@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/Button'
-import { WaveAnimation } from '@/components/ui/WaveAnimation'
+import { WaveBackground } from '@/components/ui/WaveBackground'
 
 const trustSignals = [
   'Lebensmittelproduktion',
@@ -9,8 +9,10 @@ const trustSignals = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy">
-      <div className="container-wide relative z-10 py-32 text-center md:py-40">
+    <section className="relative min-h-screen overflow-hidden bg-navy">
+      <WaveBackground className="absolute inset-0 h-full w-full" />
+
+      <div className="container-wide relative z-10 flex min-h-screen flex-col items-center justify-center py-32 text-center md:py-40">
         <span className="inline-block rounded-full border border-coral/40 bg-coral/10 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-coral">
           ~ Demand Intelligence Platform
         </span>
@@ -33,7 +35,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="mt-20 border-t border-white/10 pt-8">
+        <div className="mt-20 w-full max-w-3xl border-t border-white/10 pt-8">
           <p className="font-mono text-[11px] uppercase tracking-widest text-white/40">
             Vertrauen von Mittelständlern in DACH
           </p>
@@ -49,12 +51,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      <WaveAnimation
-        className="absolute inset-x-0 bottom-0 h-48 w-full"
-        color="#1E7AC2"
-        opacity={0.12}
-      />
     </section>
   )
 }
