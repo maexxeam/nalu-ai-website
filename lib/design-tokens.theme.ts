@@ -21,7 +21,7 @@ const tokens = {
       "primary": "#FFFFFF",
       "secondary": "#F4F6F8",
       "tertiary": "#F8FAFB",
-      "info": "#EAF2FB",
+      "info": "#E5EEF5",
       "success": "#E7F4EC",
       "warning": "#FFF1E2",
       "danger": "#FCEAEB"
@@ -30,7 +30,7 @@ const tokens = {
       "primary": "#0F172A",
       "secondary": "#475569",
       "tertiary": "#94A3B8",
-      "info": "#1A66B0",
+      "info": "#0A4F7F",
       "success": "#1F7A45",
       "warning": "#B25E10",
       "danger": "#B23335"
