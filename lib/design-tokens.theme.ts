@@ -38,13 +38,20 @@ const tokens = {
     "border": {
       "tertiary": "#E5E8EC",
       "secondary": "#CDD3DB",
+      "primary": "#E2E8F0",
       "warning": "#EF9F27",
       "danger": "#E24B4A"
+    },
+    "status": {
+      "success": "#30A46C",
+      "warning": "#F76B15",
+      "danger": "#E5484D"
     }
   }
 },
   fontFamily: {
   "sans": [
+    "DM Sans",
     "Inter",
     "Helvetica Neue",
     "system-ui",
@@ -53,6 +60,7 @@ const tokens = {
   ],
   "display": [
     "Syne",
+    "DM Sans",
     "Inter",
     "sans-serif"
   ],
