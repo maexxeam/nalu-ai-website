@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nalu-ocean-deep: #0A4F7F;
+  --nalu-coral: #FF6B4A;
+  --nalu-sea-glass: #4ABFB0;
+  --nalu-horizon: #F8FAFB;
+
+  --color-text-primary: #1E293B;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F1F5F9;
+  --color-bg-tertiary: #F8FAFB;
+  --color-bg-dark: #0F172A;
+
+  --color-border-primary: #E2E8F0;
+  --color-border-secondary: #CBD5E1;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-dm-sans), sans-serif;
+    color: var(--color-text-primary);
+    background: var(--color-bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-syne), sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  code, pre {
+    font-family: var(--font-jetbrains), monospace;
+  }
+
+  ::selection {
+    background: var(--nalu-coral);
+    color: #FFFFFF;
+  }
+}
+
+@layer utilities {
+  .container-prose {
+    @apply mx-auto max-w-prose px-6;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl px-6;
+  }
+}

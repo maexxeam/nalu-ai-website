@@ -1,0 +1,97 @@
+---
+title: "SAP R/3 und Machine Learning: Was niemand Ihnen erzählt"
+excerpt: "ML-Demos laufen auf sauberen Datasets. SAP R/3 hat keine sauberen Datasets. Was zwischen Demo und Produktion wirklich passiert."
+date: "2026-04-08"
+category: "ML Engineering"
+readTime: "7 min"
+---
+
+Wenn Sie sich eine Machine-Learning-Demo eines Forecasting-Anbieters ansehen,
+sieht das Datenset so aus: ein sauberer Zeitstempel, eine Artikelnummer, eine
+Menge. Schön gleichmäßig, ein Datenpunkt pro Tag. Vielleicht ein paar Features
+wie Wochentag oder Saison.
+
+Wenn Sie dann denselben Anbieter auf Ihre SAP-R/3-Daten loslassen, passieren
+Dinge. Hier sind die fünf häufigsten — und was sie bedeuten.
+
+## 1. Doppelte Buchungen, die keine Duplikate sind
+
+Wareneingänge in R/3 werden mehrfach gebucht: Erstbuchung, Korrektur,
+Storno, Neubuchung. Wenn Sie naiv über `BUDAT` aggregieren, zählen Sie
+Stornos als positive Bewegung. Ihr Forecast lernt eine Saisonalität, die
+in Wahrheit eine Buchungsroutine ist.
+
+**Konsequenz:** Sie brauchen einen ETL-Schritt, der Stornoflags (`SHKZG = 'H'`,
+gefolgt von `SHKZG = 'S'`) auflöst, bevor Sie aggregieren. Kein Modell der
+Welt kompensiert das automatisch.
+
+## 2. Phantomartikel
+
+Artikelnummern werden umnummeriert. Vorgänger-/Nachfolgerbeziehungen sind
+in R/3 oft nur als Freitextfeld gepflegt — wenn überhaupt. Aus Forecasting-Sicht
+ist das fatal: Ihr Modell sieht 18 Monate Historie, gefolgt von einer
+abrupten Lücke, gefolgt von einem „neuen" Artikel ohne Historie.
+
+**Konsequenz:** Sie brauchen eine **Mapping-Logik**, die Vorgänger und
+Nachfolger zusammenführt — entweder aus einem zusätzlichen Stammdatensystem
+oder aus einer manuell gepflegten Mapping-Tabelle. Cold-Start-Strategien
+helfen, aber nur dann zuverlässig, wenn die Mapping-Daten stimmen.
+
+## 3. „Mengeneinheit"
+
+In R/3 hat ein Artikel oft mehrere Mengeneinheiten: Stück, Karton, Palette.
+Wer in der falschen Einheit aggregiert, bekommt Forecasts, die um Faktor 12
+oder 24 daneben liegen. Das ist kein theoretischer Fall — wir haben es in
+realen Datenpipelines gesehen.
+
+**Konsequenz:** Konvertieren Sie **alles in eine Basiseinheit** (üblicherweise
+die kleinste, in der gebucht wird) und planen Sie in dieser. Die Umrechnung
+in „Bestelleinheit" passiert am Ende der Pipeline, nicht am Anfang.
+
+## 4. Feiertage sind nicht im Datenset
+
+Klingt trivial, ist es aber nicht. Ein Modell, das auf Wochenbasis trainiert
+wird, sieht eine Woche mit drei Feiertagen wie jede andere Woche — außer Sie
+haben das Feature explizit gebaut. Die Folge: das Modell lernt, dass die KW 52
+„immer schwach" ist, statt zu verstehen, dass sie schwach **wegen** der
+Feiertage ist.
+
+**Konsequenz:** Ein **Feiertagskalender** als Feature ist Pflicht.
+Bundesländerspezifisch in Deutschland — Bayern hat andere Feiertage als
+Berlin. Externe Quellen wie [feiertage-api.de](https://feiertage-api.de)
+funktionieren, müssen aber in den ETL eingebunden werden.
+
+## 5. Der „letzte Tag" ist nicht der letzte Tag
+
+R/3-Buchungen werden mit Verzögerung erfasst. Wenn Sie heute (Donnerstag)
+einen Forecast generieren, sind die Buchungen von Mittwoch oft noch nicht
+vollständig. Trainieren Sie Ihr Modell darauf, dass „letzter Tag = aktueller
+Tag", lernt es einen systematischen Negativ-Bias auf den letzten beiden
+Beobachtungen.
+
+**Konsequenz:** Definieren Sie einen **Cutoff** — typischerweise zwei Tage
+vor dem Generierungszeitpunkt. Forecasten Sie ab dort, und akzeptieren Sie,
+dass die letzten zwei Tage als Backfill-Bereich behandelt werden müssen.
+
+## Das gemeinsame Muster
+
+Alle fünf Punkte haben eines gemeinsam: **Sie sind kein ML-Problem, sondern
+ein Datenintegrations-Problem.** Sie werden nicht durch ein besseres Modell
+gelöst. Sie werden durch einen sauberen ETL gelöst, der die Eigenheiten von
+R/3 kennt.
+
+Das ist auch der Grund, warum „bringen Sie uns Ihre CSV, wir trainieren
+ein Modell"-Anbieter so oft scheitern, sobald sie auf echte Mittelstandsdaten
+treffen. Die Demo-Daten sind sauber. R/3 ist es nicht. Niemand ist es. Und
+das Modell ist immer nur so gut wie die Pipeline davor.
+
+## Was wir gelernt haben
+
+Wenn Sie ein Forecasting-Projekt mit SAP R/3 starten, planen Sie **zwei
+Drittel der Zeit für Datenarbeit**, nicht für Modelltraining. Wer Ihnen
+etwas anderes verspricht, hat entweder noch nie mit R/3 gearbeitet oder
+ist gerade dabei, es zu lernen — auf Ihre Kosten.
+
+Das ist keine Tragödie. Es ist die Realität jedes ML-Projekts, das echte
+Geschäftsdaten anfasst. Aber es ist eine Realität, über die in den
+Glanzbroschüren selten gesprochen wird. Wir tun es lieber vorher.

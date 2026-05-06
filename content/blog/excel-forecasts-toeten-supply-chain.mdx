@@ -1,0 +1,83 @@
+---
+title: "Warum Excel-Forecasts Ihren Supply Chain langsam töten"
+excerpt: "Excel ist die unsichtbare Steuerzentrale vieler Mittelstandsunternehmen. Genau deshalb ist es so gefährlich. Eine ehrliche Bestandsaufnahme."
+date: "2026-04-22"
+category: "Demand Planning"
+readTime: "6 min"
+---
+
+Es gibt einen Moment in fast jedem Mittelstandsunternehmen, in dem jemand sagt:
+„Wir machen das mit Excel." Niemand hat es entschieden. Es ist passiert.
+Vor zehn Jahren brauchte jemand schnell eine Übersicht — und seitdem ist die
+Tabelle von Schreibtisch zu Schreibtisch gewandert, gewachsen, verschachtelt.
+Heute hängt die Bestellmenge für die nächste Woche an einer SVERWEIS-Formel,
+die niemand mehr zerlegt versteht.
+
+## Excel ist nicht das Problem. Die Pipeline ist es.
+
+Excel-Tabellen für Forecasting sind nicht falsch, weil Excel falsch ist. Excel
+ist ein hervorragendes Werkzeug. Sie sind falsch, weil **die Pipeline drumherum
+fehlt**:
+
+- Wer aktualisiert die Daten? Wann? Aus welchem System?
+- Was passiert, wenn der Wareneingang um 23:30 Uhr noch nachgebucht wird?
+- Was passiert, wenn ein Artikel vor zwei Wochen umnummeriert wurde?
+- Was passiert, wenn die Person mit den Formeln im Urlaub ist?
+
+In einer ML-Pipeline sind all das **definierte Schritte**. In Excel sind sie
+**implizite Erwartungen** — und Erwartungen, die nicht aufgeschrieben sind,
+werden irgendwann verletzt.
+
+## Drei Symptome, die jeder kennt
+
+**1. Forecasts veralten in Stunden.**
+Sie generieren Sonntagabend Ihre Bestellvorschläge. Montag früh kommt eine
+Nachbuchung aus dem Wareneingang. Die Vorschläge stimmen jetzt nicht mehr —
+aber niemand merkt es, weil die Tabelle nicht weiß, dass sie veraltet ist.
+
+**2. Cold Starts sind Glücksspiele.**
+Ein neuer Artikel hat keine Historie. Die Excel-Logik fällt entweder auf einen
+hardcodierten Default zurück oder wirft `#NV`. Beides bedeutet: Sie planen
+nicht, Sie raten.
+
+**3. Niemand weiß, warum der Forecast so aussieht.**
+Wenn das Modell sagt „nächste Woche 480 Stück" — auf welcher Basis? Saisonalität?
+Trend? Marketingaktion? In Excel: keine Antwort. Im besten Fall: ein Kommentar
+einer Kollegin von 2021.
+
+## Was eine richtige Pipeline anders macht
+
+Eine moderne Forecasting-Pipeline löst diese Symptome nicht durch ein „besseres
+Excel", sondern durch drei Eigenschaften, die Excel strukturell nicht hat:
+
+1. **Reproduzierbarkeit.** Jeder Forecast wird aus einem definierten Modell auf
+   einem definierten Datenstand erzeugt. Wenn ich heute den Forecast von letzter
+   Woche neu rechne, kommt dasselbe Ergebnis raus.
+2. **Erklärbarkeit.** Jede Vorhersage kommt mit einem Konfidenzintervall und
+   — bei Bedarf — mit SHAP-Werten, die zeigen, welche Features den Wert getrieben
+   haben.
+3. **Resilienz.** Wenn ein Feature fehlt, fällt das Modell auf eine definierte
+   Fallback-Strategie zurück. Es schweigt nicht und es lügt nicht.
+
+## „Aber Excel funktioniert doch."
+
+Die Antwort darauf ist nicht „nein, tut es nicht." Die Antwort ist:
+**Excel funktioniert genau bis zu dem Punkt, an dem es teuer wird, dass es nicht
+funktioniert.** Bis dahin ist alles ruhig. Der Tag, an dem der erste Großauftrag
+storniert wird, weil das Lager leer ist, sieht aus wie jeder andere Tag — bis 14 Uhr.
+
+Wenn Sie an dem Punkt sind, an dem Ihr Excel die Steuerzentrale Ihres Supply
+Chains ist, ist die Frage nicht, **ob** Sie umsteigen, sondern **wann**.
+Idealerweise vor dem teuren Tag.
+
+## Der Mittelweg, den niemand bewirbt
+
+Die Industrie bietet zwei Extreme: das Excel-Status-quo und die SAP-IBP-Implementation
+für 250.000 € + Beratungsmandate. Was im Mittelstand fehlt, ist das, was technische
+Teams seit Jahren aus dem Open-Source-Umfeld kennen: eine deterministische,
+config-getriebene Pipeline, die in Wochen läuft, nicht in Quartalen.
+
+Genau dafür gibt es Nalu AI. Aber das Wichtigere ist:
+**Sie haben das Recht, Erwartungen zu haben.** Forecasts müssen nicht mystisch
+sein. Sie müssen erklärt werden können. Und sie dürfen nicht in einer Tabelle
+leben, die ein einzelner Krankheitsfall lahmlegt.

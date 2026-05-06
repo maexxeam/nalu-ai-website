@@ -1,0 +1,91 @@
+---
+title: "ABC/XYZ-Analyse: Was sie Ihnen wirklich sagt — und was nicht"
+excerpt: "ABC/XYZ ist die meistgenutzte Segmentierungstechnik im Supply Chain. Sie ist auch die meistmissverstandene. Eine pragmatische Einordnung."
+date: "2026-04-15"
+category: "Analytics"
+readTime: "5 min"
+---
+
+ABC/XYZ ist die Methode, die jede:r Supply-Chain-Manager:in im Studium gelernt
+hat. A-Artikel sind die wichtigen, C-Artikel sind die unwichtigen, X-Artikel
+sind planbar, Z-Artikel sind chaotisch. Klingt simpel. Ist es auch — bis Sie
+versuchen, daraus Entscheidungen abzuleiten.
+
+## Was ABC/XYZ wirklich ist
+
+ABC ist eine **Pareto-Klassifizierung nach Beitrag**. Üblicherweise nach Umsatz
+oder Marge. Die Logik: 20 % der Artikel machen 80 % des Werts.
+
+XYZ ist eine **Variabilitätsklassifizierung**. Sie misst, wie konstant die
+Nachfrage über die Zeit ist — typischerweise über den Variationskoeffizienten
+(Standardabweichung / Mittelwert).
+
+Kombiniert ergeben sie eine 3×3-Matrix:
+
+|     | X (planbar) | Y (mittel) | Z (volatil) |
+|-----|-------------|------------|-------------|
+| **A** | AX — Standard | AY — vorsichtig | AZ — Aufwand wert |
+| **B** | BX | BY | BZ |
+| **C** | CX | CY | CZ — automatisieren |
+
+Bis hier ist alles in Ordnung.
+
+## Wo der Schmerz anfängt
+
+Drei Fehlannahmen sehen wir immer wieder:
+
+**1. „A-Artikel = wichtig, C-Artikel = unwichtig."**
+Falsch. Ein C-Artikel kann kritisch sein, wenn er einen A-Artikel komplettiert
+(denken Sie an ein Ersatzteil, ohne das die Maschine nicht läuft). ABC misst
+**Wert**, nicht **Wichtigkeit**.
+
+**2. „Z-Artikel kann man nicht forecasten."**
+Falsch. Z-Artikel sind volatil — aber das heißt nicht zufällig. Oft ist die
+Volatilität strukturell (saisonale Werbeaktion, B2B-Großbestellungen). Mit
+Konfidenzintervallen statt Punktforecasts wird auch ein Z-Artikel planbar —
+nur eben nicht auf eine einzige Zahl reduzierbar.
+
+**3. „Die Matrix gilt für immer."**
+Falsch. Die Klassifizierung ist eine Momentaufnahme. Wir sehen regelmäßig
+Artikel, die innerhalb von zwölf Monaten von CZ nach AY wandern (oder umgekehrt).
+**ABC/XYZ muss laufen, nicht einmal pro Jahr im Excel-Sheet erstellt werden.**
+
+## Was Sie aus ABC/XYZ ableiten sollten
+
+Wenn die Klassifizierung korrekt läuft, ergeben sich klare Implikationen:
+
+- **AX-Artikel** sind die Basis. Hier lohnt sich präzises Forecasting auf
+  Wochenbasis und enge Sicherheitsbestände.
+- **AZ-Artikel** sind die teuersten Fehlentscheidungen. Hier brauchen Sie
+  Konfidenzintervalle, Szenarien-Planung und einen menschlichen Sanity-Check.
+- **CZ-Artikel** sollten Sie automatisieren. Reorder Points über Service Level,
+  feste Bestellzyklen, kein Forecasting-Aufwand.
+
+## Was Sie nicht aus ABC/XYZ ableiten sollten
+
+Strategische Sortimentsentscheidungen. Lieferanten-Konsolidierung. Make-or-Buy.
+Das sind Themen, für die ABC/XYZ ein Inputsignal ist, aber niemals die
+Entscheidungsgrundlage.
+
+## Die unterschätzte Variante: ABC nach Marge
+
+Die meisten Unternehmen rechnen ABC nach Umsatz. Das ist gut für Vertriebs-KPIs,
+aber gefährlich für Supply Chain. Ein Artikel mit hohem Umsatz und niedriger
+Marge bindet Kapital, ohne entsprechend zur Profitabilität beizutragen. **ABC
+nach Deckungsbeitrag** zeigt oft ein anderes Bild — und führt zu klügeren
+Bestandsentscheidungen.
+
+## Wenn Sie heute anfangen würden
+
+Drei pragmatische Schritte:
+
+1. ABC nach Umsatz **und** ABC nach Deckungsbeitrag laufen lassen — und die
+   Differenz analysieren.
+2. XYZ nicht nur über die letzten 12 Monate, sondern auch über die letzten
+   3 Monate berechnen. Strukturveränderungen werden so sichtbar.
+3. Die Matrix monatlich aktualisieren. Manuell ist das Aufwand. Automatisiert
+   ist es eine Konfigurationsfrage.
+
+ABC/XYZ ist kein Selbstzweck. Es ist ein Werkzeug, das Ihnen sagt, **wo Sie
+Forecasting-Aufwand investieren sollten** — und wo Sie es lassen können. Genau
+dafür ist es gut. Mehr darf man nicht erwarten. Aber das ist schon viel.
