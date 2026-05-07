@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { Logo } from '@/components/ui/Logo'
 
 const navLinks = [
-  { href: '/#produkt', label: 'Produkt' },
-  { href: '/#preise', label: 'Preise' },
+  { href: '/#produkt', label: 'Core Platform' },
+  { href: '/sales', label: 'Sales Add-on' },
+  { href: '/pricing', label: 'Preise' },
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'Über uns' },
   { href: '/demo', label: 'Demo' },

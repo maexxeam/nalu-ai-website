@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CheckIcon, FileTextIcon, ArrowRightIcon } from '@/components/ui/Icons'
+import { CheckIcon, FileTextIcon, ArrowRightIcon, UsersIcon } from '@/components/ui/Icons'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 
@@ -53,14 +53,14 @@ function ForecastingVisual() {
             8-Wochen Forecast
           </p>
         </div>
-        <span className="rounded-full bg-seaglass/15 px-2.5 py-1 font-mono text-[11px] text-seaglass">
+        <span className="rounded-full bg-ocean/10 px-2.5 py-1 font-mono text-[11px] text-ocean">
           MAPE 6.2 %
         </span>
       </div>
       <svg viewBox="0 0 320 140" className="mt-4 w-full" aria-hidden="true">
         <path d="M0 110 L 0 80 L 40 70 L 80 75 L 120 60 L 160 50 L 200 45 L 240 35 L 280 30 L 320 25 L 320 110 Z" fill="#0A4F7F" fillOpacity="0.08" />
         <path d="M0 95 L 40 88 L 80 90 L 120 78 L 160 72" stroke="#0A4F7F" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M160 72 L 200 65 L 240 55 L 280 50 L 320 45" stroke="#4ABFB0" strokeWidth="2.5" strokeDasharray="5 4" fill="none" strokeLinecap="round" />
+        <path d="M160 72 L 200 65 L 240 55 L 280 50 L 320 45" stroke="#FF6B4A" strokeWidth="2.5" strokeDasharray="5 4" fill="none" strokeLinecap="round" />
         <line x1="160" y1="20" x2="160" y2="120" stroke="#FF6B4A" strokeWidth="1" strokeDasharray="3 3" />
       </svg>
       <div className="mt-4 grid grid-cols-3 gap-2">
@@ -80,7 +80,7 @@ function ForecastingVisual() {
 function SegmentationVisual() {
   const segments = [
     { label: 'A', share: 0.62, color: '#0A4F7F', count: 142 },
-    { label: 'B', share: 0.28, color: '#4ABFB0', count: 318 },
+    { label: 'B', share: 0.28, color: '#1E7AC2', count: 318 },
     { label: 'C', share: 0.10, color: '#94A3B8', count: 434 },
   ]
   return (
@@ -134,7 +134,7 @@ function ScmVisual() {
   const colors = {
     critical: '#E5484D',
     warning: '#F76B15',
-    info: '#4ABFB0',
+    info: '#30A46C',
   } as const
 
   return (
@@ -286,6 +286,74 @@ export function Features() {
                     <span className="font-mono text-[10px] uppercase tracking-widest text-white/40">
                       generiert lokal · ollama mistral 7b
                     </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1} className="mt-12">
+          <div className="overflow-hidden rounded-2xl bg-navy p-10 text-white md:p-16">
+            <div className="grid items-center gap-10 md:grid-cols-[2fr_1fr]">
+              <div>
+                <span className="inline-block rounded-full border border-coral/40 bg-coral/10 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-coral">
+                  ~ Add-on
+                </span>
+                <h3 className="mt-4 font-display text-[28px] font-bold leading-tight text-white md:text-[36px]">
+                  Nalu AI Sales
+                </h3>
+                <p className="mt-5 max-w-xl text-base text-white/70">
+                  Kaufwahrscheinlichkeit, Churn-Detection und Next Best Product
+                  — für Vertriebsteams, die mehr wollen als Absatzplanung.
+                </p>
+                <div className="mt-8">
+                  <Link
+                    href="/sales"
+                    className="inline-flex items-center gap-2 font-display text-sm font-semibold text-coral transition-colors hover:text-coral/80"
+                  >
+                    Mehr erfahren
+                    <ArrowRightIcon className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="rounded-xl bg-white/5 p-6 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-coral/20 text-coral">
+                      <UsersIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="font-mono text-[11px] uppercase tracking-widest text-white/50">
+                        Kaufbereit · 30 d
+                      </p>
+                      <p className="font-display text-sm font-semibold text-white">
+                        12 Top-Kunden
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-4 space-y-2 border-t border-white/10 pt-4">
+                    {[
+                      ['Müller Großhandel', 86],
+                      ['Bäckerei Schmidt', 74],
+                      ['Fleischerei Wagner', 61],
+                    ].map(([name, prob]) => (
+                      <div key={name} className="flex items-center justify-between gap-3">
+                        <span className="text-xs text-white/70">{name}</span>
+                        <div className="flex items-center gap-2">
+                          <div className="h-1 w-16 overflow-hidden rounded-full bg-white/10">
+                            <div
+                              className="h-full rounded-full bg-coral"
+                              style={{ width: `${prob as number}%` }}
+                            />
+                          </div>
+                          <span className="font-mono text-[10px] text-white/60">
+                            {prob}%
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

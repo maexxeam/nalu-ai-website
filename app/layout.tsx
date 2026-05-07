@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { syne, dmSans, jetbrains } from '@/lib/fonts'
 import { defaultMetadata } from '@/lib/metadata'
 import { Navbar } from '@/components/layout/Navbar'
@@ -31,6 +33,8 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

@@ -103,7 +103,7 @@ function ForecastChart() {
         HEUTE
       </text>
 
-      <path d={bandPath} fill="#0A4F7F" fillOpacity="0.10" />
+      <path d={bandPath} fill="#0A4F7F" fillOpacity="0.08" />
 
       <path d={historyPath} stroke="#0A4F7F" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       {history.map((v, i) => (
@@ -112,7 +112,7 @@ function ForecastChart() {
 
       <path
         d={forecastPath}
-        stroke="#4ABFB0"
+        stroke="#FF6B4A"
         strokeWidth="2.5"
         strokeDasharray="5 4"
         fill="none"
@@ -120,7 +120,7 @@ function ForecastChart() {
         strokeLinejoin="round"
       />
       {forecast.map((v, i) => (
-        <circle key={i} cx={xAt(11 + i)} cy={yAt(v)} r="3" fill="#4ABFB0" />
+        <circle key={i} cx={xAt(11 + i)} cy={yAt(v)} r="3" fill="#FF6B4A" />
       ))}
 
       {[0, 4, 8, 12, 16, 19].map((w) => (
@@ -216,7 +216,7 @@ function DashboardMockup() {
                 Historie
               </span>
               <span className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-                <span className="h-[2px] w-6 border-t-2 border-dashed border-seaglass" />
+                <span className="h-[2px] w-6 border-t-2 border-dashed border-coral" />
                 Forecast
               </span>
               <span className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
@@ -233,7 +233,7 @@ function DashboardMockup() {
 
 export function Solution() {
   return (
-    <section className="bg-horizon py-24 md:py-32">
+    <section className="bg-white py-24 md:py-32">
       <div className="container-wide">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-widest text-ocean">
