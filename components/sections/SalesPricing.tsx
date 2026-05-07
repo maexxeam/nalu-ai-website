@@ -19,9 +19,9 @@ const plans: Plan[] = [
   {
     label: 'Nalu AI Core',
     title: 'Demand Intelligence',
-    price: 'ab 2.500 €',
+    price: 'ab 4.500 €',
     unit: 'pro Monat',
-    setup: '+ ab 30.000 € Implementation einmalig',
+    setup: '+ ab 50.000 € Implementation einmalig',
     description: 'Forecasting, Analytics & Supply Chain.',
     bullets: [
       'ML-Forecasting',
@@ -30,14 +30,14 @@ const plans: Plan[] = [
       'Supply Chain & Reorder',
       'Wöchentliche AI-Berichte',
     ],
-    cta: 'Demo anfragen',
+    cta: 'Angebot anfragen',
   },
   {
     label: 'Nalu AI Bundle',
     title: 'Core + Sales',
-    price: 'ab 3.800 €',
-    unit: 'pro Monat · statt 4.000 €',
-    setup: '+ ab 35.000 € Implementation einmalig (statt 38.000 €)',
+    price: 'ab 7.000 €',
+    unit: 'pro Monat',
+    setup: '+ ab 50.000 € Implementation einmalig',
     description: 'Alles aus Core, plus Sales Intelligence.',
     bullets: [
       'Alles aus Nalu AI Core',
@@ -61,9 +61,9 @@ export function SalesPricing() {
             Preise
           </p>
           <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            Sales Add-on im Bundle.
+            Sales Add-on — nur mit Core.
             <br />
-            Spürbar günstiger als einzeln.
+            Im Bundle aus einer Hand.
           </h2>
         </Reveal>
 

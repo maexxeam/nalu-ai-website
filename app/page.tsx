@@ -25,12 +25,12 @@ const jsonLd = {
   offers: [
     {
       '@type': 'Offer',
-      name: 'Implementation (Phase 1)',
-      price: '30000',
+      name: 'Implementation (einmalig)',
+      price: '50000',
       priceCurrency: 'EUR',
       priceSpecification: {
         '@type': 'PriceSpecification',
-        price: '30000',
+        price: '50000',
         priceCurrency: 'EUR',
         valueAddedTaxIncluded: false,
       },
@@ -38,12 +38,12 @@ const jsonLd = {
     },
     {
       '@type': 'Offer',
-      name: 'Wartung & Support (Phase 2)',
-      price: '2500',
+      name: 'Lizenz & Support (monatlich)',
+      price: '4500',
       priceCurrency: 'EUR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '2500',
+        price: '4500',
         priceCurrency: 'EUR',
         valueAddedTaxIncluded: false,
         billingDuration: 'P1M',

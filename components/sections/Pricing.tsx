@@ -2,40 +2,34 @@ import { CheckIcon } from '@/components/ui/Icons'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 
-interface Plan {
+interface Box {
   label: string
   title: string
   price: string
-  unit: string
-  description: string
   bullets: string[]
 }
 
-const plans: Plan[] = [
+const boxes: Box[] = [
   {
-    label: 'Phase 1 · Implementation',
-    title: 'Einmalig',
-    price: 'ab 30.000 €',
-    unit: 'einmalig',
-    description: 'Setup, Connector, Modell-Training, Go-Live.',
+    label: 'Einmalig',
+    title: 'Implementation',
+    price: 'ab 50.000 €',
     bullets: [
-      'Connector-Entwicklung (SAP R/3, S/4HANA, REST, CSV)',
-      'Modell-Training auf Ihren Daten',
-      'Go-Live in 4 Wochen',
-      'Schulung Ihres Teams (max. 2 Tage)',
+      'Connector-Aufbau',
+      'Datensäuberung',
+      'Modell-Training',
+      'Go-Live in Wochen',
     ],
   },
   {
-    label: 'Phase 2 · Laufend',
-    title: 'Monatlich',
-    price: 'ab 2.500 €',
-    unit: 'pro Monat',
-    description: 'Wartung, Support, neue Features.',
+    label: 'Laufend',
+    title: 'Lizenz + Support',
+    price: 'ab 4.500 € / Monat',
     bullets: [
-      'Wartung & Updates · Watchtower auto-deploy',
-      'Support mit wählbarem SLA',
-      'Neue Features automatisch enthalten',
-      'Wöchentliche Berichte automatisch',
+      'Software-Updates',
+      'Neue Features',
+      'Wartung',
+      'Automatische Berichte',
     ],
   },
 ]
@@ -49,43 +43,35 @@ export function Pricing() {
             Preise
           </p>
           <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            Transparent.
-            <br />
-            Kein Abo-Modell versteckt.
+            Transparente Preise.
           </h2>
         </Reveal>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-2">
-          {plans.map((plan, i) => (
-            <Reveal key={plan.label} delay={i * 0.1}>
+        <div className="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-2">
+          {boxes.map((box, i) => (
+            <Reveal key={box.label} delay={i * 0.1}>
               <div className="flex h-full flex-col rounded-2xl border border-[var(--color-border-primary)] bg-white p-8 md:p-10">
                 <p className="font-mono text-[11px] uppercase tracking-widest text-coral">
-                  {plan.label}
+                  {box.label}
                 </p>
-                <h3 className="mt-3 font-display text-xl font-semibold text-[var(--color-text-primary)]">
-                  {plan.title}
+                <h3 className="mt-2 font-display text-xl font-semibold text-[var(--color-text-primary)]">
+                  {box.title}
                 </h3>
-                <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                  {plan.description}
-                </p>
 
                 <div className="mt-6 border-t border-[var(--color-border-primary)] pt-6">
                   <p className="font-display text-3xl font-bold text-[var(--color-text-primary)]">
-                    {plan.price}
-                  </p>
-                  <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--color-text-tertiary)]">
-                    {plan.unit}
+                    {box.price}
                   </p>
                 </div>
 
-                <ul className="mt-8 flex-1 space-y-3">
-                  {plan.bullets.map((bullet) => (
+                <ul className="mt-6 flex-1 space-y-3">
+                  {box.bullets.map((b) => (
                     <li
-                      key={bullet}
+                      key={b}
                       className="flex items-start gap-3 text-sm text-[var(--color-text-primary)]"
                     >
                       <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-seaglass" />
-                      <span>{bullet}</span>
+                      <span>{b}</span>
                     </li>
                   ))}
                 </ul>
@@ -96,14 +82,24 @@ export function Pricing() {
 
         <Reveal delay={0.2} className="mx-auto mt-12 max-w-2xl text-center">
           <p className="text-sm text-[var(--color-text-secondary)]">
-            Jedes Projekt ist individuell — Preise variieren je nach Datenkomplexität,
-            Connector-Aufwand und Anzahl Artikel.
+            Der genaue Preis hängt von Ihrer Situation ab — Artikelanzahl,
+            ERP-System, Standorte.
           </p>
           <div className="mt-8">
             <Button href="/demo" size="lg">
-              Angebot anfragen →
+              Kostenloses Erstgespräch →
             </Button>
           </div>
+          <p className="mt-6 text-xs text-[var(--color-text-tertiary)]">
+            Kein Abo-Modell. Keine Cloud-Gebühren. Ihre Daten bleiben bei Ihnen.
+          </p>
+          <p className="mt-4 text-xs text-[var(--color-text-tertiary)]">
+            Volle Preisübersicht unter{' '}
+            <a href="/pricing" className="text-coral underline-offset-4 hover:underline">
+              /pricing
+            </a>
+            .
+          </p>
         </Reveal>
       </div>
     </section>
