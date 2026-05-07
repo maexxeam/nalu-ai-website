@@ -1,23 +1,6 @@
+import { useTranslations } from 'next-intl'
 import { ChartLineIcon, PackageIcon, BrainIcon } from '@/components/ui/Icons'
 import { Reveal } from '@/components/ui/Reveal'
-
-const pillars = [
-  {
-    Icon: BrainIcon,
-    title: 'Forecasting',
-    body: 'ML-Modelle, die Ihre SAP-Daten verstehen — nicht generische Templates.',
-  },
-  {
-    Icon: ChartLineIcon,
-    title: 'Analytics',
-    body: 'Absatz, Umsatz, ABC/XYZ — alles in einem Dashboard.',
-  },
-  {
-    Icon: PackageIcon,
-    title: 'SCM',
-    body: 'Safety Stock, Reorder Points, Bestandsabdeckung — automatisch.',
-  },
-]
 
 const history = [50, 55, 48, 60, 58, 65, 62, 70, 68, 72, 75, 78]
 const forecast = [78, 80, 82, 85, 88, 90, 92, 95]
@@ -34,12 +17,10 @@ const xAt = (w: number) => X0 + (w / TOTAL_WEEKS) * W
 const yAt = (v: number) => Y0 + H - ((v - 40) / 70) * H
 
 const historyPath =
-  'M ' +
-  history.map((v, i) => `${xAt(i)},${yAt(v)}`).join(' L ')
+  'M ' + history.map((v, i) => `${xAt(i)},${yAt(v)}`).join(' L ')
 
 const forecastPath =
-  'M ' +
-  forecast.map((v, i) => `${xAt(11 + i)},${yAt(v)}`).join(' L ')
+  'M ' + forecast.map((v, i) => `${xAt(11 + i)},${yAt(v)}`).join(' L ')
 
 const bandPath =
   'M ' +
@@ -52,7 +33,7 @@ const bandPath =
 
 const todayX = xAt(11)
 
-function ForecastChart() {
+function ForecastChart({ todayLabel }: { todayLabel: string }) {
   return (
     <svg
       viewBox={`0 0 ${X0 + W + 20} ${Y0 + H + 50}`}
@@ -100,7 +81,7 @@ function ForecastChart() {
         fill="#FF6B4A"
         letterSpacing="0.1em"
       >
-        HEUTE
+        {todayLabel}
       </text>
 
       <path d={bandPath} fill="#0A4F7F" fillOpacity="0.08" />
@@ -169,6 +150,7 @@ function Kpi({ label, value, delta, positive = true }: KpiProps) {
 }
 
 function DashboardMockup() {
+  const t = useTranslations('Solution.mockup')
   return (
     <div className="relative mx-auto max-w-6xl">
       <div className="overflow-hidden rounded-2xl border border-[var(--color-border-primary)] bg-white shadow-brand-lg">
@@ -185,43 +167,43 @@ function DashboardMockup() {
           <div className="flex items-end justify-between">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
-                Übersicht
+                {t('overview')}
               </p>
               <h3 className="mt-1 font-display text-xl font-semibold text-[var(--color-text-primary)]">
-                Demand Forecast · 8 Wochen
+                {t('forecastTitle')}
               </h3>
             </div>
             <div className="hidden items-center gap-2 md:flex">
               <span className="rounded-md bg-[var(--color-bg-secondary)] px-2.5 py-1 font-mono text-[11px] text-[var(--color-text-secondary)]">
-                Modell · LightGBM
+                {t('model')}
               </span>
               <span className="rounded-md bg-[var(--color-bg-secondary)] px-2.5 py-1 font-mono text-[11px] text-[var(--color-text-secondary)]">
-                MAPE · 7.6 %
+                {t('mape')}
               </span>
             </div>
           </div>
 
           <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-            <Kpi label="Forecast Accuracy" value="92.4 %" delta="+ 2.1 %" />
-            <Kpi label="Service Level" value="98.1 %" delta="+ 0.4 %" />
-            <Kpi label="Stock Coverage" value="38 d" delta="− 3 d" positive={false} />
-            <Kpi label="Active Forecasts" value="894" delta="+ 12" />
+            <Kpi label={t('kpiAccuracy')} value="92.4 %" delta="+ 2.1 %" />
+            <Kpi label={t('kpiServiceLevel')} value="98.1 %" delta="+ 0.4 %" />
+            <Kpi label={t('kpiCoverage')} value="38 d" delta="− 3 d" positive={false} />
+            <Kpi label={t('kpiActive')} value="894" delta="+ 12" />
           </div>
 
           <div className="mt-6 rounded-xl border border-[var(--color-border-primary)] bg-white p-4">
-            <ForecastChart />
+            <ForecastChart todayLabel={t('today')} />
             <div className="mt-3 flex flex-wrap items-center gap-4 border-t border-[var(--color-border-primary)] pt-3">
               <span className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
                 <span className="h-[2px] w-6 bg-ocean" />
-                Historie
+                {t('history')}
               </span>
               <span className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
                 <span className="h-[2px] w-6 border-t-2 border-dashed border-coral" />
-                Forecast
+                {t('forecast')}
               </span>
               <span className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
                 <span className="h-3 w-6 rounded-sm bg-ocean/10" />
-                95 % Konfidenz
+                {t('confidence')}
               </span>
             </div>
           </div>
@@ -232,21 +214,39 @@ function DashboardMockup() {
 }
 
 export function Solution() {
+  const t = useTranslations('Solution')
+  const pillars = [
+    {
+      Icon: BrainIcon,
+      title: t('pillars.forecasting.title'),
+      body: t('pillars.forecasting.body'),
+    },
+    {
+      Icon: ChartLineIcon,
+      title: t('pillars.analytics.title'),
+      body: t('pillars.analytics.body'),
+    },
+    {
+      Icon: PackageIcon,
+      title: t('pillars.scm.title'),
+      body: t('pillars.scm.body'),
+    },
+  ]
+
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="container-wide">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-widest text-ocean">
-            Die Lösung
+            {t('eyebrow')}
           </p>
           <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            Demand Intelligence.
+            {t('title')}
             <br />
-            On your terms.
+            {t('titleSecond')}
           </h2>
           <p className="mt-6 text-base text-[var(--color-text-secondary)] md:text-lg">
-            Eine Plattform für Forecasting, Analytics und Supply Chain — auf
-            Ihrem Server, in Ihrer Sprache, für Ihre Daten.
+            {t('subtitle')}
           </p>
         </Reveal>
 

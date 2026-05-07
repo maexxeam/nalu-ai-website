@@ -1,78 +1,57 @@
 import type { Metadata } from 'next'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { useTranslations } from 'next-intl'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 import { ShieldIcon, ZapIcon, UsersIcon } from '@/components/ui/Icons'
 
-export const metadata: Metadata = {
-  title: 'Über uns',
-  description:
-    'Nalu AI entstand aus echter Produktionserfahrung — nicht aus einem Hackathon.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'About' })
+  return { title: t('metaTitle'), description: t('metaDescription') }
 }
 
-const values = [
-  {
-    Icon: ShieldIcon,
-    title: 'Daten bleiben bei Ihnen',
-    body: 'Keine Cloud-Abhängigkeit, keine Subprocessor-Kette. Wir bauen Software für Ihre Infrastruktur, nicht für unsere.',
-  },
-  {
-    Icon: ZapIcon,
-    title: 'Kein Hype, nur Ergebnisse',
-    body: 'Wir reden nicht von "AI-powered Synergien". Wir liefern Forecasts, Alerts und Berichte, die Ihr Team morgen nutzen kann.',
-  },
-  {
-    Icon: UsersIcon,
-    title: 'Mittelstand versteht Mittelstand',
-    body: 'Wir kennen die Realität: knappe Ressourcen, gewachsene Systeme, pragmatische Entscheidungen. Daran orientiert sich das Produkt.',
-  },
-]
+function AboutBody() {
+  const t = useTranslations('About')
 
-const stats = [
-  { value: '770', label: 'Kunden im Ursprungsprojekt' },
-  { value: '900', label: 'aktive Artikel' },
-  { value: '450k+', label: 'Zeitreihen forecastet' },
-]
+  const values = [
+    { Icon: ShieldIcon, title: t('values.data.title'), body: t('values.data.body') },
+    { Icon: ZapIcon, title: t('values.noHype.title'), body: t('values.noHype.body') },
+    { Icon: UsersIcon, title: t('values.mittelstand.title'), body: t('values.mittelstand.body') },
+  ]
 
-export default function AboutPage() {
+  const stats = [
+    { value: '770', label: t('stats.customers') },
+    { value: '900', label: t('stats.articles') },
+    { value: '450k+', label: t('stats.series') },
+  ]
+
   return (
     <>
       <PageHeader
-        eyebrow="~ Über uns"
-        title="Gebaut von jemandem, der das Problem kennt."
-        subtitle="Nalu AI entstand aus echter Produktionserfahrung — nicht aus einem Hackathon."
+        eyebrow={t('headerEyebrow')}
+        title={t('headerTitle')}
+        subtitle={t('headerSubtitle')}
       />
 
       <section className="bg-white py-20 md:py-28">
         <div className="container-wide">
           <Reveal className="mx-auto max-w-3xl">
             <div className="space-y-6 text-base leading-relaxed text-[var(--color-text-primary)] md:text-lg">
+              <p>{t('story1')}</p>
+              <p>{t('story2')}</p>
+              <p>{t('story3')}</p>
               <p>
-                Bevor es Nalu AI gab, habe ich eine ML-Forecasting-Plattform für einen
-                mittelständischen Lebensmittelproduzenten gebaut — drei Jahre Entwicklung,
-                Produktion, Iteration. Kein Lab, keine Demo: tägliche Forecasts, die
-                Bestellmengen und Service Levels beeinflusst haben.
-              </p>
-              <p>
-                In dieser Zeit habe ich gelernt, wo Standardlösungen versagen. SAP-R/3-Buchungen,
-                die nicht stimmen. Cold-Start-Probleme bei neu gelisteten Artikeln. Excel-Forecasts,
-                die um Mitternacht veralten, wenn Wareneingänge eintrudeln. ML-Modelle, die im Lab
-                glänzen und in Produktion zerbröseln, weil niemand auf Datenqualität geachtet hat.
-              </p>
-              <p>
-                Nalu AI ist die Antwort auf diese Erfahrung — keine Neuerfindung. Was funktioniert,
-                bleibt: LightGBM, Temporal Fusion Transformer, SHAP-Erklärungen, Konfidenzintervalle.
-                Was im Mittelstand wirklich zählt, kommt dazu: On-Premise-Deployment, deterministische
-                Pipelines, Schulung statt Black Box, Wartung als integraler Teil — nicht als Aufpreis.
-              </p>
-              <p>
-                Die Plattform ist konfigurationsgetrieben. Ein neuer Kunde bedeutet eine{' '}
+                {t('story4Pre')}
                 <code className="rounded bg-[var(--color-bg-secondary)] px-1.5 py-0.5 text-[13px]">
                   config.yaml
-                </code>{' '}
-                und einen Connector. Keine Anpassung am Kern. Genau so wurde es entworfen, weil genau
-                so der Mittelstand bedient werden muss: ohne dass Sie zu jemandem werden müssen, der
-                Sie nicht sind.
+                </code>
+                {t('story4Post')}
               </p>
             </div>
           </Reveal>
@@ -98,12 +77,12 @@ export default function AboutPage() {
         <div className="container-wide">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="font-display text-sm font-semibold uppercase tracking-widest text-ocean">
-              Werte
+              {t('valuesEyebrow')}
             </p>
             <h2 className="mt-4 font-display text-[28px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[36px]">
-              Drei Prinzipien.
+              {t('valuesTitle')}
               <br />
-              Daran wird gemessen.
+              {t('valuesTitleSecond')}
             </h2>
           </Reveal>
 
@@ -131,15 +110,14 @@ export default function AboutPage() {
         <div className="container-wide">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-[28px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[36px]">
-              Sprechen wir.
+              {t('talkTitle')}
             </h2>
             <p className="mt-4 text-base text-[var(--color-text-secondary)] md:text-lg">
-              30 Minuten Demo auf Ihrem Use Case. Keine Verpflichtung,
-              keine Vorbereitung nötig.
+              {t('talkSubtitle')}
             </p>
             <div className="mt-8">
               <Button href="/demo" size="lg">
-                Demo anfragen →
+                {t('talkCta')}
               </Button>
             </div>
           </Reveal>
@@ -147,4 +125,14 @@ export default function AboutPage() {
       </section>
     </>
   )
+}
+
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  return <AboutBody />
 }

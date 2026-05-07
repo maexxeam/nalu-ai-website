@@ -1,7 +1,9 @@
-import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { ArrowRightIcon } from '@/components/ui/Icons'
 import { formatDate } from '@/lib/blog'
 import type { PostMeta } from '@/lib/blog'
+import type { Locale } from '@/i18n/routing'
 
 interface PostCardProps {
   post: PostMeta
@@ -9,6 +11,9 @@ interface PostCardProps {
 }
 
 export function PostCard({ post, featured = false }: PostCardProps) {
+  const t = useTranslations('Blog')
+  const locale = useLocale() as Locale
+
   if (featured) {
     return (
       <Link
@@ -18,7 +23,7 @@ export function PostCard({ post, featured = false }: PostCardProps) {
         <article className="grid gap-8 p-8 md:grid-cols-[1fr_2fr] md:gap-12 md:p-12">
           <div className="flex items-center justify-center rounded-xl bg-navy p-12">
             <span className="font-display text-sm font-semibold uppercase tracking-widest text-coral">
-              ~ Featured Insight
+              {t('cardFeatured')}
             </span>
           </div>
           <div className="flex flex-col">
@@ -33,10 +38,10 @@ export function PostCard({ post, featured = false }: PostCardProps) {
             </p>
             <div className="mt-auto flex items-center justify-between border-t border-[var(--color-border-primary)] pt-5">
               <span className="font-mono text-xs text-[var(--color-text-tertiary)]">
-                {formatDate(post.date)} · {post.readTime}
+                {formatDate(post.date, locale)} · {post.readTime}
               </span>
               <span className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-ocean transition-colors group-hover:text-coral">
-                Weiterlesen
+                {t('readMore')}
                 <ArrowRightIcon className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </span>
             </div>
@@ -62,7 +67,7 @@ export function PostCard({ post, featured = false }: PostCardProps) {
       </p>
       <div className="mt-6 flex items-center justify-between border-t border-[var(--color-border-primary)] pt-4">
         <span className="font-mono text-[11px] text-[var(--color-text-tertiary)]">
-          {formatDate(post.date)}
+          {formatDate(post.date, locale)}
         </span>
         <span className="font-mono text-[11px] text-[var(--color-text-tertiary)]">
           {post.readTime}

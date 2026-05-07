@@ -1,36 +1,39 @@
+import { useTranslations } from 'next-intl'
 import { AlertTriangleIcon, ClockIcon, BrainIcon } from '@/components/ui/Icons'
 import { Reveal } from '@/components/ui/Reveal'
 
-const problems = [
-  {
-    Icon: AlertTriangleIcon,
-    title: 'Fehlbuchungen in SAP R/3',
-    body: 'Falsche Wareneingänge, Phantombestände, inkonsistente Artikelstammdaten — die Realität jedes ERP-Systems im Mittelstand.',
-  },
-  {
-    Icon: ClockIcon,
-    title: 'Excel-Forecasts veralten in Stunden',
-    body: 'Manuelle Pflege, kopierte Formeln, Versionschaos. Was Montag stimmt, ist Dienstag falsch.',
-  },
-  {
-    Icon: BrainIcon,
-    title: 'Keine ML-Expertise intern',
-    body: 'Enterprise-Tools kosten 200k€+ pro Jahr oder brauchen ein eigenes Data Team. Beides selten realistisch.',
-  },
-]
-
 export function Problem() {
+  const t = useTranslations('Problem')
+
+  const problems = [
+    {
+      Icon: AlertTriangleIcon,
+      title: t('items.erp.title'),
+      body: t('items.erp.body'),
+    },
+    {
+      Icon: ClockIcon,
+      title: t('items.excel.title'),
+      body: t('items.excel.body'),
+    },
+    {
+      Icon: BrainIcon,
+      title: t('items.ml.title'),
+      body: t('items.ml.body'),
+    },
+  ]
+
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="container-wide">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-widest text-ocean">
-            Das Problem
+            {t('eyebrow')}
           </p>
           <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            Ihr ERP hat die Daten.
+            {t('title')}
             <br />
-            Niemand kann sie nutzen.
+            {t('titleSecond')}
           </h2>
         </Reveal>
 

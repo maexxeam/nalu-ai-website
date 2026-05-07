@@ -1,34 +1,42 @@
 import type { Metadata } from 'next'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { useTranslations } from 'next-intl'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { DemoForm } from '@/components/ui/DemoForm'
 import { CheckIcon } from '@/components/ui/Icons'
 
-export const metadata: Metadata = {
-  title: 'Demo anfragen',
-  description:
-    '30 Minuten Demo. Live-Forecasts auf Ihren Use Cases. Keine Verpflichtung.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Demo' })
+  return { title: t('metaTitle'), description: t('metaDescription') }
 }
 
-const expectations = [
-  '30-Minuten Live-Demo auf Ihren Use Cases',
-  'Echte Forecasts, keine Slideshow',
-  'Ehrliche Einschätzung, ob Nalu AI zu Ihnen passt',
-  'Auf Wunsch: technisches Deep Dive',
-]
+function DemoBody() {
+  const t = useTranslations('Demo')
 
-const agenda = [
-  { time: '10 min', label: 'Ihre Situation verstehen' },
-  { time: '15 min', label: 'Live-Demo relevanter Module' },
-  { time: '5 min', label: 'Nächste Schritte' },
-]
+  const expectations = [
+    t('expectation1'),
+    t('expectation2'),
+    t('expectation3'),
+    t('expectation4'),
+  ]
 
-export default function DemoPage() {
+  const agenda = [
+    { time: t('agenda1Time'), label: t('agenda1Label') },
+    { time: t('agenda2Time'), label: t('agenda2Label') },
+    { time: t('agenda3Time'), label: t('agenda3Label') },
+  ]
+
   return (
     <>
       <PageHeader
-        eyebrow="~ Demo"
-        title="Demo anfragen."
-        subtitle="30 Minuten. Keine Verpflichtung. Ihre Daten bleiben bei Ihnen."
+        eyebrow={t('headerEyebrow')}
+        title={t('headerTitle')}
+        subtitle={t('headerSubtitle')}
       />
 
       <section className="bg-white py-20 md:py-24">
@@ -41,7 +49,7 @@ export default function DemoPage() {
             <aside className="space-y-12">
               <div>
                 <h2 className="font-display text-xl font-semibold text-[var(--color-text-primary)]">
-                  Was Sie erwartet
+                  {t('expectationsTitle')}
                 </h2>
                 <ul className="mt-6 space-y-3">
                   {expectations.map((item) => (
@@ -55,7 +63,7 @@ export default function DemoPage() {
 
               <div>
                 <h2 className="font-display text-xl font-semibold text-[var(--color-text-primary)]">
-                  Typische Demo-Agenda
+                  {t('agendaTitle')}
                 </h2>
                 <ul className="mt-6 divide-y divide-[var(--color-border-primary)] rounded-xl border border-[var(--color-border-primary)] bg-white">
                   {agenda.map((item) => (
@@ -76,7 +84,7 @@ export default function DemoPage() {
 
               <div className="rounded-xl bg-[var(--color-bg-tertiary)] p-6">
                 <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
-                  Lieber direkt schreiben?
+                  {t('directLabel')}
                 </p>
                 <a
                   href="mailto:hello@nalu-ai.com"
@@ -91,4 +99,14 @@ export default function DemoPage() {
       </section>
     </>
   )
+}
+
+export default async function DemoPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  return <DemoBody />
 }

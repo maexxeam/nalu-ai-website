@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslations } from 'next-intl'
 import { clsx } from 'clsx'
 import { Button } from '@/components/ui/Button'
 import { CheckIcon } from '@/components/ui/Icons'
@@ -26,23 +27,6 @@ declare global {
   }
 }
 
-const articleOptions = [
-  { value: '', label: 'Bitte wählen' },
-  { value: '<100', label: 'Weniger als 100' },
-  { value: '100-500', label: '100 – 500' },
-  { value: '500-2000', label: '500 – 2.000' },
-  { value: '2000+', label: 'Mehr als 2.000' },
-]
-
-const erpOptions = [
-  { value: '', label: 'Bitte wählen' },
-  { value: 'sap-r3', label: 'SAP R/3' },
-  { value: 'sap-s4', label: 'SAP S/4HANA' },
-  { value: 'dynamics', label: 'Microsoft Dynamics' },
-  { value: 'other', label: 'Anderes ERP' },
-  { value: 'none', label: 'Kein ERP' },
-]
-
 const labelClasses =
   'block font-display text-sm font-medium text-[var(--color-text-primary)]'
 
@@ -52,6 +36,7 @@ const inputClasses =
 const errorClasses = 'mt-1.5 font-mono text-[11px] text-[#E5484D]'
 
 export function DemoForm() {
+  const t = useTranslations('DemoForm')
   const {
     register,
     handleSubmit,
@@ -59,6 +44,23 @@ export function DemoForm() {
   } = useForm<FormData>()
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+
+  const articleOptions = [
+    { value: '', label: t('articlesPlaceholder') },
+    { value: '<100', label: t('articleLt100') },
+    { value: '100-500', label: t('article100to500') },
+    { value: '500-2000', label: t('article500to2000') },
+    { value: '2000+', label: t('articleGt2000') },
+  ]
+
+  const erpOptions = [
+    { value: '', label: t('erpPlaceholder') },
+    { value: 'sap-r3', label: t('erpSapR3') },
+    { value: 'sap-s4', label: t('erpSapS4') },
+    { value: 'dynamics', label: t('erpDynamics') },
+    { value: 'other', label: t('erpOther') },
+    { value: 'none', label: t('erpNone') },
+  ]
 
   const onSubmit = async (data: FormData) => {
     setSubmitError(null)
@@ -75,9 +77,7 @@ export function DemoForm() {
       window.plausible?.('Demo Request', { props: { erp: data.erp } })
       setSubmitted(true)
     } catch (e) {
-      setSubmitError(
-        'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an hello@nalu-ai.com.',
-      )
+      setSubmitError(t('submitError'))
     }
   }
 
@@ -88,15 +88,14 @@ export function DemoForm() {
           <CheckIcon className="h-6 w-6" />
         </div>
         <h3 className="mt-5 font-display text-2xl font-semibold text-[var(--color-text-primary)]">
-          Danke für Ihre Anfrage.
+          {t('successTitle')}
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-          Wir melden uns innerhalb von 24 Stunden bei Ihnen — meistens
-          schneller. In der Zwischenzeit können Sie sich gerne unsere{' '}
+          {t('successPre')}
           <a href="/blog" className="text-ocean underline">
-            Insights
-          </a>{' '}
-          ansehen.
+            {t('successLink')}
+          </a>
+          {t('successPost')}
         </p>
       </div>
     )
@@ -107,21 +106,21 @@ export function DemoForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClasses}>
-            Name <span className="text-coral">*</span>
+            {t('name')} <span className="text-coral">*</span>
           </label>
           <input
             id="name"
             type="text"
             autoComplete="name"
             className={clsx(inputClasses, errors.name && 'border-[#E5484D]')}
-            {...register('name', { required: 'Name ist erforderlich' })}
+            {...register('name', { required: t('nameRequired') })}
           />
           {errors.name && <p className={errorClasses}>{errors.name.message}</p>}
         </div>
 
         <div>
           <label htmlFor="email" className={labelClasses}>
-            E-Mail <span className="text-coral">*</span>
+            {t('email')} <span className="text-coral">*</span>
           </label>
           <input
             id="email"
@@ -129,10 +128,10 @@ export function DemoForm() {
             autoComplete="email"
             className={clsx(inputClasses, errors.email && 'border-[#E5484D]')}
             {...register('email', {
-              required: 'E-Mail ist erforderlich',
+              required: t('emailRequired'),
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'Bitte gültige E-Mail-Adresse',
+                message: t('emailInvalid'),
               },
             })}
           />
@@ -143,14 +142,14 @@ export function DemoForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="company" className={labelClasses}>
-            Unternehmen <span className="text-coral">*</span>
+            {t('company')} <span className="text-coral">*</span>
           </label>
           <input
             id="company"
             type="text"
             autoComplete="organization"
             className={clsx(inputClasses, errors.company && 'border-[#E5484D]')}
-            {...register('company', { required: 'Unternehmen ist erforderlich' })}
+            {...register('company', { required: t('companyRequired') })}
           />
           {errors.company && (
             <p className={errorClasses}>{errors.company.message}</p>
@@ -159,9 +158,9 @@ export function DemoForm() {
 
         <div>
           <label htmlFor="position" className={labelClasses}>
-            Position
+            {t('position')}
             <span className="ml-1 font-mono text-[11px] uppercase text-[var(--color-text-tertiary)]">
-              optional
+              {t('optional')}
             </span>
           </label>
           <input
@@ -177,13 +176,13 @@ export function DemoForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="articles" className={labelClasses}>
-            Wie viele Artikel planen Sie? <span className="text-coral">*</span>
+            {t('articles')} <span className="text-coral">*</span>
           </label>
           <select
             id="articles"
             className={clsx(inputClasses, errors.articles && 'border-[#E5484D]')}
             defaultValue=""
-            {...register('articles', { required: 'Bitte auswählen' })}
+            {...register('articles', { required: t('articlesRequired') })}
           >
             {articleOptions.map((o) => (
               <option key={o.value} value={o.value} disabled={o.value === ''}>
@@ -198,13 +197,13 @@ export function DemoForm() {
 
         <div>
           <label htmlFor="erp" className={labelClasses}>
-            Welches ERP-System? <span className="text-coral">*</span>
+            {t('erp')} <span className="text-coral">*</span>
           </label>
           <select
             id="erp"
             className={clsx(inputClasses, errors.erp && 'border-[#E5484D]')}
             defaultValue=""
-            {...register('erp', { required: 'Bitte auswählen' })}
+            {...register('erp', { required: t('erpRequired') })}
           >
             {erpOptions.map((o) => (
               <option key={o.value} value={o.value} disabled={o.value === ''}>
@@ -218,16 +217,16 @@ export function DemoForm() {
 
       <div>
         <label htmlFor="challenge" className={labelClasses}>
-          Ihre größte Herausforderung
+          {t('challenge')}
           <span className="ml-1 font-mono text-[11px] uppercase text-[var(--color-text-tertiary)]">
-            optional
+            {t('optional')}
           </span>
         </label>
         <textarea
           id="challenge"
           rows={4}
           className={clsx(inputClasses, 'resize-none')}
-          placeholder="z. B. Excel-Forecasts werden zu langsam, neue Artikel haben keine Historie, …"
+          placeholder={t('challengePlaceholder')}
           {...register('challenge')}
         />
       </div>
@@ -237,15 +236,14 @@ export function DemoForm() {
           <input
             type="checkbox"
             className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-[var(--color-border-secondary)] text-ocean focus:ring-ocean"
-            {...register('consent', { required: 'Bitte zustimmen' })}
+            {...register('consent', { required: t('consentRequired') })}
           />
           <span>
-            Ich willige ein, dass meine Angaben zur Bearbeitung dieser Anfrage
-            verwendet werden. Details in der{' '}
+            {t('consentPre')}
             <a href="/datenschutz" className="text-ocean underline">
-              Datenschutzerklärung
+              {t('consentLink')}
             </a>
-            . Kein Newsletter ohne separate Zustimmung.
+            {t('consentPost')}
           </span>
         </label>
         {errors.consent && (
@@ -266,10 +264,10 @@ export function DemoForm() {
           disabled={isSubmitting}
           className="w-full sm:w-auto"
         >
-          {isSubmitting ? 'Sende …' : 'Demo anfragen →'}
+          {isSubmitting ? t('submitting') : t('submit')}
         </Button>
         <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
-          Antwort innerhalb von 24 Stunden
+          {t('responseTime')}
         </p>
       </div>
     </form>

@@ -1,11 +1,12 @@
 'use client'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { clsx } from 'clsx'
+import { Link, usePathname } from '@/i18n/navigation'
 import { Logo } from '@/components/ui/Logo'
 import { Button } from '@/components/ui/Button'
+import { LanguageToggle } from '@/components/layout/LanguageToggle'
 
 // Routes whose first section has a dark (navy) background, so the
 // navbar can sit transparently on top with white text/logo.
@@ -21,44 +22,12 @@ const DARK_HERO_ROUTES = new Set<string>([
 function hasDarkHero(pathname: string | null) {
   if (!pathname) return false
   if (DARK_HERO_ROUTES.has(pathname)) return true
-  // Blog post pages also use the dark PageHeader.
   if (pathname.startsWith('/blog/')) return true
   return false
 }
 
-interface NavLink {
-  href: string
-  label: string
-}
-
-interface NavDropdown {
-  label: string
-  items: { href: string; label: string; description?: string }[]
-}
-
-const productDropdown: NavDropdown = {
-  label: 'Produkt',
-  items: [
-    {
-      href: '/#produkt',
-      label: 'Core Platform',
-      description: 'Forecasting · Analytics · SCM',
-    },
-    {
-      href: '/sales',
-      label: 'Sales Add-on',
-      description: 'Kaufwahrscheinlichkeit · Churn',
-    },
-  ],
-}
-
-const navLinks: NavLink[] = [
-  { href: '/pricing', label: 'Preise' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'Über uns' },
-]
-
 export function Navbar() {
+  const t = useTranslations('Navbar')
   const pathname = usePathname()
   const darkHero = hasDarkHero(pathname)
   const [scrolled, setScrolled] = useState(false)
@@ -86,6 +55,29 @@ export function Navbar() {
 
   const overlay = darkHero && !scrolled && !mobileOpen
 
+  const productItems = [
+    {
+      href: '/produkt',
+      label: t('productPlatform'),
+      description: t('productPlatformDesc'),
+    },
+    {
+      href: '/pricing',
+      label: t('productPricing'),
+      description: t('productPricingDesc'),
+    },
+    {
+      href: '/pricing#custom',
+      label: t('productCustom'),
+      description: t('productCustomDesc'),
+    },
+  ]
+
+  const navLinks = [
+    { href: '/blog', label: t('blog') },
+    { href: '/about', label: t('about') },
+  ]
+
   return (
     <header
       className={clsx(
@@ -96,7 +88,7 @@ export function Navbar() {
       )}
     >
       <div className="container-wide flex h-16 items-center justify-between">
-        <Link href="/" aria-label="Nalu AI – Startseite">
+        <Link href="/" aria-label={t('logoAria')}>
           <Logo variant={overlay ? 'reversed' : 'default'} />
         </Link>
 
@@ -114,7 +106,7 @@ export function Navbar() {
                   : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]',
               )}
             >
-              {productDropdown.label}
+              {t('productLabel')}
               <svg
                 width="12"
                 height="12"
@@ -136,7 +128,7 @@ export function Navbar() {
                 role="menu"
                 className="absolute left-1/2 top-full mt-3 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-[var(--color-border-primary)] bg-white shadow-brand-lg"
               >
-                {productDropdown.items.map((item) => (
+                {productItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -174,15 +166,16 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-4 md:flex">
+          <LanguageToggle overlay={overlay} />
           <Button href="/demo" size="md">
-            Demo anfragen →
+            {t('demoCta')}
           </Button>
         </div>
 
         <button
           type="button"
-          aria-label="Menü"
+          aria-label={t('menu')}
           aria-expanded={mobileOpen}
           className={clsx(
             'p-2 md:hidden',
@@ -204,9 +197,9 @@ export function Navbar() {
         <div className="border-t border-[var(--color-border-primary)] bg-white md:hidden">
           <nav className="container-wide flex flex-col gap-1 py-4">
             <p className="px-2 pt-2 font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
-              {productDropdown.label}
+              {t('productLabel')}
             </p>
-            {productDropdown.items.map((item) => (
+            {productItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -234,9 +227,13 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Button href="/demo" size="lg" className="mt-2">
-              Demo anfragen →
-            </Button>
+
+            <div className="mt-2 flex items-center justify-between gap-3 px-2 pt-2">
+              <LanguageToggle />
+              <Button href="/demo" size="md">
+                {t('demoCta')}
+              </Button>
+            </div>
           </nav>
         </div>
       )}

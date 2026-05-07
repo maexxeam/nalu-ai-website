@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server'
 import { Hero } from '@/components/sections/Hero'
 import { Problem } from '@/components/sections/Problem'
 import { Solution } from '@/components/sections/Solution'
@@ -15,7 +16,7 @@ const jsonLd = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web · On-premise',
   description:
-    'On-premise ML-Forecasting, ABC/XYZ-Analyse und Supply-Chain-Optimierung für den Mittelstand. Deploybar in 4 Wochen.',
+    'On-premise ML forecasting, ABC/XYZ analysis and supply-chain optimization for mid-market companies. Deployable in 4 weeks.',
   url: SITE_URL,
   publisher: {
     '@type': 'Organization',
@@ -25,7 +26,7 @@ const jsonLd = {
   offers: [
     {
       '@type': 'Offer',
-      name: 'Implementation (einmalig)',
+      name: 'Implementation (one-time)',
       price: '50000',
       priceCurrency: 'EUR',
       priceSpecification: {
@@ -38,7 +39,7 @@ const jsonLd = {
     },
     {
       '@type': 'Offer',
-      name: 'Lizenz & Support (monatlich)',
+      name: 'License & support (monthly)',
       price: '4500',
       priceCurrency: 'EUR',
       priceSpecification: {
@@ -53,7 +54,14 @@ const jsonLd = {
   ],
 }
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <>
       <script

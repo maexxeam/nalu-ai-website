@@ -1,0 +1,708 @@
+{
+  "Navbar": {
+    "productLabel": "Product",
+    "productPlatform": "Nalu AI Platform",
+    "productPlatformDesc": "Forecasting · SCM · Sales",
+    "productPricing": "Pricing",
+    "productPricingDesc": "Starter · Growth · Scale",
+    "productCustom": "Custom Development",
+    "productCustomDesc": "Tailored extensions",
+    "blog": "Blog",
+    "about": "About",
+    "demoCta": "Request demo →",
+    "menu": "Menu",
+    "logoAria": "Nalu AI – Home",
+    "languageLabel": "Choose language"
+  },
+  "Footer": {
+    "tagline": "Ride the wave of demand.",
+    "rights": "© {year} Nalu AI. All rights reserved.",
+    "navHeading": "Navigation",
+    "legalHeading": "Legal",
+    "navPlatform": "Platform",
+    "navPricing": "Pricing",
+    "navBlog": "Blog",
+    "navAbout": "About",
+    "navDemo": "Demo",
+    "legalImprint": "Imprint",
+    "legalPrivacy": "Privacy",
+    "madeIn": "Made with 🤙 in Germany"
+  },
+  "Hero": {
+    "eyebrow": "~ Demand Intelligence Platform",
+    "title": "Forecasting, SCM and sales intelligence —",
+    "titleSecond": "in one tool, on your infrastructure.",
+    "subtitle": "Nalu AI shows you what to produce and purchase — and who's going to buy it. All on your server, live in 4 – 6 weeks.",
+    "ctaPrimary": "Request demo →",
+    "ctaSecondary": "Discover the product",
+    "trustHeading": "Trusted by mid-market companies in DACH",
+    "trustFood": "Food production",
+    "trustMachinery": "Mechanical engineering",
+    "trustPharma": "Pharma & cosmetics"
+  },
+  "Problem": {
+    "eyebrow": "The problem",
+    "title": "Your ERP has the data.",
+    "titleSecond": "Nobody can use it.",
+    "items": {
+      "erp": {
+        "title": "Mis-postings in SAP R/3",
+        "body": "Wrong goods receipts, phantom inventory, inconsistent master data — the reality of every mid-market ERP system."
+      },
+      "excel": {
+        "title": "Excel forecasts go stale in hours",
+        "body": "Manual upkeep, copy-pasted formulas, version chaos. What's right on Monday is wrong by Tuesday."
+      },
+      "ml": {
+        "title": "No in-house ML expertise",
+        "body": "Enterprise tools cost €200k+ per year or require a full data team. Both are rarely realistic."
+      }
+    }
+  },
+  "Solution": {
+    "eyebrow": "The solution",
+    "title": "Demand Intelligence.",
+    "titleSecond": "On your terms.",
+    "subtitle": "One platform for forecasting, analytics and supply chain — on your server, in your language, for your data.",
+    "pillars": {
+      "forecasting": {
+        "title": "Forecasting",
+        "body": "ML models that understand your SAP data — not generic templates."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "body": "Sales, revenue, ABC/XYZ — all in one dashboard."
+      },
+      "scm": {
+        "title": "SCM",
+        "body": "Safety stock, reorder points, inventory coverage — automatically."
+      }
+    },
+    "mockup": {
+      "today": "TODAY",
+      "overview": "Overview",
+      "forecastTitle": "Demand forecast · 8 weeks",
+      "model": "Model · LightGBM",
+      "mape": "MAPE · 7.6%",
+      "kpiAccuracy": "Forecast Accuracy",
+      "kpiServiceLevel": "Service Level",
+      "kpiCoverage": "Stock Coverage",
+      "kpiActive": "Active Forecasts",
+      "history": "History",
+      "forecast": "Forecast",
+      "confidence": "95% confidence"
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "How it works",
+    "title": "Live in 4 weeks.",
+    "titleSecond": "Without cloud risk.",
+    "steps": {
+      "connector": {
+        "title": "Set up the connector",
+        "body": "SAP R/3, CSV, REST API — we build the link to your system. Read-only, no changes to your ERP."
+      },
+      "config": {
+        "title": "Configure the model",
+        "body": "A single config.yaml with your columns, thresholds, seasonalities. We train on your data — not on a generic template."
+      },
+      "live": {
+        "title": "Forecasts run automatically",
+        "body": "Weekly retraining, automatic reports, alerts on critical stock levels. Your data never leaves your server."
+      }
+    },
+    "callout": {
+      "title": "Your data stays with you — always.",
+      "body": "Nalu AI runs entirely on your infrastructure. No cloud dependency, no data sharing, no hidden APIs. GDPR-compliant by design."
+    }
+  },
+  "Features": {
+    "eyebrow": "Features",
+    "title": "One tool for purchasing, planning and sales.",
+    "subtitle": "Forecasting, SCM and sales intelligence in one platform — everything included, no module shuffle.",
+    "forecasting": {
+      "eyebrow": "Forecasting",
+      "title": "ML that understands your data.",
+      "body": "LightGBM and Temporal Fusion Transformer — trained on your SKUs, your seasonalities, your ERP quirks. No generic templates.",
+      "bullet1": "Cold-start for new SKUs without history",
+      "bullet2": "Confidence intervals per forecast (P10 / P50 / P90)",
+      "bullet3": "SHAP explanations: why does the model say that?",
+      "bullet4": "Automatic weekly retraining",
+      "visualEyebrow": "SKU · 4711-Salami",
+      "visualTitle": "8-week forecast"
+    },
+    "segmentation": {
+      "eyebrow": "Analytics & Segmentation",
+      "title": "Know which SKUs matter.",
+      "body": "ABC/XYZ classification, historical sales and revenue analysis, drill-down on segments, regions, product groups — all in one dashboard.",
+      "bullet1": "ABC by revenue or margin — automatic",
+      "bullet2": "XYZ variability on a weekly basis",
+      "bullet3": "Trend analysis and seasonal patterns",
+      "bullet4": "One-click Excel export",
+      "visualEyebrow": "ABC classification · revenue",
+      "visualTitle": "894 SKUs · YTD",
+      "visualArticles": "{count} SKUs",
+      "visualRevenue": "{share}% revenue"
+    },
+    "scm": {
+      "eyebrow": "Supply Chain",
+      "title": "No more SKUs below reorder point.",
+      "body": "Safety stock and reorder points are calculated from forecast and service level. Severity-tagged alerts the moment an SKU becomes critical.",
+      "bullet1": "Safety stock at a chosen service level (e.g. 95%)",
+      "bullet2": "Reorder alerts with severity (critical / warning / info)",
+      "bullet3": "Coverage days per SKU at a glance",
+      "bullet4": "Optional: push to Slack, Teams or email",
+      "visualEyebrow": "Reorder alerts · today",
+      "visualOpen": "3 open",
+      "alertCritical": "Reorder critical",
+      "alertWarning": "Below safety stock",
+      "alertInfo": "On target"
+    },
+    "sales": {
+      "eyebrow": "Sales intelligence",
+      "title": "Who buys, when and what next.",
+      "body": "Customer overview, purchase probability, churn detection and next best product — automatically available as soon as customer data is in your ERP.",
+      "bullet1": "Purchase probability per customer (30 / 60 / 90 days)",
+      "bullet2": "Churn early warning on behavioral changes",
+      "bullet3": "Next best product — cross-sell recommendations",
+      "bullet4": "Revenue forecasting at the customer level",
+      "visualEyebrow": "Purchase probability · 30 d",
+      "visualTop": "Top 4",
+      "visualReady": "12 buy-ready customers",
+      "visualScore": "Score > 40% · W18"
+    },
+    "reportsCallout": {
+      "eyebrow": "AI Reports",
+      "title": "Every Monday at 6 a.m.:",
+      "titleSecond": "your weekly report is waiting.",
+      "body": "Nalu AI automatically generates PDF reports — KPIs, charts, AI narrative in your language. Local, on your server, no data in the cloud.",
+      "cta": "Request demo →",
+      "cardEyebrow": "Weekly report W18",
+      "cardTitle": "Forecasting · Demand · SCM",
+      "line1": "Service level rises to 98.1%",
+      "line2": "3 critical reorder alerts",
+      "line3": "Forecast bias remains positive",
+      "footer": "generated locally · ollama mistral 7b"
+    },
+    "askNaluCallout": {
+      "eyebrow": "Ask Nalu",
+      "title": "Ask your",
+      "titleSecond": "demand planner.",
+      "body": "Nalu AI answers questions about inventory, forecasts and revenue — in natural language, in your language, based on your real data. Local on your server, no internet access.",
+      "cta": "Learn more",
+      "cardEyebrow": "AI Assistant",
+      "cardTitle": "Ask Nalu",
+      "question": "> What should I order today?",
+      "answer": "6 SKUs are critically below reorder point. Most urgent: IPA Craft (covers 2 days), Cola Classic (covers 3 days).",
+      "footer": "local · ollama mistral 7b"
+    }
+  },
+  "SocialProof": {
+    "eyebrow": "Why Nalu AI?",
+    "title": "Three reasons.",
+    "titleSecond": "No buzzwords.",
+    "items": {
+      "cloud": {
+        "title": "No cloud dependency",
+        "body": "Your data on your server. Period. No lock-in, no subprocessor chain, no hidden APIs."
+      },
+      "speed": {
+        "title": "Deploy in 4 weeks",
+        "body": "Not months. Weeks. We've done it before — the learning curve belongs to us, not to you."
+      },
+      "team": {
+        "title": "No data team needed",
+        "body": "We bring the ML expertise. You get the forecasts. Your team stays focused on the actual business."
+      }
+    },
+    "quote": "„The first forecasting tool that actually understands our SAP data — instead of trying to force a generic template on us.“",
+    "quoteAuthor": "— Head of Supply Chain · food producer · Bavaria"
+  },
+  "Pricing": {
+    "eyebrow": "Pricing",
+    "title": "Transparent pricing.",
+    "boxes": {
+      "implementation": {
+        "label": "One-time",
+        "title": "Implementation",
+        "price": "from €50,000",
+        "bullet1": "Connector build",
+        "bullet2": "Data cleansing",
+        "bullet3": "Model training",
+        "bullet4": "Go-live in weeks"
+      },
+      "license": {
+        "label": "Recurring",
+        "title": "License + support",
+        "price": "from €4,500 / month",
+        "bullet1": "Software updates",
+        "bullet2": "New features",
+        "bullet3": "Maintenance",
+        "bullet4": "Automated reports"
+      }
+    },
+    "note": "The exact price depends on your situation — number of SKUs, ERP system, locations.",
+    "cta": "Free intro call →",
+    "footer1": "No subscription tricks. No cloud fees. Your data stays with you.",
+    "footerLink": "Full pricing overview at"
+  },
+  "CTA": {
+    "title": "Ready to ride the wave?",
+    "subtitle": "30-minute demo. No commitment. Your data stays with you.",
+    "cta": "Request demo →"
+  },
+  "About": {
+    "metaTitle": "About",
+    "metaDescription": "Nalu AI grew out of real production experience — not a hackathon.",
+    "headerEyebrow": "~ About",
+    "headerTitle": "Built by someone who knows the problem.",
+    "headerSubtitle": "Nalu AI grew out of real production experience — not a hackathon.",
+    "story1": "Before Nalu AI existed, I built an ML forecasting platform for a mid-market food producer — three years of development, production, iteration. No lab, no demo: daily forecasts that actually drove order quantities and service levels.",
+    "story2": "In that time I learned where standard solutions fail. SAP R/3 postings that don't add up. Cold-start problems on newly listed SKUs. Excel forecasts that go stale at midnight when goods receipts roll in. ML models that shine in the lab and crumble in production because nobody minded the data quality.",
+    "story3": "Nalu AI is the answer to that experience — not a reinvention. What works stays: LightGBM, Temporal Fusion Transformer, SHAP explanations, confidence intervals. What actually matters in mid-market gets added: on-premise deployment, deterministic pipelines, training instead of black box, maintenance as an integral part — not an upcharge.",
+    "story4Pre": "The platform is configuration-driven. A new customer means one ",
+    "story4Post": " and a connector. No core changes. That's how it was designed, because that's how mid-market companies have to be served: without you having to become someone you're not.",
+    "stats": {
+      "customers": "customers in the original project",
+      "articles": "active SKUs",
+      "series": "time series forecast"
+    },
+    "valuesEyebrow": "Values",
+    "valuesTitle": "Three principles.",
+    "valuesTitleSecond": "Measured against them.",
+    "values": {
+      "data": {
+        "title": "Your data stays with you",
+        "body": "No cloud dependency, no subprocessor chain. We build software for your infrastructure, not for ours."
+      },
+      "noHype": {
+        "title": "No hype, just results",
+        "body": "We don't talk about „AI-powered synergies.“ We deliver forecasts, alerts and reports your team can use tomorrow."
+      },
+      "mittelstand": {
+        "title": "Mid-market understands mid-market",
+        "body": "We know the reality: tight resources, legacy systems, pragmatic decisions. The product is built around that."
+      }
+    },
+    "talkTitle": "Let's talk.",
+    "talkSubtitle": "30-minute demo on your use case. No commitment, no preparation needed.",
+    "talkCta": "Request demo →"
+  },
+  "Demo": {
+    "metaTitle": "Request demo",
+    "metaDescription": "30-minute demo. Live forecasts on your use cases. No commitment.",
+    "headerEyebrow": "~ Demo",
+    "headerTitle": "Request a demo.",
+    "headerSubtitle": "30 minutes. No commitment. Your data stays with you.",
+    "expectationsTitle": "What to expect",
+    "expectation1": "30-minute live demo on your use cases",
+    "expectation2": "Real forecasts, no slideshow",
+    "expectation3": "Honest assessment whether Nalu AI fits you",
+    "expectation4": "If you want: technical deep dive",
+    "agendaTitle": "Typical demo agenda",
+    "agenda1Time": "10 min",
+    "agenda1Label": "Understand your situation",
+    "agenda2Time": "15 min",
+    "agenda2Label": "Live demo of relevant modules",
+    "agenda3Time": "5 min",
+    "agenda3Label": "Next steps",
+    "directLabel": "Prefer to write directly?"
+  },
+  "DemoForm": {
+    "name": "Name",
+    "nameRequired": "Name is required",
+    "email": "Email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "company": "Company",
+    "companyRequired": "Company is required",
+    "position": "Position",
+    "optional": "optional",
+    "articles": "How many SKUs do you plan?",
+    "articlesPlaceholder": "Please select",
+    "articlesRequired": "Please select",
+    "articleLt100": "Less than 100",
+    "article100to500": "100 – 500",
+    "article500to2000": "500 – 2,000",
+    "articleGt2000": "More than 2,000",
+    "erp": "Which ERP system?",
+    "erpPlaceholder": "Please select",
+    "erpRequired": "Please select",
+    "erpSapR3": "SAP R/3",
+    "erpSapS4": "SAP S/4HANA",
+    "erpDynamics": "Microsoft Dynamics",
+    "erpOther": "Other ERP",
+    "erpNone": "No ERP",
+    "challenge": "Your biggest challenge",
+    "challengePlaceholder": "e.g. Excel forecasts are getting too slow, new SKUs have no history, …",
+    "consentPre": "I agree that my information will be used to process this request. Details in the ",
+    "consentLink": "privacy policy",
+    "consentPost": ". No newsletter without separate consent.",
+    "consentRequired": "Please consent",
+    "submitError": "Something went wrong. Please try again or write to hello@nalu-ai.com.",
+    "submitting": "Sending …",
+    "submit": "Request demo →",
+    "responseTime": "Reply within 24 hours",
+    "successTitle": "Thanks for your request.",
+    "successPre": "We'll be in touch within 24 hours — usually faster. In the meantime, feel free to read our ",
+    "successLink": "Insights",
+    "successPost": "."
+  },
+  "Produkt": {
+    "metaTitle": "Platform – Forecasting, SCM and sales intelligence",
+    "metaDescription": "Nalu AI is a platform for demand planning and sales control. Forecasting, SCM, ABC/XYZ and customer intelligence — on your server, live in 4 – 6 weeks.",
+    "headerEyebrow": "~ Platform",
+    "headerTitle": "Everything your company needs for",
+    "headerTitleSecond": "demand planning and sales.",
+    "headerSubtitle": "One platform for purchasing, planning and sales. Forecasting, SCM and customer intelligence — everything included, on your infrastructure.",
+    "split": {
+      "eyebrow": "Two teams. One tool.",
+      "title": "Know what to produce — and who's going to buy it.",
+      "planungEyebrow": "For purchasing & planning",
+      "planungTitle": "Forecast, SCM, ABC / XYZ, analytics",
+      "planungBody": "What do I need to produce or purchase, when — and how confident can I be?",
+      "planung1": "ML forecast per SKU (LightGBM + TFT)",
+      "planung2": "Confidence intervals and SHAP explanations",
+      "planung3": "ABC / XYZ segmentation, automatic",
+      "planung4": "Safety stock & reorder points from the forecast",
+      "planung5": "Coverage days, severity-tagged reorder alerts",
+      "planung6": "Multi-location / hierarchical forecasting",
+      "vertriebEyebrow": "For sales & key account",
+      "vertriebTitle": "Customer overview, churn, purchase probability",
+      "vertriebBody": "Who's going to buy when — and which customer is at risk of churning?",
+      "vertrieb1": "Customer overview with purchase history",
+      "vertrieb2": "Purchase probability per customer (30 / 60 / 90 d)",
+      "vertrieb3": "Churn detection on behavioral changes",
+      "vertrieb4": "Next best product — cross-sell recommendations",
+      "vertrieb5": "Revenue forecast at the customer level",
+      "vertriebNote": "Active as soon as customer data is in your ERP. No license gate — a data question.",
+      "footer": "Same product. Same price. Different value for each team."
+    },
+    "features": {
+      "eyebrow": "Features",
+      "title": "What Nalu AI can do.",
+      "subtitle": "Everything is in every tier. No module comparison, no add-on tangle — tier differences are about SKU count, model and support only.",
+      "footnote": "* Sales intelligence active as soon as customer data (customer_id) is in your ERP.",
+      "groups": {
+        "forecasting": {
+          "title": "Forecasting",
+          "item1": "LightGBM baseline (all tiers)",
+          "item2": "Temporal Fusion Transformer (Growth + Scale)",
+          "item3": "Cold-start for new SKUs",
+          "item4": "Confidence intervals P10 / P50 / P90",
+          "item5": "SHAP explanations per forecast",
+          "item6": "Weekly retraining"
+        },
+        "scm": {
+          "title": "Supply Chain",
+          "item1": "Safety stock at chosen service level",
+          "item2": "Reorder points from forecast & lead time",
+          "item3": "Coverage days per SKU",
+          "item4": "Severity-tagged reorder alerts",
+          "item5": "Optional: push to Slack / Teams / email"
+        },
+        "analytics": {
+          "title": "Analytics & Segmentation",
+          "item1": "ABC by revenue or margin",
+          "item2": "XYZ variability on a weekly basis",
+          "item3": "Trend analysis, seasonal patterns",
+          "item4": "Year-over-year comparison and drill-down",
+          "item5": "One-click Excel export"
+        },
+        "sales": {
+          "title": "Sales intelligence *",
+          "item1": "Customer overview + purchase history",
+          "item2": "Purchase probability per customer",
+          "item3": "Churn detection",
+          "item4": "Next best product",
+          "item5": "Revenue forecast per customer"
+        },
+        "ai": {
+          "title": "AI & Reports",
+          "item1": "Weekly AI report (Ollama, PDF)",
+          "item2": "Ask Nalu agent — questions in natural language",
+          "item3": "Data-quality monitor",
+          "item4": "Wiki + audit log",
+          "item5": "Automatic alerts and notifications"
+        },
+        "platform": {
+          "title": "Platform",
+          "item1": "On-premise on your server",
+          "item2": "Docker Compose stack per customer",
+          "item3": "RBAC + 2FA + audit log",
+          "item4": "CSV / REST / SAP connector",
+          "item5": "Live in 4 – 6 weeks"
+        }
+      }
+    },
+    "rollout": {
+      "eyebrow": "How rollout works",
+      "title": "Live in 4 – 6 weeks — on your server.",
+      "step1Title": "Connector",
+      "step1Body": "We build the connector to your ERP (CSV / REST / SAP) and clean the data.",
+      "step2Title": "Model training",
+      "step2Body": "Models are trained on your data. You see forecast accuracy before we go live.",
+      "step3Title": "Go-live & training",
+      "step3Body": "Deployment on your server, training for purchasing and sales, then ongoing support."
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "One price. Everything included.",
+      "subtitle": "Three tiers based on SKU count. No module comparison, no add-on tangle.",
+      "starterLabel": "Starter",
+      "starterSize": "< 500 SKUs",
+      "starterPrice": "from €4,500 / month",
+      "growthLabel": "Growth",
+      "growthSize": "500 – 2,000 SKUs",
+      "growthPrice": "from €6,500 / month",
+      "scaleLabel": "Scale",
+      "scaleSize": "2,000+ SKUs",
+      "scalePrice": "from €9,500 / month",
+      "moreLink": "All pricing & implementation",
+      "demoCta": "Request demo →"
+    }
+  },
+  "Pricing_Page": {
+    "metaTitle": "Pricing – One price. Everything included.",
+    "metaDescription": "Transparent pricing for Nalu AI: three tiers based on SKU count, one-time implementation from €50,000, monthly license from €4,500. No cloud fees, no add-ons, no hidden costs.",
+    "headerEyebrow": "~ Pricing",
+    "headerTitle": "One price.",
+    "headerTitleSecond": "Everything included.",
+    "headerSubtitle": "No module comparison. No add-on tangle. Nalu AI gives you forecasting, SCM and sales intelligence in one tool.",
+    "tiers": {
+      "eyebrow": "Tiers",
+      "title": "Three sizes, same feature set.",
+      "subtitle": "Every tier includes every feature. Tier follows your SKU count, model and support level.",
+      "recommended": "Recommended",
+      "implNote": "+ from €50,000 implementation",
+      "starter": {
+        "label": "Starter",
+        "size": "< 500 SKUs",
+        "monthly": "from €4,500 / month",
+        "h1": "LightGBM forecast",
+        "h2": "1 location",
+        "h3": "Standard support",
+        "cta": "Request quote"
+      },
+      "growth": {
+        "label": "Growth",
+        "size": "500 – 2,000 SKUs",
+        "monthly": "from €6,500 / month",
+        "h1": "LightGBM + TFT",
+        "h2": "Multi-location",
+        "h3": "Priority support",
+        "cta": "Request quote →"
+      },
+      "scale": {
+        "label": "Scale",
+        "size": "2,000+ SKUs",
+        "monthly": "from €9,500 / month",
+        "h1": "LightGBM + TFT",
+        "h2": "Multi-location",
+        "h3": "Premium support + SLA",
+        "cta": "Request quote"
+      },
+      "enterprise": {
+        "label": "Enterprise",
+        "size": "Custom",
+        "monthly": "Custom quote",
+        "h1": "Group setup",
+        "h2": "International locations",
+        "h3": "Dedicated CSM",
+        "cta": "Schedule a call"
+      },
+      "calloutListPrices": "List prices.",
+      "calloutBody": "In a personal call we'll put together an individual offer — tailored to your company size and contract length. We offer attractive terms for 12+ months.",
+      "calloutCta": "Request a free intro call →"
+    },
+    "features": {
+      "eyebrow": "Features",
+      "title": "What every package includes.",
+      "subtitle": "One list — applies to every tier. No asterisk comparisons.",
+      "list": [
+        "SKU forecast (LightGBM, TFT from Growth)",
+        "Confidence intervals + SHAP explanations",
+        "Cold-start for new SKUs",
+        "Historical analysis + year-over-year comparison",
+        "ABC / XYZ segmentation",
+        "Supply chain: safety stock, reorder points, coverage",
+        "Severity-tagged reorder alerts",
+        "Data-quality monitor",
+        "Multi-location / hierarchical forecasting **",
+        "Customer overview + purchase history *",
+        "Purchase probability per customer *",
+        "Churn detection *",
+        "Next best product *",
+        "Revenue forecast per customer *",
+        "Weekly AI report (Ollama, PDF)",
+        "Ask Nalu agent — questions in natural language",
+        "Wiki + audit log",
+        "Automatic alerts + notifications (email, Slack, Teams)",
+        "RBAC + 2FA",
+        "CSV / REST / SAP connector"
+      ],
+      "footnote1": "* Sales features active as soon as customer data is in your ERP.",
+      "footnote2": "** Multi-location: Growth + Scale."
+    },
+    "implementation": {
+      "eyebrow": "Implementation",
+      "title": "Implementation — one-time",
+      "subtitle": "Every implementation is individual. These packages give you a starting point.",
+      "forWhom": "For: {who}",
+      "standard": {
+        "label": "Standard",
+        "price": "from €50,000",
+        "forWhom": "1 location, existing ERP data",
+        "b1": "Connector development",
+        "b2": "Data cleansing",
+        "b3": "Model training",
+        "b4": "Go-live in 4 – 6 weeks",
+        "b5": "Training (0.5 days)",
+        "cta": "Request quote"
+      },
+      "professional": {
+        "label": "Professional",
+        "price": "from €65,000",
+        "forWhom": "multiple locations or complex ERP environment",
+        "b1": "Everything in Standard",
+        "b2": "Multi-location support",
+        "b3": "DWH build (if needed)",
+        "b4": "Extended data cleansing",
+        "b5": "Go-live in 6 – 10 weeks",
+        "b6": "Training (1 day)",
+        "cta": "Request quote →"
+      },
+      "enterprise": {
+        "label": "Enterprise",
+        "price": "Custom quote",
+        "forWhom": "groups, international locations, legacy systems",
+        "b1": "Everything in Professional",
+        "b2": "Unlimited data sources",
+        "b3": "Historical migration (10+ years)",
+        "b4": "IT-team training (2 days)",
+        "b5": "3 months post-launch support",
+        "cta": "Schedule a call"
+      },
+      "recommended": "Recommended"
+    },
+    "agent": {
+      "eyebrow": "~ Nalu AI Agent",
+      "title": "Just ask.",
+      "subtitle": "Nalu AI answers your questions about inventory, forecasts and revenue — in natural language, in your language, based on your real data.",
+      "ex1Q": "What should I order today?",
+      "ex1A": "6 SKUs are critical. Most urgent: IPA Craft Series (stock 54, ROP 238 — 2 days left), Cola Classic (3 days left).",
+      "ex2Q": "Why is the forecast for Nordpils so high?",
+      "ex2A": "Week 23 is historically the strongest grilling week — +47% vs. the 3-year annual average.",
+      "ex3Q": "Which SKUs have poor forecast accuracy?",
+      "ex3A": "3 SKUs with MAPE > 15%: Aperitif Bitter (22.3%), Berry Splash (18.1%), Tomato juice (16.4%).",
+      "calloutInclusive": "Included in every tier.",
+      "calloutBody": " The Ask Nalu agent runs locally on Ollama — no internet access, all data stays on your server.",
+      "cta": "Request demo →"
+    },
+    "custom": {
+      "eyebrow": "Custom development",
+      "title": "Need something that's not listed here?",
+      "subtitle": "Nalu AI is an open platform. Anything beyond the standard, we build for you — as a permanent extension that survives every update.",
+      "items": {
+        "erp": { "title": "ERP connector", "body": "Proalpha, Sage, Navision, Dynamics, custom APIs" },
+        "bi": { "title": "BI integration", "body": "Power BI, Tableau, Looker, your own tools" },
+        "dashboard": { "title": "Custom dashboard", "body": "Specific KPIs, widgets, calculation logic" },
+        "whiteLabel": { "title": "White-label", "body": "Your branding, your domain" },
+        "mobile": { "title": "Mobile app", "body": "iOS / Android companion app" },
+        "api": { "title": "API extension", "body": "Webhooks, custom interfaces" }
+      },
+      "small": { "label": "Small", "range": "1 – 3 days", "price": "from €3,600" },
+      "medium": { "label": "Medium", "range": "3 – 10 days", "price": "from €10,000" },
+      "large": { "label": "Large", "range": "10+ days", "price": "Custom quote" },
+      "footer": "Day rate: €1,200. Minimum: 3 days. Built, tested, and preserved through every Nalu AI update.",
+      "cta": "Describe your requirement →"
+    },
+    "social": {
+      "eyebrow": "Impact",
+      "title": "What our customers say.",
+      "stat1": { "value": "up to 60%", "label": "stockouts reduced" },
+      "stat2": { "value": "halved", "label": "planning time" },
+      "stat3": { "value": "< 12 months", "label": "typical ROI payback" },
+      "note": "Your savings depend on your situation — SKU count, ERP complexity, sales volume. We work it out with you.",
+      "cta": "Request a free intro call →"
+    },
+    "individual": {
+      "title": "No package fits?",
+      "subtitle": "Nalu AI is fully configurable. We'll put together an offer that matches your requirements and your budget.",
+      "factorsHeading": "What drives your price",
+      "factor1": { "label": "Number of SKUs", "detail": "< 500 / 500 – 2,000 / 2,000+" },
+      "factor2": { "label": "Contract length", "detail": "monthly / 1 year / 2 years" },
+      "factor3": { "label": "Number of locations", "detail": "1 / 2 – 10 / 10+" },
+      "factor4": { "label": "ERP system", "detail": "CSV / standard ERP / SAP R/3" },
+      "factor5": { "label": "Data complexity", "detail": "low / medium / high" },
+      "factor6": { "label": "Support level", "detail": "Standard / Priority / Premium" },
+      "factor7": { "label": "Custom development", "detail": "optional, see below" },
+      "factor8": { "label": "Reference willingness", "detail": "yes / no" },
+      "ctaButton": "Request demo — free intro call →",
+      "checklist1": "Which tier fits you",
+      "checklist2": "What your implementation costs",
+      "checklist3": "When you can go live"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Frequently asked",
+      "items": [
+        { "q": "Why is there no fixed price?", "a": "Every implementation is individual — the complexity of your ERP data, your SKU count and the number of locations drive the effort. The tier prices are list prices; in conversation we'll prepare a binding quote." },
+        { "q": "What sets the three tiers apart?", "a": "In substance, nothing — every tier includes every feature. The differences are SKU count, the forecasting model used (Starter: LightGBM, Growth/Scale: LightGBM + TFT) and the support level. As your assortment grows, you simply switch tiers." },
+        { "q": "When are sales features available?", "a": "As soon as customer data (customer_id) is in your ERP — automatically. No license gate, just a data requirement. Without customer_id those pages would be empty and confusing, so we only show them when data exists." },
+        { "q": "What's included in the monthly license?", "a": "Software updates, new features, maintenance and support per the agreed SLA. You don't pay for hosting — Nalu AI runs on your own infrastructure." },
+        { "q": "Can I change tier later?", "a": "Yes — both up and down. As you grow (e.g. from 450 to 700 SKUs), you switch to Growth without friction. We usually spot it automatically and reach out with a proposal." },
+        { "q": "Is there a minimum contract term?", "a": "12 months is recommended — implementation barely amortizes for shorter terms. We offer attractive terms at 12 or 24 months. Monthly contracts are possible at list price." },
+        { "q": "What does a data warehouse build cost?", "a": "If you don't have a consolidated data foundation yet, we build it before the Nalu AI rollout. From €15,000 for a single source, from €35,000 for multiple. Talk to us." },
+        { "q": "Is there a trial?", "a": "We offer a 30-day pilot at reduced terms — with real data, real model, real results. No blind purchase." }
+      ]
+    },
+    "finalCta": {
+      "title": "Let's talk about your project.",
+      "subtitle": "30 minutes. Free. Not a sales pitch — we listen first.",
+      "cta": "Request demo →",
+      "note": "Typical response time: < 24 hours · No proposal without your consent"
+    }
+  },
+  "Blog": {
+    "metaTitle": "Insights",
+    "metaDescription": "Demand planning, ML forecasting, supply chain — from practice for practice.",
+    "headerEyebrow": "~ Insights",
+    "headerTitle": "Insights.",
+    "headerSubtitle": "Demand planning, ML forecasting, supply chain — from practice for practice.",
+    "empty": "The first post is coming soon.",
+    "cardFeatured": "~ Featured Insight",
+    "readMore": "Read more",
+    "postRelatedEyebrow": "Read more",
+    "postRelatedTitle": "Other Insights",
+    "postAllPosts": "All posts",
+    "postFinalTitle": "The theory is clear. What does your reality say?",
+    "postFinalSubtitle": "30-minute demo on your use case. We'll show you what this looks like in your reality.",
+    "postFinalCta": "Request demo →"
+  },
+  "Impressum": {
+    "metaTitle": "Imprint",
+    "headerTitle": "Imprint",
+    "h1": "Information pursuant to § 5 DDG",
+    "h1Body": "Maximilian Fischer\nLiebenzeller Straße 50\n75339 Höfen an der Enz\nGermany",
+    "contactHeading": "Contact",
+    "contactPhone": "Phone:",
+    "contactEmail": "Email:",
+    "vatHeading": "VAT",
+    "vatBody": "No VAT is shown pursuant to § 19 UStG (small-business regulation).",
+    "responsibleHeading": "Responsible for content per § 18 (2) MStV",
+    "disputeHeading": "Dispute resolution",
+    "disputeBodyPre": "The European Commission provides a platform for online dispute resolution (ODR): ",
+    "disputeBodyPost": ". We are neither willing nor obliged to participate in dispute-resolution proceedings before a consumer arbitration board.",
+    "liabilityContentHeading": "Liability for content",
+    "liabilityContentBody": "The contents of these pages were created with the greatest possible care. However, we cannot guarantee the accuracy, completeness or topicality of the content. As a service provider we are responsible per § 7 (1) DDG for our own content on these pages under general laws. According to §§ 8 to 10 DDG we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+    "liabilityLinksHeading": "Liability for links",
+    "liabilityLinksBody": "Our website contains links to external third-party sites whose content we have no control over. We therefore cannot accept any liability for this third-party content. The respective provider or operator of the linked pages is always responsible for their content.",
+    "copyrightHeading": "Copyright",
+    "copyrightBody": "Content and works on these pages created by the site operator are subject to German copyright law. Reproduction, processing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.",
+    "asOf": "As of: {date}"
+  },
+  "Common": {
+    "demoCta": "Request demo →"
+  }
+}

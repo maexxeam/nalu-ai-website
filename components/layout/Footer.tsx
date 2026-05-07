@@ -1,38 +1,39 @@
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { Logo } from '@/components/ui/Logo'
 
-const navLinks = [
-  { href: '/#produkt', label: 'Core Platform' },
-  { href: '/sales', label: 'Sales Add-on' },
-  { href: '/pricing', label: 'Preise' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'Über uns' },
-  { href: '/demo', label: 'Demo' },
-]
-
-const legalLinks = [
-  { href: '/impressum', label: 'Impressum' },
-  { href: '/datenschutz', label: 'Datenschutz' },
-]
-
 export function Footer() {
+  const t = useTranslations('Footer')
+  const year = new Date().getFullYear()
+
+  const navLinks = [
+    { href: '/produkt', label: t('navPlatform') },
+    { href: '/pricing', label: t('navPricing') },
+    { href: '/blog', label: t('navBlog') },
+    { href: '/about', label: t('navAbout') },
+    { href: '/demo', label: t('navDemo') },
+  ]
+
+  const legalLinks = [
+    { href: '/impressum', label: t('legalImprint') },
+    { href: '/datenschutz', label: t('legalPrivacy') },
+  ]
+
   return (
     <footer className="bg-navy text-white">
       <div className="container-wide py-16">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
             <Logo variant="reversed" />
-            <p className="mt-4 max-w-xs text-sm text-white/70">
-              Ride the wave of demand.
-            </p>
+            <p className="mt-4 max-w-xs text-sm text-white/70">{t('tagline')}</p>
             <p className="mt-8 text-xs text-white/40">
-              © {new Date().getFullYear()} Nalu AI. Alle Rechte vorbehalten.
+              {t('rights', { year })}
             </p>
           </div>
 
           <div className="md:text-center">
             <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-white/60">
-              Navigation
+              {t('navHeading')}
             </h3>
             <ul className="mt-4 space-y-2">
               {navLinks.map((link) => (
@@ -50,7 +51,7 @@ export function Footer() {
 
           <div className="md:text-right">
             <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-white/60">
-              Legal
+              {t('legalHeading')}
             </h3>
             <ul className="mt-4 space-y-2">
               {legalLinks.map((link) => (
@@ -68,7 +69,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 border-t border-white/10 pt-8 text-center">
-          <p className="text-xs text-white/40">Made with 🤙 in Germany</p>
+          <p className="text-xs text-white/40">{t('madeIn')}</p>
         </div>
       </div>
     </footer>

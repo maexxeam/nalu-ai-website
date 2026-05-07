@@ -1,39 +1,41 @@
+import { useTranslations } from 'next-intl'
 import { PlugIcon, SettingsIcon, ChartLineIcon, ShieldIcon } from '@/components/ui/Icons'
 import { Reveal } from '@/components/ui/Reveal'
 
-const steps = [
-  {
-    Icon: PlugIcon,
-    label: '01',
-    title: 'Connector einrichten',
-    body: 'SAP R/3, CSV, REST API — wir bauen den Anschluss an Ihr System. Read-only, keine Änderung an Ihrem ERP.',
-  },
-  {
-    Icon: SettingsIcon,
-    label: '02',
-    title: 'Modell konfigurieren',
-    body: 'Eine config.yaml mit Ihren Spalten, Schwellen, Saisonalitäten. Wir trainieren auf Ihren Daten — nicht auf einem generischen Template.',
-  },
-  {
-    Icon: ChartLineIcon,
-    label: '03',
-    title: 'Forecasts laufen automatisch',
-    body: 'Wöchentliches Retraining, automatische Berichte, Alerts bei kritischen Beständen. Ihre Daten verlassen nie Ihren Server.',
-  },
-]
-
 export function HowItWorks() {
+  const t = useTranslations('HowItWorks')
+  const steps = [
+    {
+      Icon: PlugIcon,
+      label: '01',
+      title: t('steps.connector.title'),
+      body: t('steps.connector.body'),
+    },
+    {
+      Icon: SettingsIcon,
+      label: '02',
+      title: t('steps.config.title'),
+      body: t('steps.config.body'),
+    },
+    {
+      Icon: ChartLineIcon,
+      label: '03',
+      title: t('steps.live.title'),
+      body: t('steps.live.body'),
+    },
+  ]
+
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="container-wide">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-widest text-ocean">
-            So funktioniert es
+            {t('eyebrow')}
           </p>
           <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            Live in 4 Wochen.
+            {t('title')}
             <br />
-            Ohne Cloud-Risiko.
+            {t('titleSecond')}
           </h2>
         </Reveal>
 
@@ -71,12 +73,9 @@ export function HowItWorks() {
             <ShieldIcon className="mt-0.5 h-6 w-6 flex-shrink-0 text-coral" />
             <div>
               <p className="font-display text-base font-semibold">
-                Ihre Daten bleiben bei Ihnen — immer.
+                {t('callout.title')}
               </p>
-              <p className="mt-1 text-sm text-white/70">
-                Nalu AI läuft komplett auf Ihrer Infrastruktur. Keine Cloud-Abhängigkeit,
-                keine Datenweitergabe, keine versteckten APIs. DSGVO-konform per Design.
-              </p>
+              <p className="mt-1 text-sm text-white/70">{t('callout.body')}</p>
             </div>
           </div>
         </Reveal>

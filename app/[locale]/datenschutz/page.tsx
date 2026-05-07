@@ -1,10 +1,19 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { setRequestLocale } from 'next-intl/server'
 import { PageHeader } from '@/components/ui/PageHeader'
+import type { Locale } from '@/i18n/routing'
 
-export const metadata: Metadata = {
-  title: 'Datenschutz',
-  robots: { index: false, follow: true },
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return {
+    title: locale === 'en' ? 'Privacy' : 'Datenschutz',
+    robots: { index: false, follow: true },
+  }
 }
 
 interface Section {
@@ -12,7 +21,7 @@ interface Section {
   body: ReactNode
 }
 
-const sections: Section[] = [
+const deSections: Section[] = [
   {
     title: '1. Verantwortlicher',
     body: (
@@ -232,19 +241,246 @@ const sections: Section[] = [
   },
 ]
 
-export default function DatenschutzPage() {
+const enSections: Section[] = [
+  {
+    title: '1. Controller',
+    body: (
+      <>
+        Controller for data processing on this website within the meaning
+        of the General Data Protection Regulation (GDPR):
+        <br />
+        <br />
+        Maximilian Fischer
+        <br />
+        Liebenzeller Straße 50
+        <br />
+        75339 Höfen an der Enz
+        <br />
+        Germany
+        <br />
+        <br />
+        Phone:{' '}
+        <a href="tel:+4915111637402" className="text-ocean underline">
+          +49 151 11637402
+        </a>
+        <br />
+        Email:{' '}
+        <a href="mailto:hello@nalu-ai.com" className="text-ocean underline">
+          hello@nalu-ai.com
+        </a>
+      </>
+    ),
+  },
+  {
+    title: '2. Hosting and server log files',
+    body: (
+      <>
+        This website is hosted by Vercel Inc. (340 S Lemon Ave #4133,
+        Walnut, CA 91789, USA). On every request, technically necessary
+        data (date/time of the request, IP address, user agent, referrer,
+        URL accessed) is automatically processed by our hosting provider in
+        server log files.
+        <br />
+        <br />
+        Processing serves to provide and secure the service on the basis of
+        Art. 6 (1) (f) GDPR (legitimate interest in stable, secure
+        operation). A data processing agreement (Art. 28 GDPR) is in place
+        with Vercel. Data transfer to the USA takes place on the basis of
+        the EU-US Data Privacy Framework or, supplementarily, on Standard
+        Contractual Clauses (Art. 46 (2) (c) GDPR).
+        <br />
+        <br />
+        Log file data is stored for a maximum of 30 days and then deleted
+        automatically.
+      </>
+    ),
+  },
+  {
+    title: '3. Web analytics with Plausible',
+    body: (
+      <>
+        We use Plausible Analytics to statistically evaluate visits.
+        Plausible does not use cookies and does not collect personal data.
+        IP addresses are not stored; they are only used briefly to compute
+        an anonymized daily hash.
+        <br />
+        <br />
+        Only aggregated statistics are recorded — page views, dwell time,
+        country of origin and referrer. There is no recognition across
+        devices or sessions.
+        <br />
+        <br />
+        Legal basis is Art. 6 (1) (f) GDPR. As no cookies are set and no
+        personal data is processed, no consent is required. Provider:
+        Plausible Insights OÜ, Västriku tn 2, 50403 Tartu, Estonia.
+      </>
+    ),
+  },
+  {
+    title: '4. Demo request form',
+    body: (
+      <>
+        When you use the demo request form we process the following data to
+        handle your request: name, email address, company, position, SKU
+        count, ERP system and your optional description.
+        <br />
+        <br />
+        Legal basis is Art. 6 (1) (b) GDPR (initiation of a contractual
+        relationship) and Art. 6 (1) (f) GDPR (our legitimate interest in
+        replying to inquiries).
+        <br />
+        <br />
+        Your data is used exclusively to process your request, not shared
+        with third parties without your explicit consent and never used for
+        advertising. Data is deleted as soon as it's no longer needed for
+        processing, at the latest after statutory retention periods expire
+        (typically 6 or 10 years under German commercial and tax law if a
+        business relationship arises).
+      </>
+    ),
+  },
+  {
+    title: '5. Email delivery via Resend',
+    body: (
+      <>
+        For confirmation and notification emails (in particular relating to
+        the demo request form) we use Resend (Resend Inc., 2261 Market
+        Street #5039, San Francisco, CA 94114, USA) as a processor.
+        <br />
+        <br />
+        A data processing agreement (Art. 28 GDPR) is in place with Resend.
+        Data transfer to the USA takes place on the basis of the EU-US Data
+        Privacy Framework or, supplementarily, on Standard Contractual
+        Clauses (Art. 46 (2) (c) GDPR). Legal basis is Art. 6 (1) (b) and
+        (f) GDPR.
+      </>
+    ),
+  },
+  {
+    title: '6. Cookies',
+    body: (
+      <>
+        This website does not set any tracking or marketing cookies. Only
+        technically necessary storage mechanisms required to operate the
+        website are used. Consent via a cookie banner is therefore not
+        required.
+      </>
+    ),
+  },
+  {
+    title: '7. Retention periods',
+    body: (
+      <>
+        Personal data is only stored for as long as necessary for the
+        respective purpose or as required by statutory retention periods.
+        Specifically:
+        <br />
+        <br />
+        • Server log files: 30 days
+        <br />
+        • Inquiry data without follow-up business: up to 6 months
+        <br />
+        • Business correspondence: 6 years (§ 257 HGB)
+        <br />
+        • Tax-relevant documents: 10 years (§ 147 AO)
+      </>
+    ),
+  },
+  {
+    title: '8. Your rights as a data subject',
+    body: (
+      <>
+        You have the right at any time to:
+        <br />
+        <br />
+        • Access information about the data stored about you (Art. 15 GDPR)
+        <br />
+        • Rectification of inaccurate data (Art. 16 GDPR)
+        <br />
+        • Erasure of your data (Art. 17 GDPR)
+        <br />
+        • Restriction of processing (Art. 18 GDPR)
+        <br />
+        • Data portability (Art. 20 GDPR)
+        <br />
+        • Objection to processing (Art. 21 GDPR)
+        <br />
+        • Withdrawal of consent with effect for the future (Art. 7 (3)
+        GDPR)
+        <br />
+        <br />
+        An informal notice to the contact details given in the imprint is
+        sufficient to exercise your rights.
+      </>
+    ),
+  },
+  {
+    title: '9. Right to lodge a complaint',
+    body: (
+      <>
+        You have the right to lodge a complaint with a data-protection
+        supervisory authority about the processing of your personal data.
+        The competent authority is:
+        <br />
+        <br />
+        Der Landesbeauftragte für den Datenschutz und die
+        Informationsfreiheit Baden-Württemberg
+        <br />
+        Lautenschlagerstraße 20
+        <br />
+        70173 Stuttgart
+        <br />
+        <a
+          href="https://www.baden-wuerttemberg.datenschutz.de"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-ocean underline"
+        >
+          www.baden-wuerttemberg.datenschutz.de
+        </a>
+      </>
+    ),
+  },
+  {
+    title: '10. Changes to this policy',
+    body: (
+      <>
+        We reserve the right to adjust this privacy policy so that it
+        always meets current legal requirements or to reflect changes in
+        our processing operations. The version current at the time of your
+        next visit applies.
+      </>
+    ),
+  },
+]
+
+export default async function DatenschutzPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const isEn = locale === 'en'
+  const sections = isEn ? enSections : deSections
+
+  const dateTag = isEn ? 'en-US' : 'de-DE'
+  const stand = new Date().toLocaleDateString(dateTag, {
+    month: 'long',
+    year: 'numeric',
+  })
+
   return (
     <>
-      <PageHeader title="Datenschutz" />
+      <PageHeader title={isEn ? 'Privacy' : 'Datenschutz'} />
 
       <section className="bg-white py-20 md:py-24">
         <div className="container-wide">
           <article className="mx-auto max-w-prose space-y-8 text-[var(--color-text-primary)]">
             <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
-              Diese Datenschutzerklärung erläutert Art, Umfang und Zweck der
-              Verarbeitung von personenbezogenen Daten innerhalb dieser
-              Website. Wir nehmen Datenschutz ernst — und zwar nicht nur,
-              weil die DSGVO uns dazu verpflichtet.
+              {isEn
+                ? "This privacy policy explains the nature, scope and purpose of personal-data processing on this website. We take privacy seriously — and not just because the GDPR requires us to."
+                : 'Diese Datenschutzerklärung erläutert Art, Umfang und Zweck der Verarbeitung von personenbezogenen Daten innerhalb dieser Website. Wir nehmen Datenschutz ernst — und zwar nicht nur, weil die DSGVO uns dazu verpflichtet.'}
             </p>
 
             {sections.map((s) => (
@@ -259,11 +495,7 @@ export default function DatenschutzPage() {
             ))}
 
             <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
-              Stand:{' '}
-              {new Date().toLocaleDateString('de-DE', {
-                month: 'long',
-                year: 'numeric',
-              })}
+              {isEn ? `As of: ${stand}` : `Stand: ${stand}`}
             </p>
           </article>
         </div>

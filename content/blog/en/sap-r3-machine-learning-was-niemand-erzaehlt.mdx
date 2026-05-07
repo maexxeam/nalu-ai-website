@@ -1,0 +1,93 @@
+---
+title: "SAP R/3 and machine learning: what nobody tells you"
+excerpt: "ML demos run on clean datasets. SAP R/3 has no clean datasets. What actually happens between demo and production."
+date: "2026-04-08"
+category: "ML Engineering"
+readTime: "7 min"
+---
+
+When you watch a forecasting vendor's machine-learning demo, the dataset
+looks like this: a clean timestamp, an SKU number, a quantity. Nicely
+uniform, one data point per day. Maybe a few features like day-of-week or
+season.
+
+When you let that same vendor loose on your SAP R/3 data, things happen.
+Here are the five most common — and what they mean.
+
+## 1. Duplicate postings that aren't duplicates
+
+Goods receipts in R/3 get posted multiple times: original posting,
+correction, reversal, re-posting. If you naively aggregate by `BUDAT` you
+count reversals as positive movement. Your forecast learns a seasonality
+that's actually a posting routine.
+
+**Consequence:** you need an ETL step that resolves reversal flags
+(`SHKZG = 'H'` followed by `SHKZG = 'S'`) before you aggregate. No model in
+the world compensates for this automatically.
+
+## 2. Phantom SKUs
+
+Material numbers get renumbered. Predecessor/successor relationships in R/3
+are often kept only as free-text fields — when at all. From a forecasting
+perspective this is fatal: your model sees 18 months of history, an abrupt
+gap, then a "new" SKU with no history.
+
+**Consequence:** you need a **mapping layer** that joins predecessors and
+successors — either from an additional master-data system or from a manually
+maintained mapping table. Cold-start strategies help, but only reliably if
+the mapping is correct.
+
+## 3. "Unit of measure"
+
+In R/3 an SKU often has multiple units: piece, case, pallet. Anyone
+aggregating in the wrong unit gets forecasts that are off by a factor of 12
+or 24. This isn't a hypothetical — we've seen it in real pipelines.
+
+**Consequence:** convert **everything to a base unit** (usually the smallest
+one used for postings) and plan in that unit. Conversion to "order unit"
+happens at the end of the pipeline, not the beginning.
+
+## 4. Holidays aren't in the dataset
+
+Sounds trivial, isn't. A weekly model sees a week with three holidays like
+any other week — unless you've built that feature explicitly. The
+consequence: the model learns that calendar week 52 is "always weak"
+instead of understanding it's weak **because** of the holidays.
+
+**Consequence:** a **holiday calendar** as a feature is mandatory.
+State-specific in Germany — Bavaria has different holidays than Berlin.
+External sources like [feiertage-api.de](https://feiertage-api.de) work,
+but have to be wired into the ETL.
+
+## 5. The "last day" isn't the last day
+
+R/3 postings are recorded with delay. If you generate a forecast today
+(Thursday), Wednesday's postings are often not complete yet. Train your
+model assuming "last day = current day" and it learns a systematic negative
+bias on the last two observations.
+
+**Consequence:** define a **cutoff** — typically two days before generation
+time. Forecast from there and accept that the last two days have to be
+treated as a backfill window.
+
+## The common pattern
+
+All five points share one thing: **they're not an ML problem, they're a
+data-integration problem.** They aren't solved by a better model. They're
+solved by a clean ETL that knows R/3's quirks.
+
+That's also why "bring us your CSV, we'll train a model" vendors fail so
+often the moment they hit real mid-market data. The demo data is clean. R/3
+isn't. Nobody is. And a model is only ever as good as the pipeline in front
+of it.
+
+## What we've learned
+
+When you start a forecasting project with SAP R/3, plan **two thirds of the
+time for data work**, not for model training. Anyone promising you
+otherwise has either never worked with R/3 or is in the process of
+learning — at your expense.
+
+That's not a tragedy. It's the reality of every ML project that touches
+real business data. But it's a reality that rarely gets discussed in the
+glossy brochures. We prefer to discuss it up front.

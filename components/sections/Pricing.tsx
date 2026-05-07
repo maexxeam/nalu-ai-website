@@ -1,49 +1,46 @@
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { CheckIcon } from '@/components/ui/Icons'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 
-interface Box {
-  label: string
-  title: string
-  price: string
-  bullets: string[]
-}
-
-const boxes: Box[] = [
-  {
-    label: 'Einmalig',
-    title: 'Implementation',
-    price: 'ab 50.000 €',
-    bullets: [
-      'Connector-Aufbau',
-      'Datensäuberung',
-      'Modell-Training',
-      'Go-Live in Wochen',
-    ],
-  },
-  {
-    label: 'Laufend',
-    title: 'Lizenz + Support',
-    price: 'ab 4.500 € / Monat',
-    bullets: [
-      'Software-Updates',
-      'Neue Features',
-      'Wartung',
-      'Automatische Berichte',
-    ],
-  },
-]
-
 export function Pricing() {
+  const t = useTranslations('Pricing')
+
+  const boxes = [
+    {
+      label: t('boxes.implementation.label'),
+      title: t('boxes.implementation.title'),
+      price: t('boxes.implementation.price'),
+      bullets: [
+        t('boxes.implementation.bullet1'),
+        t('boxes.implementation.bullet2'),
+        t('boxes.implementation.bullet3'),
+        t('boxes.implementation.bullet4'),
+      ],
+    },
+    {
+      label: t('boxes.license.label'),
+      title: t('boxes.license.title'),
+      price: t('boxes.license.price'),
+      bullets: [
+        t('boxes.license.bullet1'),
+        t('boxes.license.bullet2'),
+        t('boxes.license.bullet3'),
+        t('boxes.license.bullet4'),
+      ],
+    },
+  ]
+
   return (
     <section id="preise" className="bg-horizon py-24 md:py-32">
       <div className="container-wide">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-widest text-ocean">
-            Preise
+            {t('eyebrow')}
           </p>
           <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            Transparente Preise.
+            {t('title')}
           </h2>
         </Reveal>
 
@@ -81,23 +78,20 @@ export function Pricing() {
         </div>
 
         <Reveal delay={0.2} className="mx-auto mt-12 max-w-2xl text-center">
-          <p className="text-sm text-[var(--color-text-secondary)]">
-            Der genaue Preis hängt von Ihrer Situation ab — Artikelanzahl,
-            ERP-System, Standorte.
-          </p>
+          <p className="text-sm text-[var(--color-text-secondary)]">{t('note')}</p>
           <div className="mt-8">
             <Button href="/demo" size="lg">
-              Kostenloses Erstgespräch →
+              {t('cta')}
             </Button>
           </div>
           <p className="mt-6 text-xs text-[var(--color-text-tertiary)]">
-            Kein Abo-Modell. Keine Cloud-Gebühren. Ihre Daten bleiben bei Ihnen.
+            {t('footer1')}
           </p>
           <p className="mt-4 text-xs text-[var(--color-text-tertiary)]">
-            Volle Preisübersicht unter{' '}
-            <a href="/pricing" className="text-coral underline-offset-4 hover:underline">
+            {t('footerLink')}{' '}
+            <Link href="/pricing" className="text-coral underline-offset-4 hover:underline">
               /pricing
-            </a>
+            </Link>
             .
           </p>
         </Reveal>

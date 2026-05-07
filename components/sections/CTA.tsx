@@ -1,7 +1,9 @@
+import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/Button'
 import { WaveAnimation } from '@/components/ui/WaveAnimation'
 
 export function CTA() {
+  const t = useTranslations('CTA')
   return (
     <section className="relative overflow-hidden bg-navy">
       <WaveAnimation
@@ -13,14 +15,14 @@ export function CTA() {
 
       <div className="container-wide relative z-10 py-24 text-center md:py-32">
         <h2 className="mx-auto max-w-3xl font-display text-[32px] font-bold leading-[1.1] text-white md:text-[44px]">
-          Ready to ride the wave?
+          {t('title')}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-base text-white/70 md:text-lg">
-          30 Minuten Demo. Keine Verpflichtung. Ihre Daten bleiben bei Ihnen.
+          {t('subtitle')}
         </p>
         <div className="mt-10">
           <Button href="/demo" size="lg" className="animate-pulse-subtle">
-            Demo anfragen →
+            {t('cta')}
           </Button>
         </div>
       </div>
