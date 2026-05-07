@@ -34,7 +34,7 @@ export function SalesFeatures() {
                 key={feature}
                 className="flex items-start gap-3 rounded-lg border border-[var(--color-border-primary)] bg-white p-4"
               >
-                <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-seaglass" />
+                <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-coral" />
                 <span className="text-sm text-[var(--color-text-primary)]">
                   {feature}
                 </span>

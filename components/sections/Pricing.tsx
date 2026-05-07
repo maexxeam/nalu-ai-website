@@ -70,7 +70,7 @@ export function Pricing() {
                       key={b}
                       className="flex items-start gap-3 text-sm text-[var(--color-text-primary)]"
                     >
-                      <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-seaglass" />
+                      <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-coral" />
                       <span>{b}</span>
                     </li>
                   ))}

@@ -94,6 +94,7 @@ const tiers: Tier[] = [
     key: 'sales',
     label: 'Sales Add-on',
     monthly: 'ab 2.500 € / Monat',
+    setup: '+ ab 8.000 € Implementation',
     note: 'nur mit Core',
     cta: 'Angebot anfragen',
     href: '/demo',
@@ -112,7 +113,7 @@ const tiers: Tier[] = [
 
 function CellContent({ value }: { value: Cell }) {
   if (value === true) {
-    return <CheckIcon className="mx-auto h-5 w-5 text-seaglass" />
+    return <CheckIcon className="mx-auto h-5 w-5 text-coral" />
   }
   if (value === false) {
     return (
@@ -308,7 +309,7 @@ export default function PricingPage() {
                       key={b}
                       className="flex items-start gap-3 text-sm text-[var(--color-text-primary)]"
                     >
-                      <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-seaglass" />
+                      <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-coral" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -510,7 +511,7 @@ export default function PricingPage() {
                       key={b}
                       className="flex items-start gap-3 text-sm text-[var(--color-text-primary)]"
                     >
-                      <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-seaglass" />
+                      <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-coral" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -626,6 +627,20 @@ export default function PricingPage() {
                 aber teurer.
               </p>
             </div>
+
+            {/* Discount hint */}
+            <div className="mx-auto mt-10 max-w-2xl text-center">
+              <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                Listenpreise. Im persönlichen Gespräch erstellen wir ein
+                individuelles Angebot — abgestimmt auf Ihre Unternehmensgröße
+                und Vertragslaufzeit.
+              </p>
+              <div className="mt-6">
+                <Button href="/demo" size="md">
+                  Kostenloses Erstgespräch anfragen →
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -694,7 +709,7 @@ export default function PricingPage() {
               <div className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-2">
                 {priceFactors.map((f) => (
                   <div key={f.label} className="flex items-start gap-3">
-                    <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-seaglass" />
+                    <CheckIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-coral" />
                     <div>
                       <p className="text-sm font-medium text-[var(--color-text-primary)]">
                         {f.label}
@@ -713,15 +728,15 @@ export default function PricingPage() {
                 </Button>
                 <ul className="mx-auto mt-6 max-w-md space-y-1.5 text-left text-sm text-[var(--color-text-secondary)]">
                   <li className="flex items-start gap-2">
-                    <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-seaglass" />
+                    <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-coral" />
                     <span>Welche Module Sie wirklich brauchen</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-seaglass" />
+                    <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-coral" />
                     <span>Was Ihre Implementierung kostet</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-seaglass" />
+                    <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-coral" />
                     <span>Wann Sie live gehen können</span>
                   </li>
                 </ul>

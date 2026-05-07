@@ -84,7 +84,7 @@ export function DemoForm() {
   if (submitted) {
     return (
       <div className="rounded-2xl border-l-4 border-seaglass bg-horizon p-8 md:p-10">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-seaglass/15 text-seaglass">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-seaglass/15 text-coral">
           <CheckIcon className="h-6 w-6" />
         </div>
         <h3 className="mt-5 font-display text-2xl font-semibold text-[var(--color-text-primary)]">
