@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Nalu AI – Demand Intelligence für den Mittelstand'
+export const alt = 'Nalu AI – Ride the wave of demand'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -71,7 +71,7 @@ export default async function Image() {
             textTransform: 'uppercase',
           }}
         >
-          ~ Demand Intelligence Platform
+          DEMAND INTELLIGENCE · MASSGESCHNEIDERT
         </div>
 
         <div
@@ -99,7 +99,7 @@ export default async function Image() {
             maxWidth: 880,
           }}
         >
-          ML-Forecasting, ABC/XYZ &amp; SCM — on-premise, deploybar in 4 Wochen.
+          Maßgeschneiderte ML-Systeme — auf Ihrer Infrastruktur, gebaut für Ihre Daten.
         </div>
 
         <div

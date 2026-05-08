@@ -27,13 +27,13 @@ export async function generateMetadata({
     title:
       locale === 'en'
         ? {
-            default: 'Nalu AI – Demand Intelligence for the Mid-Market',
+            default: 'Nalu AI – Demand Intelligence, tailored',
             template: '%s | Nalu AI',
           }
         : defaultMetadata.title,
     description:
       locale === 'en'
-        ? 'ML forecasting, ABC/XYZ analysis and SCM optimization — on-premise, deployable in 4 weeks. Your data stays with you.'
+        ? 'Tailored ML systems for demand planning and sales intelligence — on your infrastructure, built for your data.'
         : defaultMetadata.description,
     openGraph: {
       ...defaultMetadata.openGraph,

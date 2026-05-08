@@ -5,33 +5,34 @@ export const SITE_URL = 'https://nalu-ai.com'
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Nalu AI – Demand Intelligence für den Mittelstand',
+    default: 'Nalu AI – Demand Intelligence, maßgeschneidert',
     template: '%s | Nalu AI',
   },
   description:
-    'ML-Forecasting, ABC/XYZ-Analyse und SCM-Optimierung — on-premise, deploybar in 4 Wochen. Ihre Daten bleiben bei Ihnen.',
+    'Maßgeschneiderte ML-Systeme für Demand Planning und Vertriebsintelligenz — auf Ihrer Infrastruktur, gebaut für Ihre Daten.',
   keywords: [
-    'Demand Planning Software',
-    'Absatzplanung Mittelstand',
-    'ML Forecasting SAP',
-    'Supply Chain Optimierung',
-    'ABC XYZ Analyse',
-    'Bestandsoptimierung Software',
+    'Demand Planning',
+    'ML Forecasting',
+    'Custom ML',
+    'ETL SAP',
+    'On-Premise Machine Learning',
+    'Maximilian Fischer',
   ],
-  authors: [{ name: 'Nalu AI' }],
+  authors: [{ name: 'Maximilian Fischer' }],
   openGraph: {
     type: 'website',
     locale: 'de_DE',
     url: SITE_URL,
     siteName: 'Nalu AI',
-    title: 'Nalu AI – Demand Intelligence für den Mittelstand',
+    title: 'Nalu AI – Demand Intelligence, maßgeschneidert',
     description:
-      'ML-Forecasting, ABC/XYZ-Analyse und SCM-Optimierung — on-premise, deploybar in 4 Wochen.',
+      'Maßgeschneiderte ML-Systeme für Demand Planning und Vertriebsintelligenz — auf Ihrer Infrastruktur.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nalu AI – Demand Intelligence für den Mittelstand',
-    description: 'On-premise ML-Forecasting für den Mittelstand.',
+    title: 'Nalu AI – Demand Intelligence, maßgeschneidert',
+    description:
+      'Maßgeschneiderte ML-Systeme — auf Ihrer Infrastruktur, gebaut für Ihre Daten.',
   },
   robots: {
     index: true,

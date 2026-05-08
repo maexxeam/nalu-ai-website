@@ -7,11 +7,10 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   const navLinks = [
-    { href: '/produkt', label: t('navPlatform') },
-    { href: '/pricing', label: t('navPricing') },
-    { href: '/blog', label: t('navBlog') },
+    { href: '/#produkt', label: t('navProdukt') },
+    { href: '/leistungen', label: t('navLeistungen') },
     { href: '/about', label: t('navAbout') },
-    { href: '/demo', label: t('navDemo') },
+    { href: '/kontakt', label: t('navKontakt') },
   ]
 
   const legalLinks = [

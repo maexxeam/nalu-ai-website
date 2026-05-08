@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
-import { PageHeader } from '@/components/ui/PageHeader'
-import { Reveal } from '@/components/ui/Reveal'
-import { Button } from '@/components/ui/Button'
-import { ShieldIcon, ZapIcon, UsersIcon } from '@/components/ui/Icons'
 
 export async function generateMetadata({
   params,
@@ -19,108 +15,67 @@ export async function generateMetadata({
 function AboutBody() {
   const t = useTranslations('About')
 
-  const values = [
-    { Icon: ShieldIcon, title: t('values.data.title'), body: t('values.data.body') },
-    { Icon: ZapIcon, title: t('values.noHype.title'), body: t('values.noHype.body') },
-    { Icon: UsersIcon, title: t('values.mittelstand.title'), body: t('values.mittelstand.body') },
-  ]
-
-  const stats = [
-    { value: '770', label: t('stats.customers') },
-    { value: '900', label: t('stats.articles') },
-    { value: '450k+', label: t('stats.series') },
-  ]
-
   return (
     <>
-      <PageHeader
-        eyebrow={t('headerEyebrow')}
-        title={t('headerTitle')}
-        subtitle={t('headerSubtitle')}
-      />
-
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-navy py-32">
         <div className="container-wide">
-          <Reveal className="mx-auto max-w-3xl">
-            <div className="space-y-6 text-base leading-relaxed text-[var(--color-text-primary)] md:text-lg">
-              <p>{t('story1')}</p>
-              <p>{t('story2')}</p>
-              <p>{t('story3')}</p>
-              <p>
-                {t('story4Pre')}
-                <code className="rounded bg-[var(--color-bg-secondary)] px-1.5 py-0.5 text-[13px]">
-                  config.yaml
-                </code>
-                {t('story4Post')}
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1} className="mx-auto mt-16 max-w-3xl">
-            <div className="grid gap-6 rounded-2xl border border-[var(--color-border-primary)] bg-horizon p-8 sm:grid-cols-3">
-              {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <p className="font-display text-3xl font-bold text-ocean">
-                    {s.value}
-                  </p>
-                  <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <h1 className="font-display text-[40px] font-bold text-white md:text-[52px]">
+            {t('headerTitle')}
+          </h1>
         </div>
       </section>
 
-      <section className="bg-horizon py-20 md:py-28">
-        <div className="container-wide">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="font-display text-sm font-semibold uppercase tracking-widest text-ocean">
-              {t('valuesEyebrow')}
-            </p>
-            <h2 className="mt-4 font-display text-[28px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[36px]">
-              {t('valuesTitle')}
-              <br />
-              {t('valuesTitleSecond')}
-            </h2>
-          </Reveal>
+      <section className="bg-white py-20">
+        <div className="container-wide max-w-3xl">
+          <p className="text-lg font-medium text-[var(--color-text-primary)]">{t('intro')}</p>
+          <p className="mt-2 text-lg text-[var(--color-text-secondary)]">{t('introSecond')}</p>
 
-          <div className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-3">
-            {values.map(({ Icon, title, body }, i) => (
-              <Reveal key={title} delay={i * 0.1}>
-                <div className="h-full rounded-xl border border-[var(--color-border-primary)] bg-white p-8">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-ocean/10 text-ocean">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-[var(--color-text-primary)]">
-                    {title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                    {body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <p className="mt-10 text-base leading-relaxed text-[var(--color-text-secondary)]">
+            {t('naluSection')}
+          </p>
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-24">
-        <div className="container-wide">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-[28px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[36px]">
-              {t('talkTitle')}
-            </h2>
-            <p className="mt-4 text-base text-[var(--color-text-secondary)] md:text-lg">
-              {t('talkSubtitle')}
+      <section className="bg-[#F8FAFB] py-20">
+        <div className="container-wide max-w-3xl">
+          <h2 className="font-display text-2xl font-bold text-[var(--color-text-primary)]">
+            {t('meatmindTitle')}
+          </h2>
+          <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-[var(--color-text-secondary)]">
+            {t('meatmindBody')}
+          </p>
+          <p className="mt-4 font-semibold text-[var(--color-text-primary)]">{t('meatmindStats')}</p>
+          <p className="mt-1 font-mono text-xs text-[var(--color-text-tertiary)]">{t('meatmindTech')}</p>
+
+          <blockquote className="mt-10 border-l-4 border-coral pl-6">
+            <p className="font-display text-lg font-semibold italic text-[var(--color-text-primary)]">
+              {t('quote')}
             </p>
-            <div className="mt-8">
-              <Button href="/demo" size="lg">
-                {t('talkCta')}
-              </Button>
-            </div>
-          </Reveal>
+            <p className="mt-3 text-sm text-[var(--color-text-secondary)]">{t('quoteAuthor')}</p>
+          </blockquote>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="container-wide max-w-3xl">
+          <h2 className="font-display text-2xl font-bold text-[var(--color-text-primary)]">
+            {t('hintergrundTitle')}
+          </h2>
+          <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-[var(--color-text-secondary)]">
+            {t('hintergrundBody')}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-navy py-20">
+        <div className="container-wide max-w-3xl">
+          <h2 className="font-display text-2xl font-bold text-white">{t('kontaktTitle')}</h2>
+          <a
+            href={`mailto:${t('email')}`}
+            className="mt-4 inline-block font-display text-[22px] font-semibold text-coral hover:underline"
+          >
+            {t('email')}
+          </a>
         </div>
       </section>
     </>
