@@ -9,10 +9,7 @@ import { LanguageToggle } from '@/components/layout/LanguageToggle'
 
 const DARK_HERO_ROUTES = new Set<string>([
   '/',
-  '/about',
   '/kontakt',
-  '/datenschutz',
-  '/impressum',
 ])
 
 function hasDarkHero(pathname: string | null) {
