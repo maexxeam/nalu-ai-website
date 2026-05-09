@@ -67,36 +67,48 @@ function LeistungenBody() {
         </div>
       </section>
 
-      {/* Section 2: Hauptprodukt — navy dark */}
-      <section className="bg-[#0F172A] py-20">
+      {/* Section 2: Hauptprodukt — navy dark, breathing, with proof stats */}
+      <section className="bg-[#0F172A] py-[120px]">
         <div className="container-wide">
           <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
             {t('hauptLabel')}
           </LabelReveal>
 
           <Reveal delay={0.1}>
-            <div className="mt-6 rounded-2xl border border-white/10 p-10 md:p-14">
-              <p className="font-display text-3xl font-bold text-white md:text-4xl">
-                {t('hauptName')}
-              </p>
-              <p className="mt-2 font-mono text-sm uppercase tracking-widest text-coral">
-                {t('hauptTagline')}
-              </p>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70">
-                {t('hauptBody')}
-              </p>
-              <a
-                href="https://naluai.com"
-                className="mt-8 inline-block font-display text-base font-semibold text-coral hover:underline"
-              >
-                → {t('hauptLink')}
-              </a>
-            </div>
+            <p className="mt-6 font-display text-3xl font-bold text-white md:text-4xl">
+              {t('hauptName')}
+            </p>
+            <p className="mt-2 font-mono text-sm uppercase tracking-widest text-coral">
+              {t('hauptTagline')}
+            </p>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70">
+              {t('hauptBody')}
+            </p>
+            <a
+              href="https://naluai.com"
+              className="mt-8 inline-block font-display text-base font-semibold text-coral hover:underline"
+            >
+              → {t('hauptLink')}
+            </a>
           </Reveal>
+
+          {/* Proof numbers from MeatMind deployment */}
+          <div className="mt-16 grid grid-cols-2 gap-8 border-t border-white/10 pt-16 md:grid-cols-4">
+            {stats.map((stat, i) => (
+              <Reveal key={stat.label} delay={0.3 + i * 0.1}>
+                <div>
+                  <p className="font-display text-[40px] font-bold text-coral md:text-[48px]">
+                    <CountUp value={stat.value} />
+                  </p>
+                  <p className="mt-1 text-sm text-white/50">{stat.label}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Section 3: Referenzprojekt — white, coral stats */}
+      {/* Section 3: MeatMind Referenzprojekt — white, no duplicate stats */}
       <section className="bg-white py-20">
         <div className="container-wide">
           <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
@@ -107,20 +119,6 @@ function LeistungenBody() {
               {t('refTitle')}
             </h2>
           </Reveal>
-
-          {/* Stats row */}
-          <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {stats.map((stat, i) => (
-              <Reveal key={stat.label} delay={0.2 + i * 0.1}>
-                <div>
-                  <p className="font-display text-[36px] font-bold text-coral md:text-[44px]">
-                    <CountUp value={stat.value} />
-                  </p>
-                  <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{stat.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
 
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch">
             <Reveal delay={0.1}>
@@ -143,13 +141,13 @@ function LeistungenBody() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <div className="rounded-2xl bg-navy p-10 text-white">
-                <blockquote className="font-display text-xl font-semibold leading-snug md:text-2xl">
+              <div className="rounded-2xl border-l-4 border-coral bg-[#F8FAFB] p-10">
+                <blockquote className="font-display text-xl font-semibold leading-snug text-[var(--color-text-primary)] md:text-2xl">
                   {t('refQuote')}
                 </blockquote>
-                <div className="mt-6 border-t border-white/10 pt-4">
-                  <p className="font-semibold">{t('refAuthor')}</p>
-                  <p className="mt-1 text-sm text-white/60">{t('refRole')}</p>
+                <div className="mt-6 border-t border-[var(--color-border-primary)] pt-4">
+                  <p className="font-semibold text-[var(--color-text-primary)]">{t('refAuthor')}</p>
+                  <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{t('refRole')}</p>
                 </div>
               </div>
             </Reveal>
