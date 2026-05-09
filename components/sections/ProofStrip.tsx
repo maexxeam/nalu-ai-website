@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { Reveal } from '@/components/ui/Reveal'
 
-export function MuellerStrip() {
+export function ProofStrip() {
   const t = useTranslations('Referenz')
 
   const items = [
@@ -23,7 +23,7 @@ export function MuellerStrip() {
               </span>
             ))}
             <span className="hidden text-[var(--color-border-primary)] md:inline">—</span>
-            <span className="font-semibold text-[var(--color-text-primary)]">Müller Fleisch GmbH</span>
+            <span className="font-semibold text-[var(--color-text-primary)]">{t('authorRole')}</span>
           </div>
         </Reveal>
       </div>
