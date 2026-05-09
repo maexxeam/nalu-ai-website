@@ -153,7 +153,7 @@ function AboutBody() {
               },
               {
                 label: 'Daten & ETL',
-                pills: ['DuckDB', 'PostgreSQL', 'Parquet', 'SAP R/3'],
+                pills: ['DuckDB', 'PostgreSQL', 'Parquet', 'SAP'],
               },
               {
                 label: 'Backend',
