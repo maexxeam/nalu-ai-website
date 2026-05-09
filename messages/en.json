@@ -46,7 +46,7 @@
     "col2Title": "Your ERP",
     "col2Body": "SAP, S/4HANA, Dynamics, Proalpha, CSV — we build the connector for your system.",
     "col3Title": "Your pace",
-    "col3Body": "We go live when you're ready. Typical: 4–8 weeks."
+    "col3Body": "We go live when you're ready. Typical: a few weeks — depending on your data."
   },
   "Referenz": {
     "sectionLabel": "REFERENCE",
@@ -107,7 +107,8 @@
     "headline": "Talk to me.",
     "subline": "No form. No funnel. Just an email.",
     "email": "max@nalu-ai.com",
-    "linkedin": "Or LinkedIn: /in/maximilianfischer"
+    "linkedin": "Or LinkedIn: /in/maximilianfischer",
+    "investment": "Investment on request — depends on data complexity and scope."
   },
   "About": {
     "metaTitle": "About",
@@ -115,7 +116,7 @@
     "headerLabel": "ABOUT",
     "headerTitle": "Demand intelligence",
     "headerTitleSecond": "that actually runs in production.",
-    "headerSubtitle": "Nalu AI develops ML systems for demand planning and sales intelligence — not as software you install, but as a solution built together with the customer. On their data, their infrastructure, their processes.",
+    "headerSubtitle": "Nalu AI is an ML system built together with the customer — for demand planning and sales intelligence, on their infrastructure, for their data.",
     "wasLabel": "WHAT NALU AI IS",
     "wasTitle": "Not SaaS. Not a consulting project.",
     "wasBody": "Nalu AI is a demand intelligence platform tailored to each customer. Forecasts, SCM recommendations and AI reports run on the customer's own infrastructure — no shared data, no external cloud, no black box.\n\nThe platform is built on proven technology from production use: LightGBM and Temporal Fusion Transformer for forecasts, DuckDB for analytical queries, FastAPI as the API layer, Docker for deployment. What works stays — what matters in mid-market gets added.",
@@ -127,7 +128,7 @@
     "wasNot3Body": "One Docker Compose stack per customer. What is not needed does not run. What runs, runs fast.",
     "methodikLabel": "METHOD",
     "methodikTitle": "How a project runs.",
-    "methodikSubline": "From the first conversation to production — typically 4 to 8 weeks.",
+    "methodikSubline": "From the first conversation to production — typically a few weeks, depending on data quality and ERP complexity.",
     "step1Num": "01",
     "step1Title": "Discovery",
     "step1Body": "Short workshop with the customer: ERP system, data structure, business logic, biggest pain points. Out of it comes a config.yaml — the heart of every implementation.",

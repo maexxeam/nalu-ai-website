@@ -46,7 +46,7 @@
     "col2Title": "Ihr ERP",
     "col2Body": "SAP, S/4HANA, Dynamics, Proalpha, CSV — wir bauen den Connector für Ihr System.",
     "col3Title": "Ihr Tempo",
-    "col3Body": "Wir gehen live wenn Sie bereit sind. Typisch: 4–8 Wochen."
+    "col3Body": "Wir gehen live wenn Sie bereit sind. Typisch: wenige Wochen — abhängig von Ihren Daten."
   },
   "Referenz": {
     "sectionLabel": "REFERENZ",
@@ -107,7 +107,8 @@
     "headline": "Sprechen Sie mit mir.",
     "subline": "Kein Formular. Kein Funnel. Einfach eine E-Mail.",
     "email": "max@nalu-ai.com",
-    "linkedin": "Oder LinkedIn: /in/maximilianfischer"
+    "linkedin": "Oder LinkedIn: /in/maximilianfischer",
+    "investment": "Investition auf Anfrage — abhängig von Datenkomplexität und Umfang."
   },
   "About": {
     "metaTitle": "Über uns",
@@ -115,7 +116,7 @@
     "headerLabel": "ÜBER UNS",
     "headerTitle": "Demand Intelligence,",
     "headerTitleSecond": "die im Betrieb tatsächlich läuft.",
-    "headerSubtitle": "Nalu AI entwickelt ML-Systeme für Demand Planning und Vertriebsintelligenz — nicht als Software die installiert wird, sondern als Lösung die gemeinsam mit dem Kunden entsteht. Auf seinen Daten, seiner Infrastruktur, seinen Prozessen.",
+    "headerSubtitle": "Nalu AI ist ein ML-System das gemeinsam mit dem Kunden entsteht — für Demand Planning und Vertriebsintelligenz, auf seiner Infrastruktur, für seine Daten.",
     "wasLabel": "WAS NALU AI IST",
     "wasTitle": "Kein SaaS. Kein Beratungsprojekt.",
     "wasBody": "Nalu AI ist eine Demand-Intelligence-Plattform, die für jeden Kunden individuell angepasst wird. Forecasts, SCM-Empfehlungen und KI-Berichte laufen auf der Infrastruktur des Kunden — keine geteilten Daten, keine externe Cloud, keine Black Box.\n\nDie Plattform basiert auf erprobter Technologie aus dem produktiven Einsatz: LightGBM und Temporal Fusion Transformer für Forecasts, DuckDB für analytische Queries, FastAPI als API-Layer, Docker für Deployment. Was funktioniert, bleibt — was im Mittelstand zählt, kommt dazu.",
@@ -127,7 +128,7 @@
     "wasNot3Body": "Ein Docker-Compose-Stack pro Kunde. Was nicht gebraucht wird, läuft nicht. Was läuft, läuft schnell.",
     "methodikLabel": "METHODIK",
     "methodikTitle": "Wie ein Projekt läuft.",
-    "methodikSubline": "Vom ersten Gespräch bis zum produktiven Betrieb — typisch 4 bis 8 Wochen.",
+    "methodikSubline": "Vom ersten Gespräch bis zum produktiven Betrieb — typisch wenige Wochen, abhängig von Datenlage und ERP-Komplexität.",
     "step1Num": "01",
     "step1Title": "Discovery",
     "step1Body": "Kurzer Workshop mit dem Kunden: ERP-System, Datenstruktur, Geschäftslogik, größte Schmerzpunkte. Daraus entsteht eine config.yaml — das Herz jeder Implementierung.",

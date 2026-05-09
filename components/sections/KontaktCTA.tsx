@@ -20,6 +20,9 @@ export function KontaktCTA() {
         >
           {t('email')}
         </a>
+        <p className="mx-auto mt-10 max-w-md font-mono text-xs text-white/40">
+          {t('investment')}
+        </p>
       </div>
     </section>
   )
