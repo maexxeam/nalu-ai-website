@@ -97,6 +97,19 @@ function AboutBody() {
         </div>
       </section>
 
+      {/* Nalu origin — white, compact */}
+      <section className="bg-white py-16">
+        <div className="container-wide">
+          <Reveal>
+            <p className="max-w-2xl text-base leading-relaxed text-[var(--color-text-secondary)]">
+              <span className="font-semibold text-[var(--color-text-primary)]">Der Name Nalu ist Hawaiianisch für Welle</span> —
+              entstanden während eines Sabbaticals auf Hawaii,
+              wo nebenbei ein Dive-Shop-System entwickelt wurde.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Methodik — steps alternating white/gray */}
       <section className="bg-white py-20">
         <div className="container-wide">
@@ -149,19 +162,23 @@ function AboutBody() {
             {([
               {
                 label: 'ML & Forecasting',
-                pills: ['LightGBM', 'PyTorch/TFT', 'SHAP', 'MLflow'],
+                pills: ['LightGBM', 'PyTorch/TFT', 'SHAP', 'MLflow', 'scikit-learn', 'Anomaly Detection', 'Ollama'],
               },
               {
                 label: 'Daten & ETL',
-                pills: ['DuckDB', 'PostgreSQL', 'Parquet', 'SAP'],
+                pills: ['DuckDB', 'PostgreSQL', 'Parquet', 'SAP R/3', 'PyArrow', 'SQL Server', 'Dagster'],
               },
               {
                 label: 'Backend',
-                pills: ['Python', 'FastAPI', 'Flask', 'Celery', 'Redis'],
+                pills: ['Python', 'FastAPI', 'Flask', 'Celery', 'Redis', 'Pydantic', 'SQLAlchemy', 'Entra ID SSO'],
               },
               {
                 label: 'Deployment',
-                pills: ['Docker', 'Nginx', 'React', 'TypeScript'],
+                pills: ['Docker', 'Nginx', 'React', 'TypeScript', 'GitHub Actions', 'Prometheus', 'Grafana'],
+              },
+              {
+                label: 'Visualisierung',
+                pills: ['Recharts', 'Deck.gl', 'Leaflet', 'GeoPandas'],
               },
             ] as const).map((group, i) => (
               <Reveal key={group.label} delay={0.1 + i * 0.08}>
