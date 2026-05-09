@@ -8,6 +8,7 @@ import {
   IconUsers,
 } from '@tabler/icons-react'
 import { SCMMockup } from '@/components/ui/SCMMockup'
+import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
 
 export function Module() {
   const t = useTranslations('Module')
@@ -24,35 +25,36 @@ export function Module() {
   return (
     <section className="bg-white py-24">
       <div className="container-wide">
-        <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
+        <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
           {t('sectionLabel')}
-        </p>
+        </LabelReveal>
 
-        <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-          {t('headline')}
-        </h2>
+        <Reveal delay={0.1}>
+          <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
+            {t('headline')}
+          </h2>
+        </Reveal>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {cards.map(({ Icon, title, body }) => (
-            <div
-              key={title}
-              className="group rounded-xl border border-[var(--color-border-primary)] p-6 transition-shadow hover:shadow-brand"
-            >
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--color-bg-secondary)] text-coral transition-colors group-hover:bg-coral/10">
-                <Icon size={22} stroke={1.75} />
+          {cards.map(({ Icon, title, body }, i) => (
+            <Reveal key={title} delay={0.2 + i * 0.1}>
+              <div className="group rounded-xl border border-[var(--color-border-primary)] p-6 transition-shadow hover:shadow-brand">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--color-bg-secondary)] text-coral transition-colors group-hover:bg-coral/10">
+                  <Icon size={22} stroke={1.75} />
+                </div>
+                <p className="mt-5 font-display text-base font-semibold text-[var(--color-text-primary)]">
+                  {title}
+                </p>
+                <p className="mt-2 text-sm text-[var(--color-text-secondary)]">{body}</p>
               </div>
-              <p className="mt-5 font-display text-base font-semibold text-[var(--color-text-primary)]">
-                {title}
-              </p>
-              <p className="mt-2 text-sm text-[var(--color-text-secondary)]">{body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         <p className="mt-6 text-xs text-[var(--color-text-tertiary)]">{t('footnote')}</p>
 
         <div className="mt-20 grid gap-12 md:grid-cols-5 md:items-center">
-          <div className="md:col-span-2">
+          <Reveal delay={0} className="md:col-span-2">
             <p className="font-mono text-[11px] uppercase tracking-widest text-coral">
               {t('scmLabel')}
             </p>
@@ -62,15 +64,15 @@ export function Module() {
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
               {t('scmBody')}
             </p>
-          </div>
-          <div className="md:col-span-3">
+          </Reveal>
+          <MockupReveal delay={0.2} className="md:col-span-3">
             <div
               className="transform-gpu"
               style={{ transform: 'perspective(1400px) rotateY(4deg) rotateX(2deg)' }}
             >
               <SCMMockup />
             </div>
-          </div>
+          </MockupReveal>
         </div>
       </div>
     </section>

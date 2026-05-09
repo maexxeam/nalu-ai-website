@@ -8,6 +8,7 @@ import {
   IconBuildings,
 } from '@tabler/icons-react'
 import { WaveBackground } from '@/components/ui/WaveBackground'
+import { Reveal, LabelReveal } from '@/components/ui/Reveal'
 
 export async function generateMetadata({
   params,
@@ -48,114 +49,122 @@ function AboutBody() {
       {/* Hero */}
       <section className="bg-white pt-32 pb-20">
         <div className="container-wide">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
+          <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
             {t('headerLabel')}
-          </p>
-          <h1 className="mt-4 max-w-3xl font-display text-[40px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[52px]">
-            {t('headerTitle')}
-            <br />
-            <span className="text-coral">{t('headerTitleSecond')}</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-base text-[var(--color-text-secondary)] md:text-lg">
-            {t('headerSubtitle')}
-          </p>
+          </LabelReveal>
+          <Reveal delay={0.1}>
+            <h1 className="mt-4 max-w-3xl font-display text-[40px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[52px]">
+              {t('headerTitle')}
+              <br />
+              <span className="text-coral">{t('headerTitleSecond')}</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-base text-[var(--color-text-secondary)] md:text-lg">
+              {t('headerSubtitle')}
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Was Nalu AI ist */}
-      <section className="bg-[#F8FAFB] py-20">
+      {/* "Kein SaaS. Kein Beratungsprojekt." — navy dark */}
+      <section className="bg-[#0F172A] py-20">
         <div className="container-wide">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
+          <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
             {t('wasLabel')}
-          </p>
-          <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            {t('wasTitle')}
-          </h2>
-
-          <p className="mt-8 max-w-3xl whitespace-pre-line text-base leading-relaxed text-[var(--color-text-secondary)]">
-            {t('wasBody')}
-          </p>
+          </LabelReveal>
+          <Reveal delay={0.1}>
+            <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-white md:text-[40px]">
+              {t('wasTitle')}
+            </h2>
+            <p className="mt-8 max-w-3xl whitespace-pre-line text-base leading-relaxed text-white/70">
+              {t('wasBody')}
+            </p>
+          </Reveal>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {wasNot.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl border border-[var(--color-border-primary)] bg-white p-6"
-              >
-                <p className="font-display text-base font-semibold text-[var(--color-text-primary)]">
-                  {item.title}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                  {item.body}
-                </p>
-              </div>
+            {wasNot.map((item, i) => (
+              <Reveal key={item.title} delay={0.2 + i * 0.1}>
+                <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+                  <p className="font-display text-base font-semibold text-white">
+                    {item.title}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">
+                    {item.body}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Methodik */}
+      {/* Methodik — steps alternating white/gray */}
       <section className="bg-white py-20">
         <div className="container-wide">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
+          <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
             {t('methodikLabel')}
-          </p>
-          <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            {t('methodikTitle')}
-          </h2>
-          <p className="mt-3 text-base text-[var(--color-text-secondary)]">
-            {t('methodikSubline')}
-          </p>
+          </LabelReveal>
+          <Reveal delay={0.1}>
+            <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
+              {t('methodikTitle')}
+            </h2>
+            <p className="mt-3 text-base text-[var(--color-text-secondary)]">
+              {t('methodikSubline')}
+            </p>
+          </Reveal>
 
-          <ol className="mt-12 space-y-6">
-            {steps.map((step) => (
-              <li
-                key={step.num}
-                className="grid gap-4 rounded-xl border border-[var(--color-border-primary)] p-6 md:grid-cols-[80px_1fr] md:gap-8 md:p-8"
-              >
-                <div className="font-display text-3xl font-bold text-coral md:text-4xl">
-                  {step.num}
-                </div>
-                <div>
-                  <p className="font-display text-lg font-semibold text-[var(--color-text-primary)]">
-                    {step.title}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                    {step.body}
-                  </p>
-                </div>
-              </li>
+          <ol className="mt-12 space-y-4">
+            {steps.map((step, i) => (
+              <Reveal key={step.num} delay={0.1 + i * 0.1}>
+                <li
+                  className={`grid gap-4 rounded-xl border border-[var(--color-border-primary)] p-6 md:grid-cols-[80px_1fr] md:gap-8 md:p-8 ${
+                    i % 2 === 0 ? 'bg-white' : 'bg-[#F8FAFB]'
+                  }`}
+                >
+                  <div className="font-display text-3xl font-bold text-coral md:text-4xl">
+                    {step.num}
+                  </div>
+                  <div>
+                    <p className="font-display text-lg font-semibold text-[var(--color-text-primary)]">
+                      {step.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                      {step.body}
+                    </p>
+                  </div>
+                </li>
+              </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* Prinzipien */}
-      <section className="bg-[#F8FAFB] py-20">
+      {/* Prinzipien — navy dark */}
+      <section className="bg-[#0F172A] py-20">
         <div className="container-wide">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-text-tertiary)]">
+          <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
             {t('prinzipienLabel')}
-          </p>
-          <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[40px]">
-            {t('prinzipienTitle')}
-          </h2>
+          </LabelReveal>
+          <Reveal delay={0.1}>
+            <h2 className="mt-4 font-display text-[32px] font-bold leading-tight text-white md:text-[40px]">
+              {t('prinzipienTitle')}
+            </h2>
+          </Reveal>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {principles.map(({ Icon, title, body }) => (
-              <div
-                key={title}
-                className="rounded-xl border border-[var(--color-border-primary)] bg-white p-8"
-              >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-bg-secondary)] text-coral">
-                  <Icon size={24} stroke={1.75} />
+            {principles.map(({ Icon, title, body }, i) => (
+              <Reveal key={title} delay={0.2 + i * 0.1}>
+                <div className="rounded-xl border border-white/10 bg-white/5 p-8">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-coral">
+                    <Icon size={24} stroke={1.75} />
+                  </div>
+                  <p className="mt-5 font-display text-lg font-semibold text-white">
+                    {title}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">
+                    {body}
+                  </p>
                 </div>
-                <p className="mt-5 font-display text-lg font-semibold text-[var(--color-text-primary)]">
-                  {title}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-                  {body}
-                </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -165,16 +174,18 @@ function AboutBody() {
       <section className="relative overflow-hidden bg-navy py-32">
         <WaveBackground className="absolute inset-0 h-full w-full opacity-50" />
         <div className="container-wide relative z-10 text-center">
-          <h2 className="font-display text-[36px] font-bold text-white md:text-[44px]">
-            {t('kontaktTitle')}
-          </h2>
-          <p className="mt-4 text-base text-white/60">{t('kontaktSubline')}</p>
-          <a
-            href={`mailto:${t('kontaktEmail')}`}
-            className="mt-8 inline-block font-display text-[22px] font-semibold text-coral hover:underline md:text-[28px]"
-          >
-            {t('kontaktEmail')}
-          </a>
+          <Reveal>
+            <h2 className="font-display text-[36px] font-bold text-white md:text-[44px]">
+              {t('kontaktTitle')}
+            </h2>
+            <p className="mt-4 text-base text-white/60">{t('kontaktSubline')}</p>
+            <a
+              href={`mailto:${t('kontaktEmail')}`}
+              className="mt-8 inline-block font-display text-[22px] font-semibold text-coral hover:underline md:text-[28px]"
+            >
+              {t('kontaktEmail')}
+            </a>
+          </Reveal>
         </div>
       </section>
     </>
