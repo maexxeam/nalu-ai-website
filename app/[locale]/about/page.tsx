@@ -94,17 +94,10 @@ function AboutBody() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Nalu origin — white, compact */}
-      <section className="bg-white py-16">
-        <div className="container-wide">
-          <Reveal>
-            <p className="max-w-2xl text-base leading-relaxed text-[var(--color-text-secondary)]">
-              <span className="font-semibold text-[var(--color-text-primary)]">Der Name Nalu ist Hawaiianisch für Welle</span> —
-              entstanden während eines Sabbaticals auf Hawaii,
-              wo nebenbei ein Dive-Shop-System entwickelt wurde.
+          <Reveal delay={0.4}>
+            <p className="mt-12 border-t border-white/10 pt-8 font-mono text-xs text-white/40">
+              <span className="text-white/60">Nalu</span> ist Hawaiianisch für Welle — entstanden während eines Sabbaticals auf Hawaii, wo nebenbei ein Dive-Shop-System entwickelt wurde.
             </p>
           </Reveal>
         </div>
