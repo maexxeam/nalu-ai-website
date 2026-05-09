@@ -8,6 +8,7 @@ import {
   IconUsers,
 } from '@tabler/icons-react'
 import { SCMMockup } from '@/components/ui/SCMMockup'
+import { ForecastingMockup } from '@/components/ui/ForecastingMockup'
 import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
 
 export function Module() {
@@ -35,6 +36,7 @@ export function Module() {
           </h2>
         </Reveal>
 
+        {/* Feature cards */}
         <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {cards.map(({ Icon, title, body }, i) => (
             <Reveal key={title} delay={0.2 + i * 0.1}>
@@ -53,6 +55,25 @@ export function Module() {
 
         <p className="mt-6 text-xs text-[var(--color-text-tertiary)]">{t('footnote')}</p>
 
+        {/* Forecasting Detail — mockup left, text right */}
+        <div className="mt-24 grid gap-12 md:grid-cols-5 md:items-center">
+          <MockupReveal delay={0} className="md:col-span-3">
+            <ForecastingMockup />
+          </MockupReveal>
+          <Reveal delay={0.2} className="md:col-span-2">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-coral">
+              {t('forecastingLabel')}
+            </p>
+            <h3 className="mt-3 font-display text-2xl font-bold text-[var(--color-text-primary)] md:text-3xl">
+              {t('forecastingTitle')}
+            </h3>
+            <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-[var(--color-text-secondary)]">
+              {t('forecastingBody')}
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Reorder Alerts — text left, mockup right */}
         <div className="mt-20 grid gap-12 md:grid-cols-5 md:items-center">
           <Reveal delay={0} className="md:col-span-2">
             <p className="font-mono text-[11px] uppercase tracking-widest text-coral">

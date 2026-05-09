@@ -8,8 +8,9 @@ import {
   IconServer,
 } from '@tabler/icons-react'
 import { WaveBackground } from '@/components/ui/WaveBackground'
-import { Reveal, LabelReveal } from '@/components/ui/Reveal'
+import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
+import { KundenMockup } from '@/components/ui/KundenMockup'
 
 export async function generateMetadata({
   params,
@@ -20,13 +21,6 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Leistungen' })
   return { title: t('metaTitle'), description: t('metaDescription') }
 }
-
-const STACK = [
-  'Python', 'FastAPI', 'LightGBM', 'PyTorch/TFT',
-  'DuckDB', 'PostgreSQL', 'React', 'TypeScript',
-  'Docker', 'SAP R/3', 'MLflow', 'Celery',
-  'Nginx', 'Redis', 'Ollama', 'SHAP',
-]
 
 function LeistungenBody() {
   const t = useTranslations('Leistungen')
@@ -120,7 +114,8 @@ function LeistungenBody() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch">
+          <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-start">
+            {/* Left: description + pills + stack + quote */}
             <Reveal delay={0.1}>
               <p className="text-base leading-relaxed text-[var(--color-text-secondary)]">
                 {t('refBody')}
@@ -135,22 +130,24 @@ function LeistungenBody() {
                   </span>
                 ))}
               </div>
-              <p className="mt-8 font-mono text-xs text-[var(--color-text-tertiary)]">
+              <p className="mt-6 font-mono text-xs text-[var(--color-text-tertiary)]">
                 {t('refStack')}
               </p>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <div className="rounded-2xl border-l-4 border-coral bg-[#F8FAFB] p-10">
-                <blockquote className="font-display text-xl font-semibold leading-snug text-[var(--color-text-primary)] md:text-2xl">
+              <div className="mt-8 rounded-2xl border-l-4 border-coral bg-[#F8FAFB] p-8">
+                <blockquote className="font-display text-lg font-semibold leading-snug text-[var(--color-text-primary)]">
                   {t('refQuote')}
                 </blockquote>
-                <div className="mt-6 border-t border-[var(--color-border-primary)] pt-4">
+                <div className="mt-5 border-t border-[var(--color-border-primary)] pt-4">
                   <p className="font-semibold text-[var(--color-text-primary)]">{t('refAuthor')}</p>
                   <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{t('refRole')}</p>
                 </div>
               </div>
             </Reveal>
+
+            {/* Right: Kunden-Intelligenz mockup */}
+            <MockupReveal delay={0.2}>
+              <KundenMockup />
+            </MockupReveal>
           </div>
         </div>
       </section>
@@ -194,28 +191,7 @@ function LeistungenBody() {
         </div>
       </section>
 
-      {/* Section 5: Stack */}
-      <section className="bg-white py-20">
-        <div className="container-wide">
-          <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
-            {t('stackLabel')}
-          </LabelReveal>
-          <Reveal delay={0.1}>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {STACK.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-[var(--color-border-primary)] px-4 py-1.5 font-mono text-xs text-[var(--color-text-secondary)]"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Section 6: Kontakt */}
+      {/* Kontakt */}
       <section className="relative overflow-hidden bg-navy py-32">
         <WaveBackground className="absolute inset-0 h-full w-full opacity-50" />
         <div className="container-wide relative z-10 text-center">

@@ -138,6 +138,54 @@ function AboutBody() {
         </div>
       </section>
 
+      {/* Technologie — light gray */}
+      <section className="bg-[#F8FAFB] py-20">
+        <div className="container-wide">
+          <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
+            TECHNOLOGIE
+          </LabelReveal>
+
+          <div className="mt-8 space-y-6">
+            {([
+              {
+                label: 'ML & Forecasting',
+                pills: ['LightGBM', 'PyTorch/TFT', 'SHAP', 'MLflow'],
+              },
+              {
+                label: 'Daten & ETL',
+                pills: ['DuckDB', 'PostgreSQL', 'Parquet', 'SAP R/3'],
+              },
+              {
+                label: 'Backend',
+                pills: ['Python', 'FastAPI', 'Flask', 'Celery', 'Redis'],
+              },
+              {
+                label: 'Deployment',
+                pills: ['Docker', 'Nginx', 'React', 'TypeScript'],
+              },
+            ] as const).map((group, i) => (
+              <Reveal key={group.label} delay={0.1 + i * 0.08}>
+                <div className="flex flex-wrap items-baseline gap-3">
+                  <span className="w-36 shrink-0 font-mono text-[11px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
+                    {group.label}
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {group.pills.map((pill) => (
+                      <span
+                        key={pill}
+                        className="rounded-full border border-[var(--color-border-primary)] bg-white px-4 py-1.5 font-mono text-xs text-[var(--color-text-secondary)]"
+                      >
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Prinzipien — navy dark */}
       <section className="bg-[#0F172A] py-20">
         <div className="container-wide">

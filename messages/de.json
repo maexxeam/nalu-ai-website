@@ -81,7 +81,10 @@
     "footnote": "* Verfügbar wenn Kundendaten vorhanden",
     "scmLabel": "LIVE-BLICK",
     "scmTitle": "Reorder Alerts mit Severity.",
-    "scmBody": "Safety Stock und Reorder Points werden aus Forecast und Service Level berechnet. Sobald ein Artikel unter den ROP fällt, sehen Einkauf und Disposition den Alert mit Bestand, Reichweite und Schweregrad — optional als Push in Slack, Teams oder per E-Mail."
+    "scmBody": "Safety Stock und Reorder Points werden aus Forecast und Service Level berechnet. Sobald ein Artikel unter den ROP fällt, sehen Einkauf und Disposition den Alert mit Bestand, Reichweite und Schweregrad — optional als Push in Slack, Teams oder per E-Mail.",
+    "forecastingLabel": "LIVE-BLICK",
+    "forecastingTitle": "Artikel-Forecast mit Konfidenz.",
+    "forecastingBody": "LightGBM und Temporal Fusion Transformer —\ntrainiert auf den realen Artikeldaten des Kunden,\nnicht auf generischen Templates.\n\nJeder Forecast zeigt P10/P50/P90 Konfidenzintervalle,\nSHAP-Erklärungen und den empfohlenen Bestellzeitpunkt —\nautomatisch berechnet aus Forecast und Lead Time."
   },
   "Zusatzleistungen": {
     "sectionLabel": "WEITERE LEISTUNGEN",

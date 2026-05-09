@@ -81,7 +81,10 @@
     "footnote": "* Available when customer data is present",
     "scmLabel": "LIVE VIEW",
     "scmTitle": "Reorder alerts with severity.",
-    "scmBody": "Safety stock and reorder points are calculated from forecast and service level. The moment an SKU drops below ROP, purchasing and planning see the alert with stock, coverage days and severity — optionally pushed to Slack, Teams or email."
+    "scmBody": "Safety stock and reorder points are calculated from forecast and service level. The moment an SKU drops below ROP, purchasing and planning see the alert with stock, coverage days and severity — optionally pushed to Slack, Teams or email.",
+    "forecastingLabel": "LIVE VIEW",
+    "forecastingTitle": "Article forecast with confidence.",
+    "forecastingBody": "LightGBM and Temporal Fusion Transformer —\ntrained on the customer's real item data,\nnot on generic templates.\n\nEvery forecast shows P10\/P50\/P90 confidence intervals,\nSHAP explanations and the recommended order date —\nautomatically calculated from forecast and lead time."
   },
   "Zusatzleistungen": {
     "sectionLabel": "OTHER SERVICES",
