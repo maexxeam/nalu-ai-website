@@ -243,6 +243,9 @@ function AboutBody() {
             >
               {t('kontaktEmail')}
             </a>
+            <p className="mx-auto mt-10 max-w-md font-mono text-xs text-white/40">
+              {t('kontaktInvestment')}
+            </p>
           </Reveal>
         </div>
       </section>

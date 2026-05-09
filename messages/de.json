@@ -109,7 +109,7 @@
     "subline": "Kein Formular. Kein Funnel. Einfach eine E-Mail.",
     "email": "max@nalu-ai.com",
     "linkedin": "Oder LinkedIn: /in/maximilianfischer",
-    "investment": "Investition auf Anfrage — abhängig von Datenkomplexität und Umfang."
+    "investment": "Typische Investition: ab 50.000 € einmalig, ab 5.000 €/Monat — immer individuell kalkuliert."
   },
   "About": {
     "metaTitle": "Über uns",
@@ -157,7 +157,8 @@
     "p4Body": "Knappe Ressourcen, gewachsene Systeme, pragmatische Entscheidungen. Genau dafür ist die Plattform gebaut — nicht für Konzerne mit eigenem Data Team.",
     "kontaktTitle": "Mehr erfahren.",
     "kontaktSubline": "Kein Formular. Kein Funnel. Einfach eine E-Mail.",
-    "kontaktEmail": "max@nalu-ai.com"
+    "kontaktEmail": "max@nalu-ai.com",
+    "kontaktInvestment": "Typische Investition: ab 50.000 € einmalig, ab 5.000 €/Monat — immer individuell kalkuliert."
   },
   "Kontakt": {
     "metaTitle": "Kontakt",
@@ -241,6 +242,7 @@
     "kontaktTitle": "Projekt anfragen.",
     "kontaktSubline": "Kein Formular. Kein Funnel. Einfach eine E-Mail.",
     "kontaktEmail": "max@nalu-ai.com",
-    "kontaktLinkedin": "Oder LinkedIn: /in/maximilianfischer"
+    "kontaktLinkedin": "Oder LinkedIn: /in/maximilianfischer",
+    "kontaktInvestment": "Typische Investition: ab 50.000 € einmalig, ab 5.000 €/Monat — immer individuell kalkuliert."
   }
 }

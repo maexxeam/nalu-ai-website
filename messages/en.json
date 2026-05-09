@@ -109,7 +109,7 @@
     "subline": "No form. No funnel. Just an email.",
     "email": "max@nalu-ai.com",
     "linkedin": "Or LinkedIn: /in/maximilianfischer",
-    "investment": "Investment on request — depends on data complexity and scope."
+    "investment": "Typical investment: from €50,000 one-time, from €5,000/month — always individually calculated."
   },
   "About": {
     "metaTitle": "About",
@@ -157,7 +157,8 @@
     "p4Body": "Tight resources, legacy systems, pragmatic decisions. The platform is built for that — not for enterprises with their own data team.",
     "kontaktTitle": "Learn more.",
     "kontaktSubline": "No form. No funnel. Just an email.",
-    "kontaktEmail": "max@nalu-ai.com"
+    "kontaktEmail": "max@nalu-ai.com",
+    "kontaktInvestment": "Typical investment: from €50,000 one-time, from €5,000/month — always individually calculated."
   },
   "Kontakt": {
     "metaTitle": "Contact",
@@ -241,6 +242,7 @@
     "kontaktTitle": "Request a project.",
     "kontaktSubline": "No form. No funnel. Just an email.",
     "kontaktEmail": "max@nalu-ai.com",
-    "kontaktLinkedin": "Or LinkedIn: /in/maximilianfischer"
+    "kontaktLinkedin": "Or LinkedIn: /in/maximilianfischer",
+    "kontaktInvestment": "Typical investment: from €50,000 one-time, from €5,000/month — always individually calculated."
   }
 }

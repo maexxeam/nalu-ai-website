@@ -207,6 +207,9 @@ function LeistungenBody() {
               {t('kontaktEmail')}
             </a>
             <p className="mt-4 text-sm text-white/40">{t('kontaktLinkedin')}</p>
+            <p className="mx-auto mt-10 max-w-md font-mono text-xs text-white/40">
+              {t('kontaktInvestment')}
+            </p>
           </Reveal>
         </div>
       </section>
