@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import { Hero } from '@/components/sections/Hero'
+import { MuellerStrip } from '@/components/sections/MuellerStrip'
 import { WasNaluIst } from '@/components/sections/WasNaluIst'
 import { Massgeschneidert } from '@/components/sections/Massgeschneidert'
 import { Referenz } from '@/components/sections/Referenz'
@@ -38,6 +39,7 @@ export default async function Home({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
+      <MuellerStrip />
       <WasNaluIst />
       <Massgeschneidert />
       <Referenz />
