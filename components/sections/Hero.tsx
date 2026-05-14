@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { WaveBackground } from '@/components/ui/WaveBackground'
 
 export function Hero() {
@@ -24,14 +23,6 @@ export function Hero() {
           {t('subtitle')}
         </p>
 
-        <div className="mt-10">
-          <Link
-            href="/kontakt"
-            className="inline-block rounded-lg border border-white/40 px-8 py-3 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/10"
-          >
-            {t('cta')}
-          </Link>
-        </div>
       </div>
     </section>
   )
