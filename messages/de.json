@@ -162,22 +162,7 @@
   },
   "Kontakt": {
     "metaTitle": "Kontakt",
-    "metaDescription": "Schreiben Sie mir eine E-Mail — max@nalu-ai.com",
-    "headline": "Kontakt",
-    "body": "Der einfachste Weg: eine E-Mail.",
-    "email": "max@nalu-ai.com",
-    "linkedin": "LinkedIn: /in/maximilianfischer",
-    "formTitle": "Oder schreiben Sie hier:",
-    "name": "Name",
-    "emailLabel": "E-Mail",
-    "message": "Nachricht",
-    "emailRequired": "E-Mail ist erforderlich",
-    "emailInvalid": "Bitte gültige E-Mail-Adresse",
-    "submit": "Absenden",
-    "submitting": "Sende …",
-    "successTitle": "Danke.",
-    "successBody": "Ich melde mich bei Ihnen.",
-    "submitError": "Etwas ist schiefgelaufen. Bitte schreiben Sie direkt an max@nalu-ai.com."
+    "metaDescription": "Schreiben Sie mir eine E-Mail — max@nalu-ai.com"
   },
   "Impressum": {
     "metaTitle": "Impressum",

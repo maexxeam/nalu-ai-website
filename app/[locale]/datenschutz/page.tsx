@@ -100,50 +100,7 @@ const deSections: Section[] = [
     ),
   },
   {
-    title: '4. Demo-Anfrageformular',
-    body: (
-      <>
-        Wenn Sie das Demo-Anfrageformular nutzen, verarbeiten wir folgende
-        Daten zur Bearbeitung Ihrer Anfrage: Name, E-Mail-Adresse,
-        Unternehmen, Position, Artikelanzahl, ERP-System sowie Ihre
-        optionale Beschreibung.
-        <br />
-        <br />
-        Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines
-        Vertragsverhältnisses) sowie Art. 6 Abs. 1 lit. f DSGVO (unser
-        berechtigtes Interesse, Anfragen zu beantworten).
-        <br />
-        <br />
-        Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage
-        verwendet, nicht ohne Ihre ausdrückliche Einwilligung an Dritte
-        weitergegeben und insbesondere nicht für Werbezwecke verwendet. Die
-        Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr
-        erforderlich sind, spätestens nach Ablauf gesetzlicher
-        Aufbewahrungsfristen (in der Regel 6 bzw. 10 Jahre nach
-        Handels- und Steuerrecht, sofern eine Geschäftsbeziehung entsteht).
-      </>
-    ),
-  },
-  {
-    title: '5. E-Mail-Versand mit Resend',
-    body: (
-      <>
-        Zum Versand von Bestätigungs- und Benachrichtigungs-E-Mails
-        (insbesondere im Zusammenhang mit dem Demo-Anfrageformular) nutzen
-        wir Resend (Resend Inc., 2261 Market Street #5039, San Francisco, CA
-        94114, USA) als Auftragsverarbeiter.
-        <br />
-        <br />
-        Mit Resend besteht ein Auftragsverarbeitungsvertrag (Art. 28 DSGVO).
-        Die Datenübermittlung in die USA erfolgt auf Grundlage des
-        EU-US-Datenschutzrahmens (Data Privacy Framework) bzw. ergänzend auf
-        Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
-        Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO.
-      </>
-    ),
-  },
-  {
-    title: '6. Cookies',
+    title: '4. Cookies',
     body: (
       <>
         Diese Website setzt keine Tracking- oder Marketing-Cookies. Es werden
@@ -154,7 +111,7 @@ const deSections: Section[] = [
     ),
   },
   {
-    title: '7. Speicherdauer',
+    title: '5. Speicherdauer',
     body: (
       <>
         Personenbezogene Daten werden nur so lange gespeichert, wie es für
@@ -173,7 +130,7 @@ const deSections: Section[] = [
     ),
   },
   {
-    title: '8. Ihre Rechte als betroffene Person',
+    title: '6. Ihre Rechte als betroffene Person',
     body: (
       <>
         Sie haben jederzeit das Recht auf:
@@ -202,7 +159,7 @@ const deSections: Section[] = [
     ),
   },
   {
-    title: '9. Beschwerderecht bei der Aufsichtsbehörde',
+    title: '7. Beschwerderecht bei der Aufsichtsbehörde',
     body: (
       <>
         Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde
@@ -229,7 +186,7 @@ const deSections: Section[] = [
     ),
   },
   {
-    title: '10. Änderungen dieser Datenschutzerklärung',
+    title: '8. Änderungen dieser Datenschutzerklärung',
     body: (
       <>
         Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit
@@ -317,47 +274,7 @@ const enSections: Section[] = [
     ),
   },
   {
-    title: '4. Demo request form',
-    body: (
-      <>
-        When you use the demo request form we process the following data to
-        handle your request: name, email address, company, position, SKU
-        count, ERP system and your optional description.
-        <br />
-        <br />
-        Legal basis is Art. 6 (1) (b) GDPR (initiation of a contractual
-        relationship) and Art. 6 (1) (f) GDPR (our legitimate interest in
-        replying to inquiries).
-        <br />
-        <br />
-        Your data is used exclusively to process your request, not shared
-        with third parties without your explicit consent and never used for
-        advertising. Data is deleted as soon as it's no longer needed for
-        processing, at the latest after statutory retention periods expire
-        (typically 6 or 10 years under German commercial and tax law if a
-        business relationship arises).
-      </>
-    ),
-  },
-  {
-    title: '5. Email delivery via Resend',
-    body: (
-      <>
-        For confirmation and notification emails (in particular relating to
-        the demo request form) we use Resend (Resend Inc., 2261 Market
-        Street #5039, San Francisco, CA 94114, USA) as a processor.
-        <br />
-        <br />
-        A data processing agreement (Art. 28 GDPR) is in place with Resend.
-        Data transfer to the USA takes place on the basis of the EU-US Data
-        Privacy Framework or, supplementarily, on Standard Contractual
-        Clauses (Art. 46 (2) (c) GDPR). Legal basis is Art. 6 (1) (b) and
-        (f) GDPR.
-      </>
-    ),
-  },
-  {
-    title: '6. Cookies',
+    title: '4. Cookies',
     body: (
       <>
         This website does not set any tracking or marketing cookies. Only
@@ -368,7 +285,7 @@ const enSections: Section[] = [
     ),
   },
   {
-    title: '7. Retention periods',
+    title: '5. Retention periods',
     body: (
       <>
         Personal data is only stored for as long as necessary for the
@@ -387,7 +304,7 @@ const enSections: Section[] = [
     ),
   },
   {
-    title: '8. Your rights as a data subject',
+    title: '6. Your rights as a data subject',
     body: (
       <>
         You have the right at any time to:
@@ -415,7 +332,7 @@ const enSections: Section[] = [
     ),
   },
   {
-    title: '9. Right to lodge a complaint',
+    title: '7. Right to lodge a complaint',
     body: (
       <>
         You have the right to lodge a complaint with a data-protection
@@ -442,7 +359,7 @@ const enSections: Section[] = [
     ),
   },
   {
-    title: '10. Changes to this policy',
+    title: '8. Changes to this policy',
     body: (
       <>
         We reserve the right to adjust this privacy policy so that it

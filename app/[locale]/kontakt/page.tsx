@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { KontaktForm } from '@/components/ui/KontaktForm'
+import { PageHeader } from '@/components/ui/PageHeader'
 
 export async function generateMetadata({
   params,
@@ -19,5 +19,30 @@ export default async function KontaktPage({
 }) {
   const { locale } = await params
   setRequestLocale(locale)
-  return <KontaktForm />
+
+  return (
+    <>
+      <PageHeader title="Kontakt" />
+      <section className="bg-white py-20 md:py-24">
+        <div className="container-wide">
+          <div className="mx-auto max-w-2xl space-y-6 text-center">
+            <a
+              href="mailto:max@nalu-ai.com"
+              className="block font-display text-3xl font-semibold text-coral hover:underline md:text-5xl"
+            >
+              max@nalu-ai.com
+            </a>
+            <a
+              href="https://linkedin.com/in/maximilianfischer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-base text-[var(--color-text-secondary)] hover:underline md:text-lg"
+            >
+              linkedin.com/in/maximilianfischer
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }
