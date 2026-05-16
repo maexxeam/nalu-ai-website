@@ -8,20 +8,48 @@ import { Module } from '@/components/sections/Module'
 import { KontaktCTA } from '@/components/sections/KontaktCTA'
 import { SITE_URL } from '@/lib/metadata'
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Nalu AI',
-  applicationCategory: 'BusinessApplication',
-  operatingSystem: 'On-premise',
-  description:
-    'On-premise ML demand planning and sales intelligence for mid-market companies. Built for your data, your ERP, your infrastructure.',
-  url: SITE_URL,
-  publisher: {
-    '@type': 'Person',
-    name: 'Maximilian Fischer',
+function buildJsonLd(locale: string) {
+  const isEn = locale === 'en'
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Nalu AI',
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'Demand Planning & Forecasting',
+    operatingSystem: 'On-premise (Linux, Docker)',
+    inLanguage: isEn ? 'en' : 'de',
+    description: isEn
+      ? 'On-premise ML platform for demand planning, sales forecasting and supply chain intelligence — tailored for mid-market manufacturers and integrated with SAP and other ERP systems.'
+      : 'On-Premise ML-Plattform für Demand Planning, Absatzprognose und Supply Chain Intelligence — maßgeschneidert für den Mittelstand und integriert in SAP und andere ERP-Systeme.',
+    keywords: isEn
+      ? 'demand planning, sales forecasting, supply chain, on-premise ML, SAP integration, mid-market AI'
+      : 'Demand Planning, Absatzprognose, Bedarfsplanung, KI Mittelstand, On-Premise Machine Learning, SAP Forecasting, ERP Integration, Vertriebsintelligenz',
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: isEn
+        ? 'Mid-market manufacturers and distributors'
+        : 'Mittelständische Hersteller und Großhändler',
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: '50000',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'EUR',
+        minPrice: '50000',
+        description: isEn
+          ? 'From €50,000 one-time, from €5,000/month — individually calculated.'
+          : 'Ab 50.000 € einmalig, ab 5.000 €/Monat — individuell kalkuliert.',
+      },
+    },
     url: SITE_URL,
-  },
+    publisher: {
+      '@type': 'Person',
+      name: 'Maximilian Fischer',
+      url: SITE_URL,
+    },
+  }
 }
 
 export default async function Home({
@@ -31,6 +59,7 @@ export default async function Home({
 }) {
   const { locale } = await params
   setRequestLocale(locale)
+  const jsonLd = buildJsonLd(locale)
 
   return (
     <>
