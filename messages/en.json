@@ -107,7 +107,7 @@
   "KontaktCTA": {
     "headline": "Talk to me.",
     "subline": "No form. No funnel. Just an email.",
-    "email": "max@nalu-ai.com",
+    "email": "aloha@nalu-ai.com",
     "linkedin": "Or LinkedIn: /in/maximilianfischer",
     "investment": "Typical investment: from €50,000 one-time, from €5,000/month — always individually calculated."
   },
@@ -157,12 +157,12 @@
     "p4Body": "Tight resources, legacy systems, pragmatic decisions. The platform is built for that — not for enterprises with their own data team.",
     "kontaktTitle": "Learn more.",
     "kontaktSubline": "No form. No funnel. Just an email.",
-    "kontaktEmail": "max@nalu-ai.com",
+    "kontaktEmail": "aloha@nalu-ai.com",
     "kontaktInvestment": "Typical investment: from €50,000 one-time, from €5,000/month — always individually calculated."
   },
   "Kontakt": {
     "metaTitle": "Contact",
-    "metaDescription": "Send me an email — max@nalu-ai.com"
+    "metaDescription": "Send me an email — aloha@nalu-ai.com"
   },
   "Impressum": {
     "metaTitle": "Imprint",
@@ -199,7 +199,7 @@
     "hauptName": "Nalu AI",
     "hauptTagline": "Demand Intelligence Platform",
     "hauptBody": "ML forecasting, supply chain and sales intelligence — on-premise, tailored for mid-market companies.",
-    "hauptLink": "naluai.com",
+    "hauptLink": "nalu-ai.com",
     "refLabel": "REFERENCE PROJECT",
     "refTitle": "MeatMind",
     "refBody": "Built for a mid-market food producer — a full ML forecasting platform on top of SAP data.",
@@ -226,7 +226,7 @@
     "stackLabel": "TECHNOLOGY",
     "kontaktTitle": "Request a project.",
     "kontaktSubline": "No form. No funnel. Just an email.",
-    "kontaktEmail": "max@nalu-ai.com",
+    "kontaktEmail": "aloha@nalu-ai.com",
     "kontaktLinkedin": "Or LinkedIn: /in/maximilianfischer",
     "kontaktInvestment": "Typical investment: from €50,000 one-time, from €5,000/month — always individually calculated."
   }

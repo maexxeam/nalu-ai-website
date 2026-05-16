@@ -45,7 +45,7 @@ const BADGE: Record<string, { bg: string; text: string }> = {
 
 export function KundenMockup() {
   return (
-    <BrowserFrame url="app.naluai.com/kunden">
+    <BrowserFrame url="app.nalu-ai.com/kunden">
       <div className="bg-[#FAFBFC] p-5">
         {/* Header */}
         <div className="mb-4">

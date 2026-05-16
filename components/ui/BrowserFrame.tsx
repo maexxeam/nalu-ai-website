@@ -6,7 +6,7 @@ interface BrowserFrameProps {
   className?: string
 }
 
-export function BrowserFrame({ url = 'app.naluai.com', children, className }: BrowserFrameProps) {
+export function BrowserFrame({ url = 'app.nalu-ai.com', children, className }: BrowserFrameProps) {
   return (
     <div
       className={clsx(

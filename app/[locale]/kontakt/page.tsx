@@ -27,10 +27,10 @@ export default async function KontaktPage({
         <div className="container-wide">
           <div className="mx-auto max-w-2xl space-y-6 text-center">
             <a
-              href="mailto:max@nalu-ai.com"
+              href="mailto:aloha@nalu-ai.com"
               className="block font-display text-3xl font-semibold text-coral hover:underline md:text-5xl"
             >
-              max@nalu-ai.com
+              aloha@nalu-ai.com
             </a>
             <a
               href="https://linkedin.com/in/maximilianfischer"

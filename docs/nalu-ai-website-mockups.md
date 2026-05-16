@@ -37,7 +37,7 @@ SHAP-Erklärungen und den empfohlenen Bestellzeitpunkt.
 ### Mockup (right side) — browser frame style
 
 ```
-•• •  app.naluai.com/forecasting
+•• •  app.nalu-ai.com/forecasting
 ─────────────────────────────────────────────
 
 ARTIKEL
@@ -78,7 +78,7 @@ Footer:
 // 
 // Browser frame: same style as existing mockups
 // - Gray top bar with 3 dots (red/yellow/green)
-// - URL bar showing app.naluai.com/forecasting
+// - URL bar showing app.nalu-ai.com/forecasting
 // - White content area with subtle border-radius
 // - Drop shadow: 0 20px 60px rgba(0,0,0,0.08)
 ```
@@ -94,7 +94,7 @@ Footer:
 ### Mockup content — browser frame
 
 ```
-•• •  app.naluai.com/kunden
+•• •  app.nalu-ai.com/kunden
 ─────────────────────────────────────────────
 
 KUNDEN-INTELLIGENZ

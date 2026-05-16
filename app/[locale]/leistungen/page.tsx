@@ -79,7 +79,7 @@ function LeistungenBody() {
               {t('hauptBody')}
             </p>
             <a
-              href="https://naluai.com"
+              href="https://nalu-ai.com"
               className="mt-8 inline-block font-display text-base font-semibold text-coral hover:underline"
             >
               → {t('hauptLink')}

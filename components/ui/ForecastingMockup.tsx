@@ -15,7 +15,7 @@ const HEUTE_X = HISTORY.length * bw
 
 export function ForecastingMockup() {
   return (
-    <BrowserFrame url="app.naluai.com/forecasting">
+    <BrowserFrame url="app.nalu-ai.com/forecasting">
       <div className="bg-[#FAFBFC] p-5">
         {/* Article header */}
         <div className="mb-4">

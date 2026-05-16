@@ -31,7 +31,7 @@ export function DashboardMockup() {
   const lineY = (v: number) => 110 - (v / max) * 90
 
   return (
-    <BrowserFrame url="app.naluai.com/dashboard">
+    <BrowserFrame url="app.nalu-ai.com/dashboard">
       <div className="bg-[#FAFBFC] p-5">
         {/* Header row */}
         <div className="mb-4 flex items-center justify-between">

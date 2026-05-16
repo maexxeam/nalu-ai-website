@@ -51,7 +51,7 @@ const SEVERITY_STYLES = {
 
 export function SCMMockup() {
   return (
-    <BrowserFrame url="app.naluai.com/scm/alerts">
+    <BrowserFrame url="app.nalu-ai.com/scm/alerts">
       <div className="bg-[#FAFBFC] p-5">
         {/* Header */}
         <div className="mb-4 flex items-center justify-between">
