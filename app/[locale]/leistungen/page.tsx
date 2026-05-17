@@ -6,6 +6,8 @@ import {
   IconBrain,
   IconCode,
   IconServer,
+  IconChartBar,
+  IconSettingsAutomation,
 } from '@tabler/icons-react'
 import { WaveBackground } from '@/components/ui/WaveBackground'
 import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
@@ -31,6 +33,8 @@ function LeistungenBody() {
     { Icon: IconBrain, title: t('card2Title'), body: t('card2Body') },
     { Icon: IconCode, title: t('card3Title'), body: t('card3Body') },
     { Icon: IconServer, title: t('card4Title'), body: t('card4Body') },
+    { Icon: IconChartBar, title: t('card5Title'), body: t('card5Body') },
+    { Icon: IconSettingsAutomation, title: t('card6Title'), body: t('card6Body') },
   ]
 
   const refPills = [t('refPill1'), t('refPill2'), t('refPill3'), t('refPill4')]
@@ -167,7 +171,7 @@ function LeistungenBody() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             {cards.map(({ Icon, title, body }, i) => (
               <Reveal key={title} delay={0.2 + i * 0.1}>
                 <div className="group rounded-xl border border-[var(--color-border-primary)] bg-white p-6">

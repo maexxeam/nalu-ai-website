@@ -155,19 +155,19 @@ function AboutBody() {
             {([
               {
                 label: 'ML & Forecasting',
-                pills: ['LightGBM', 'PyTorch/TFT', 'SHAP', 'MLflow', 'scikit-learn', 'Anomaly Detection', 'Ollama'],
+                pills: ['LightGBM', 'neuralforecast (NHITS + TFT)', 'PyTorch/TFT', 'SHAP', 'MLflow', 'scikit-learn', 'Anomaly Detection', 'Ollama'],
               },
               {
                 label: 'Daten & ETL',
-                pills: ['DuckDB', 'PostgreSQL', 'Parquet', 'SAP R/3', 'PyArrow', 'SQL Server', 'Dagster'],
+                pills: ['Polars', 'DuckDB', 'PostgreSQL', 'Parquet', 'PyArrow', 'SQL Server', 'Dagster', 'SAP R/3'],
               },
               {
                 label: 'Backend',
-                pills: ['Python', 'FastAPI', 'Flask', 'Celery', 'Redis', 'Pydantic', 'SQLAlchemy', 'Entra ID SSO'],
+                pills: ['Python', 'FastAPI', 'Flask', 'Celery', 'Redis', 'Pydantic', 'SQLAlchemy', 'Entra ID SSO', 'uv'],
               },
               {
                 label: 'Deployment',
-                pills: ['Docker', 'Nginx', 'React', 'TypeScript', 'GitHub Actions', 'Prometheus', 'Grafana'],
+                pills: ['Docker', 'Caddy', 'React', 'TypeScript', 'GitHub Actions', 'Prometheus', 'Grafana'],
               },
               {
                 label: 'Visualisierung',
