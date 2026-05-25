@@ -1,7 +1,3 @@
-import createNextIntlPlugin from 'next-intl/plugin'
-
-const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -11,17 +7,24 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'mdx'],
   async redirects() {
     return [
-      { source: '/demo', destination: '/kontakt', permanent: true },
-      { source: '/de/demo', destination: '/de/kontakt', permanent: true },
-      { source: '/en/demo', destination: '/en/kontakt', permanent: true },
+      { source: '/leistungen', destination: '/', permanent: false },
+      { source: '/about', destination: '/', permanent: false },
+      { source: '/kontakt', destination: '/', permanent: false },
+      { source: '/impressum', destination: '/', permanent: false },
+      { source: '/datenschutz', destination: '/', permanent: false },
+      { source: '/demo', destination: '/', permanent: true },
       { source: '/pricing', destination: '/', permanent: true },
-      { source: '/de/pricing', destination: '/de', permanent: true },
+      { source: '/produkt', destination: '/', permanent: true },
+      { source: '/de', destination: '/', permanent: true },
+      { source: '/de/:path*', destination: '/', permanent: true },
+      { source: '/en/leistungen', destination: '/en', permanent: false },
+      { source: '/en/about', destination: '/en', permanent: false },
+      { source: '/en/kontakt', destination: '/en', permanent: false },
+      { source: '/en/demo', destination: '/en', permanent: true },
       { source: '/en/pricing', destination: '/en', permanent: true },
-      { source: '/produkt', destination: '/#produkt', permanent: true },
-      { source: '/de/produkt', destination: '/de#produkt', permanent: true },
-      { source: '/en/produkt', destination: '/en#produkt', permanent: true },
+      { source: '/en/produkt', destination: '/en', permanent: true },
     ]
   },
 }
 
-export default withNextIntl(nextConfig)
+export default nextConfig
