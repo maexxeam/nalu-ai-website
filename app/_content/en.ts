@@ -162,7 +162,7 @@ export const en: Content = {
         number: '02',
         title: 'Nalu AI',
         subtitle: 'Demand Intelligence Platform — Next Generation',
-        attribution: 'Independently developed · Own product',
+        attribution: 'Independently developed · Personal project',
         paragraphs: [
           'Generalisation of MeatMind into an industry-agnostic platform. Multi-tenant architecture with configuration-driven onboarding — no hard-coded industry assumptions in the core.',
           'Each customer receives a dedicated instance, deployed via Docker Compose on their own infrastructure. No customer data leaves the server.',
