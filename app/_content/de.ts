@@ -23,7 +23,7 @@ export const de: Content = {
     paragraph1:
       'Entstanden aus einer tiefen Verbindung zum Pazifik, jahrelanger Erfahrung unter Wasser und der Überzeugung, dass Daten denselben Mustern folgen wie das Meer: Saisonalität, Trends, Rauschen — Wellen.',
     paragraph2:
-      'Die richtigen Muster erkennen, die nächste Welle vorhersagen und darauf vorbereitet sein — das ist der rote Faden.',
+      'Die richtigen Muster erkennen, die nächste Welle vorhersagen und darauf vorbereitet sein — im Wasser wie in den Daten.',
     authorLine1: 'Entwickelt von Maximilian Fischer',
     authorLine2: 'Physik & Meteorologie (LMU München) · ML Engineering · München',
     authorLine3: 'Baut seit 2016 datengetriebene Systeme.',

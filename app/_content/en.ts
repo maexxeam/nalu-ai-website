@@ -23,7 +23,7 @@ export const en: Content = {
     paragraph1:
       'Born from a deep connection to the Pacific, years of experience underwater, and the conviction that data follows the same patterns as the ocean: seasonality, trends, noise — waves.',
     paragraph2:
-      'Spotting the right patterns, forecasting the next wave and being ready for it — that is the through-line.',
+      'Spotting the right patterns, forecasting the next wave and being ready for it — in the ocean as in the data.',
     authorLine1: 'Built by Maximilian Fischer',
     authorLine2: 'Physics & Meteorology (LMU Munich) · ML Engineering · Munich',
     authorLine3: 'Building data-driven systems since 2016.',
