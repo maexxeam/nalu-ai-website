@@ -2,8 +2,8 @@ import { BrowserFrame } from './BrowserFrame'
 
 const INSIGHTS = [
   { dot: 'bg-emerald-500', text: 'Rind · KW 29: +12 % über Forecast — Grillsaison-Peak erkannt.' },
-  { dot: 'bg-amber-500', text: 'Backwaren · Filiale Bahnhof: Wochenende schwächer, Vordispo anpassen.' },
-  { dot: 'bg-red-500', text: '3 B2B-Kunden mit Churn-Risiko — erwarteter Umsatz ~€38k gefährdet.' },
+  { dot: 'bg-amber-500', text: 'Einkauf · Rind: 38 Tiere Zukauf nötig — Engpass in KW 30.' },
+  { dot: 'bg-red-500', text: '3 Kunden mit Churn-Risiko — erwarteter Umsatz ~€38k gefährdet.' },
 ]
 
 export function MockGenAIPanel() {
