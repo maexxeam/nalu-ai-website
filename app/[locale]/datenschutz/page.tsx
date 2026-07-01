@@ -45,8 +45,8 @@ const deSections: Section[] = [
         </a>
         <br />
         E-Mail:{' '}
-        <a href="mailto:hello@nalu-ai.com" className="text-ocean underline">
-          hello@nalu-ai.com
+        <a href="mailto:aloha@nalu-ai.com" className="text-ocean underline">
+          aloha@nalu-ai.com
         </a>
       </>
     ),
@@ -222,8 +222,8 @@ const enSections: Section[] = [
         </a>
         <br />
         Email:{' '}
-        <a href="mailto:hello@nalu-ai.com" className="text-ocean underline">
-          hello@nalu-ai.com
+        <a href="mailto:aloha@nalu-ai.com" className="text-ocean underline">
+          aloha@nalu-ai.com
         </a>
       </>
     ),

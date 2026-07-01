@@ -30,6 +30,12 @@
     "subtitle": "Nalu AI is not software you install. It's an ML system we build together for you — on your data, your infrastructure, your processes.",
     "cta": "Get in touch"
   },
+  "ProofStrip": {
+    "item1": "Predictive & Generative AI",
+    "item2": "On-premise · your data",
+    "item3": "Forecast to production",
+    "item4": "Live in weeks"
+  },
   "WasNaluIst": {
     "sectionLabel": "THE PRODUCT",
     "headline": "Demand planning and sales intelligence —",

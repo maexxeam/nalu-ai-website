@@ -47,8 +47,8 @@ function ImpressumBody({ locale }: { locale: Locale }) {
                 </a>
                 <br />
                 {t('contactEmail')}{' '}
-                <a href="mailto:hello@nalu-ai.com" className="text-ocean underline">
-                  hello@nalu-ai.com
+                <a href="mailto:aloha@nalu-ai.com" className="text-ocean underline">
+                  aloha@nalu-ai.com
                 </a>
               </p>
             </div>

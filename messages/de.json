@@ -30,6 +30,12 @@
     "subtitle": "Nalu AI ist keine Software die Sie installieren. Es ist ein ML-System das wir gemeinsam für Sie bauen — auf Ihren Daten, Ihrer Infrastruktur, Ihren Prozessen.",
     "cta": "Kontakt aufnehmen"
   },
+  "ProofStrip": {
+    "item1": "Predictive & Generative AI",
+    "item2": "On-Premise · Ihre Daten",
+    "item3": "Forecast bis Produktion",
+    "item4": "Live in Wochen"
+  },
   "WasNaluIst": {
     "sectionLabel": "DAS PRODUKT",
     "headline": "Demand Planning und Vertriebsintelligenz —",
