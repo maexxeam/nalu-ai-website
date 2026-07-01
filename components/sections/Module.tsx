@@ -9,6 +9,7 @@ import {
 } from '@tabler/icons-react'
 import { SCMMockup } from '@/components/ui/SCMMockup'
 import { ForecastingMockup } from '@/components/ui/ForecastingMockup'
+import { MockGenAIPanel } from '@/components/ui/MockGenAIPanel'
 import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
 
 export function Module() {
@@ -94,6 +95,24 @@ export function Module() {
               <SCMMockup />
             </div>
           </MockupReveal>
+        </div>
+
+        {/* Generative AI — mockup left, text right */}
+        <div className="mt-20 grid gap-12 md:grid-cols-5 md:items-center">
+          <MockupReveal delay={0} className="md:col-span-3">
+            <MockGenAIPanel />
+          </MockupReveal>
+          <Reveal delay={0.2} className="md:col-span-2">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-coral">
+              {t('genaiLabel')}
+            </p>
+            <h3 className="mt-3 font-display text-2xl font-bold text-[var(--color-text-primary)] md:text-3xl">
+              {t('genaiTitle')}
+            </h3>
+            <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-[var(--color-text-secondary)]">
+              {t('genaiBody')}
+            </p>
+          </Reveal>
         </div>
       </div>
     </section>
