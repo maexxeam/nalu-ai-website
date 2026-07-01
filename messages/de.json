@@ -40,6 +40,17 @@
     "pill3": "Analytics",
     "pill4": "Generative AI"
   },
+  "Tour": {
+    "sectionLabel": "PRODUKT-TOUR",
+    "headline": "Sehen Sie es in Aktion.",
+    "subline": "Ein Blick ins System — Forecast, Steuerung, Kunden und KI-Insights, automatisch durchgeblättert.",
+    "tabUebersicht": "Übersicht",
+    "tabForecast": "Forecast",
+    "tabSteuerung": "Steuerung",
+    "tabKunden": "Kunden",
+    "tabKi": "KI-Insights",
+    "tabAlerts": "Alerts"
+  },
   "Massgeschneidert": {
     "sectionLabel": "ANSATZ",
     "headline": "Jede Implementierung ist anders.",

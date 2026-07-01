@@ -40,6 +40,17 @@
     "pill3": "Analytics",
     "pill4": "Generative AI"
   },
+  "Tour": {
+    "sectionLabel": "PRODUCT TOUR",
+    "headline": "See it in action.",
+    "subline": "A look inside the system — forecast, control, customers and AI insights, auto-cycled.",
+    "tabUebersicht": "Overview",
+    "tabForecast": "Forecast",
+    "tabSteuerung": "Control",
+    "tabKunden": "Customers",
+    "tabKi": "AI insights",
+    "tabAlerts": "Alerts"
+  },
   "Massgeschneidert": {
     "sectionLabel": "APPROACH",
     "headline": "Every implementation is different.",

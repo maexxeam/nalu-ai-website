@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Hero } from '@/components/sections/Hero'
 import { ProofStrip } from '@/components/sections/ProofStrip'
 import { WasNaluIst } from '@/components/sections/WasNaluIst'
+import { ProductTour } from '@/components/sections/ProductTour'
 import { Massgeschneidert } from '@/components/sections/Massgeschneidert'
 import { Referenz } from '@/components/sections/Referenz'
 import { Module } from '@/components/sections/Module'
@@ -58,6 +59,7 @@ export default async function Home({
       <Hero />
       <ProofStrip />
       <WasNaluIst />
+      <ProductTour />
       <Massgeschneidert />
       <Referenz />
       <Module />
