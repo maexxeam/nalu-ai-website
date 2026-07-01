@@ -123,12 +123,15 @@
   "BranchenTeaser": {
     "sectionLabel": "INDUSTRIES",
     "headline": "Built for more than one industry.",
+    "subline": "Industry-agnostic at the core — each industry is a configuration. The three below are examples, not a limit.",
     "fleischTitle": "Meat processing",
     "fleischNote": "Forecast, purchasing & production",
     "baeckereiTitle": "Bakery",
     "baeckereiNote": "Daily freshness forecast",
     "getraenkeTitle": "Beverage retail",
     "getraenkeNote": "Seasonality & B2B customers",
+    "weitereTitle": "…and your industry",
+    "weitereNote": "Config-driven: manufacturing, retail, pharma …",
     "cta": "See the industries in detail"
   },
   "Zusatzleistungen": {

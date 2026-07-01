@@ -123,12 +123,15 @@
   "BranchenTeaser": {
     "sectionLabel": "BRANCHEN",
     "headline": "Für mehr als eine Branche gebaut.",
+    "subline": "Branchenfrei im Kern — jede Branche entsteht per Konfiguration. Die folgenden drei sind Beispiele, kein Endpunkt.",
     "fleischTitle": "Fleischverarbeitung",
     "fleischNote": "Forecast, Einkauf & Produktion",
     "baeckereiTitle": "Bäckerei",
     "baeckereiNote": "Tägliche Frische-Prognose",
     "getraenkeTitle": "Getränkemarkt",
     "getraenkeNote": "Saison & B2B-Kunden",
+    "weitereTitle": "…und Ihre Branche",
+    "weitereNote": "Config-getrieben: Industrie, Handel, Pharma …",
     "cta": "Branchen im Detail ansehen"
   },
   "Zusatzleistungen": {
