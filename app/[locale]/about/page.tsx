@@ -154,24 +154,40 @@ function AboutBody() {
           <div className="mt-8 space-y-6">
             {([
               {
-                label: 'ML & Forecasting',
-                pills: ['LightGBM', 'neuralforecast (NHITS + TFT)', 'PyTorch/TFT', 'SHAP', 'MLflow', 'scikit-learn', 'Anomaly Detection', 'Ollama'],
+                label: 'ML & Data Science',
+                pills: ['PyTorch', 'scikit-learn', 'LightGBM', 'SHAP', 'MLflow'],
               },
               {
-                label: 'Daten & ETL',
-                pills: ['Polars', 'DuckDB', 'PostgreSQL', 'Parquet', 'PyArrow', 'SQL Server', 'Dagster', 'SAP R/3'],
+                label: 'Generative AI',
+                pills: ['Ollama', 'LLM-gestützte Reportgenerierung', 'KI-Chat'],
               },
               {
-                label: 'Backend',
-                pills: ['Python', 'FastAPI', 'Flask', 'Celery', 'Redis', 'Pydantic', 'SQLAlchemy', 'Entra ID SSO', 'uv'],
+                label: 'Backend & APIs',
+                pills: ['Python', 'FastAPI', 'Flask', 'Celery', 'Redis'],
               },
               {
-                label: 'Deployment',
-                pills: ['Docker', 'Caddy', 'React', 'TypeScript', 'GitHub Actions', 'Prometheus', 'Grafana'],
+                label: 'Orchestration',
+                pills: ['Dagster', 'Airflow'],
               },
               {
-                label: 'Visualisierung',
-                pills: ['Recharts', 'Deck.gl', 'Leaflet', 'GeoPandas'],
+                label: 'Data & Storage',
+                pills: ['DuckDB', 'PostgreSQL', 'Snowflake', 'SQL Server', 'Parquet'],
+              },
+              {
+                label: 'Frontend',
+                pills: ['React', 'TypeScript'],
+              },
+              {
+                label: 'Infrastructure',
+                pills: ['Docker', 'Kubernetes', 'Nginx', 'GitHub Actions', 'CI/CD', 'Prometheus', 'Grafana'],
+              },
+              {
+                label: 'Cloud',
+                pills: ['Azure', 'Entra ID (SSO)', 'Azure Blob Storage'],
+              },
+              {
+                label: 'Integration',
+                pills: ['SAP R/3', 'REST APIs', 'structlog', 'Custom Observability'],
               },
             ] as const).map((group, i) => (
               <Reveal key={group.label} delay={0.1 + i * 0.08}>
