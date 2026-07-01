@@ -88,7 +88,7 @@
     "forecastingBody": "LightGBM and Temporal Fusion Transformer —\ntrained on the customer's real item data,\nnot on generic templates.\n\nEvery forecast shows P10\/P50\/P90 confidence intervals,\nSHAP explanations and the recommended order date —\nautomatically calculated from forecast and lead time.",
     "genaiLabel": "LIVE VIEW",
     "genaiTitle": "Generative AI — local or cloud.",
-    "genaiBody": "A language model summarises what's happening in the data:\nautomatic weekly reports, a chat to ask follow-up questions\nand insights in plain language.\n\nEither local (Ollama, on-premise — no data leaves the server)\nor connected to a cloud model like GPT or Claude.\nYour choice, not our default."
+    "genaiBody": "A language model summarises what's happening in the data:\nautomatic weekly reports, a chat to ask follow-up questions\nand insights in plain language.\n\nEither local — open-source models like Qwen, Llama or Mistral run\non-premise, no data leaves the server — or connected to a cloud model\nlike GPT, Claude or Gemini. Your choice, not our default."
   },
   "Branchen": {
     "sectionLabel": "INDUSTRIES",

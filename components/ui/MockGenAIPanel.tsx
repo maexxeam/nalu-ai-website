@@ -22,7 +22,7 @@ export function MockGenAIPanel() {
           </div>
           <div className="flex shrink-0 flex-col items-end gap-1">
             <span className="rounded-full bg-coral/10 px-2.5 py-1 font-mono text-[9px] font-semibold text-coral">
-              ● Lokal · Ollama
+              ● Lokal · Qwen / Llama
             </span>
             <span className="rounded-full border border-[var(--color-border-primary)] bg-white px-2.5 py-1 font-mono text-[9px] text-[var(--color-text-tertiary)]">
               ○ Cloud · GPT / Claude
@@ -61,7 +61,7 @@ export function MockGenAIPanel() {
 
         {/* Footer */}
         <div className="mt-3 flex items-center justify-between font-mono text-[9px] text-[var(--color-text-tertiary)]">
-          <span>Lokales Sprachmodell · keine Daten verlassen den Server</span>
+          <span>Lokales Modell (Qwen/Llama/Mistral) · keine Daten verlassen den Server</span>
           <span>Cloud optional</span>
         </div>
       </div>

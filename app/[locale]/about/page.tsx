@@ -159,7 +159,7 @@ function AboutBody() {
               },
               {
                 label: 'Generative AI',
-                pills: ['Ollama', 'LLM-gestützte Reportgenerierung', 'KI-Chat'],
+                pills: ['Ollama', 'Qwen · Llama · Mistral', 'GPT · Claude (Cloud, optional)', 'LLM-gestützte Reportgenerierung', 'KI-Chat'],
               },
               {
                 label: 'Backend & APIs',
