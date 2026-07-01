@@ -112,6 +112,32 @@ export function MockFleischForecast() {
           ))}
         </div>
 
+        {/* Produktionsboard · Linien-Auslastung */}
+        <div className="mt-3 rounded-lg border border-[var(--color-border-primary)] bg-white p-3">
+          <p className="mb-2 text-[11px] font-semibold text-[var(--color-text-primary)]">
+            Produktionsboard · Linien-Auslastung
+          </p>
+          <div className="space-y-2">
+            {[
+              { line: 'Zerlegung', pct: 82, color: '#FBBF24' },
+              { line: 'Verpackung', pct: 68, color: '#34D399' },
+              { line: 'Kutter', pct: 96, color: '#F87171' },
+            ].map((l) => (
+              <div key={l.line} className="flex items-center gap-2">
+                <span className="w-20 shrink-0 font-mono text-[9px] text-[var(--color-text-secondary)]">
+                  {l.line}
+                </span>
+                <div className="h-2 flex-1 overflow-hidden rounded-full bg-[var(--color-bg-secondary)]">
+                  <div className="h-full rounded-full" style={{ width: `${l.pct}%`, background: l.color }} />
+                </div>
+                <span className="w-8 text-right font-mono text-[9px] font-semibold" style={{ color: l.color }}>
+                  {l.pct}%
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Anomaly / recommendation strip */}
         <div className="mt-3 rounded-r-lg border-l-2 border-coral bg-coral/5 px-3 py-2.5">
           <p className="font-mono text-[10px] font-semibold text-[var(--color-text-primary)]">

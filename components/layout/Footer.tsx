@@ -9,6 +9,7 @@ export function Footer() {
   const navLinks = [
     { href: '/#produkt', label: t('navProdukt') },
     { href: '/leistungen', label: t('navLeistungen') },
+    { href: '/warum', label: t('navWarum') },
     { href: '/about', label: t('navAbout') },
     { href: '/kontakt', label: t('navKontakt') },
   ]

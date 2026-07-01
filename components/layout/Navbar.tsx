@@ -36,6 +36,7 @@ export function Navbar() {
   const navLinks = [
     { href: '/#produkt', label: t('produkt') },
     { href: '/leistungen', label: t('leistungen') },
+    { href: '/warum', label: t('warum') },
     { href: '/about', label: t('about') },
   ]
 

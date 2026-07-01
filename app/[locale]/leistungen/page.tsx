@@ -13,6 +13,7 @@ import { WaveBackground } from '@/components/ui/WaveBackground'
 import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
 import { KundenMockup } from '@/components/ui/KundenMockup'
+import { MockSteuerungstool } from '@/components/ui/MockSteuerungstool'
 import { BranchenSection } from '@/components/sections/BranchenSection'
 
 export async function generateMetadata({
@@ -153,6 +154,38 @@ function LeistungenBody() {
             <MockupReveal delay={0.2}>
               <KundenMockup />
             </MockupReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3a: Steuerungstool — MeatMind Kern (Produktionsschiene) */}
+      <section className="bg-[#F8FAFB] py-24">
+        <div className="container-wide">
+          <LabelReveal className="font-mono text-[11px] uppercase tracking-widest text-coral">
+            {t('steuerungLabel')}
+          </LabelReveal>
+          <Reveal delay={0.1}>
+            <h2 className="mt-4 max-w-3xl font-display text-[28px] font-bold leading-tight text-[var(--color-text-primary)] md:text-[36px]">
+              {t('steuerungTitle')}
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid gap-12 md:grid-cols-5 md:items-center">
+            <MockupReveal delay={0} className="md:col-span-3">
+              <MockSteuerungstool />
+            </MockupReveal>
+            <Reveal delay={0.2} className="md:col-span-2">
+              <p className="whitespace-pre-line text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                {t('steuerungBody')}
+              </p>
+              <ul className="mt-5 space-y-2">
+                {[1, 2, 3, 4].map((n) => (
+                  <li key={n} className="flex gap-2.5 text-sm text-[var(--color-text-secondary)]">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
+                    {t(`steuerungF${n}`)}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
       </section>

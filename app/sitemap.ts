@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/metadata'
 import { routing } from '@/i18n/routing'
 
-const STATIC_PATHS = ['/', '/leistungen', '/about', '/kontakt']
+const STATIC_PATHS = ['/', '/leistungen', '/warum', '/about', '/kontakt']
 
 function urlFor(locale: string, path: string): string {
   if (locale === routing.defaultLocale) {
