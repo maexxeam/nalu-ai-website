@@ -100,7 +100,7 @@ export default async function LocaleLayout({
       'On-Premise AI',
       'Mittelstand',
     ],
-    sameAs: ['https://www.linkedin.com/in/maximilianfischer'],
+    sameAs: ['https://www.linkedin.com/in/maximilian-fischer-naluai/'],
   }
 
   return (

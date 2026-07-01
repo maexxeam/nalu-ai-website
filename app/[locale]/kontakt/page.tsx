@@ -33,12 +33,12 @@ export default async function KontaktPage({
               aloha@nalu-ai.com
             </a>
             <a
-              href="https://linkedin.com/in/maximilianfischer"
+              href="https://www.linkedin.com/in/maximilian-fischer-naluai/"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-base text-[var(--color-text-secondary)] hover:underline md:text-lg"
             >
-              linkedin.com/in/maximilianfischer
+              linkedin.com/in/maximilian-fischer-naluai
             </a>
           </div>
         </div>
