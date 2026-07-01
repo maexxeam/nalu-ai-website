@@ -13,6 +13,7 @@ import { WaveBackground } from '@/components/ui/WaveBackground'
 import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
 import { KundenMockup } from '@/components/ui/KundenMockup'
+import { BranchenSection } from '@/components/sections/BranchenSection'
 
 export async function generateMetadata({
   params,
@@ -155,6 +156,9 @@ function LeistungenBody() {
           </div>
         </div>
       </section>
+
+      {/* Section 3b: Branchen — Fleisch / Bäckerei / Getränkemarkt */}
+      <BranchenSection />
 
       {/* Section 4: Weitere Leistungen — light gray */}
       <section className="bg-[#F8FAFB] py-20">

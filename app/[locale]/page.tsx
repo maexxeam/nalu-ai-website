@@ -5,6 +5,7 @@ import { WasNaluIst } from '@/components/sections/WasNaluIst'
 import { Massgeschneidert } from '@/components/sections/Massgeschneidert'
 import { Referenz } from '@/components/sections/Referenz'
 import { Module } from '@/components/sections/Module'
+import { BranchenTeaser } from '@/components/sections/BranchenTeaser'
 import { KontaktCTA } from '@/components/sections/KontaktCTA'
 import { SITE_URL } from '@/lib/metadata'
 
@@ -73,6 +74,7 @@ export default async function Home({
       <Massgeschneidert />
       <Referenz />
       <Module />
+      <BranchenTeaser />
       <KontaktCTA />
     </>
   )
