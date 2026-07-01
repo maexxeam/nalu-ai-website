@@ -31,19 +31,6 @@ function buildJsonLd(locale: string) {
         ? 'Mid-market manufacturers and distributors'
         : 'Mittelständische Hersteller und Großhändler',
     },
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'EUR',
-      price: '50000',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'EUR',
-        minPrice: '50000',
-        description: isEn
-          ? 'From €50,000 one-time, from €5,000/month — individually calculated.'
-          : 'Ab 50.000 € einmalig, ab 5.000 €/Monat — individuell kalkuliert.',
-      },
-    },
     url: SITE_URL,
     publisher: {
       '@type': 'Person',
