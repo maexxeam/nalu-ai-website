@@ -36,7 +36,7 @@
     "pill1": "ML Forecasting",
     "pill2": "Supply Chain",
     "pill3": "Analytics",
-    "pill4": "KI-Berichte"
+    "pill4": "Generative AI"
   },
   "Massgeschneidert": {
     "sectionLabel": "ANSATZ",
@@ -75,8 +75,8 @@
     "card3Body": "ABC/XYZ automatisch",
     "card4Title": "Supply Chain",
     "card4Body": "Safety Stock, Reorder Alerts",
-    "card5Title": "KI-Berichte",
-    "card5Body": "Wöchentlich, automatisch, PDF",
+    "card5Title": "Generative AI",
+    "card5Body": "LLM lokal oder Cloud — Berichte, Chat & Insights",
     "card6Title": "Kunden-Intelligenz",
     "card6Body": "Kaufwahrscheinl., Churn-Erkennung*",
     "footnote": "* Verfügbar wenn Kundendaten vorhanden",
@@ -258,7 +258,7 @@
     "card1Title": "ETL & Datenintegration",
     "card1Body": "Pipelines aus SAP, SQL Server, heterogenen Quellsystemen. Automatisiert, produktionsreif, wartbar.",
     "card2Title": "Custom ML",
-    "card2Body": "Forecasting-Modelle, Klassifikation, Anomalie-Erkennung — trainiert auf echten Produktionsdaten.",
+    "card2Body": "Forecasting, Klassifikation, Anomalie-Erkennung — plus LLM-/KI-Anbindung, wahlweise lokal (on-premise) oder Cloud, für Chat, Berichte und automatische Insights.",
     "card3Title": "Backend & APIs",
     "card3Body": "FastAPI, Flask, REST-Interfaces. Von der Konzeption bis zum Deployment auf der eigenen Infrastruktur.",
     "card4Title": "DWH & Datenarchitektur",
