@@ -14,6 +14,9 @@ import { Reveal, LabelReveal, MockupReveal } from '@/components/ui/Reveal'
 import { CountUp } from '@/components/ui/CountUp'
 import { KundenMockup } from '@/components/ui/KundenMockup'
 import { MockSteuerungstool } from '@/components/ui/MockSteuerungstool'
+import { DashboardMockup } from '@/components/ui/DashboardMockup'
+import { MockETLPipeline } from '@/components/ui/MockETLPipeline'
+import { MockAutomation } from '@/components/ui/MockAutomation'
 import { BranchenSection } from '@/components/sections/BranchenSection'
 
 export async function generateMetadata({
@@ -229,6 +232,52 @@ function LeistungenBody() {
           <p className="mt-8 text-sm italic text-[var(--color-text-tertiary)]">
             {t('preisNote')}
           </p>
+
+          {/* Detail-Mockups: ETL · Analytics · Automatisierung */}
+          <div className="mt-20 grid gap-12 md:grid-cols-5 md:items-center">
+            <MockupReveal delay={0} className="md:col-span-3">
+              <MockETLPipeline />
+            </MockupReveal>
+            <Reveal delay={0.2} className="md:col-span-2">
+              <p className="font-mono text-[11px] uppercase tracking-widest text-coral">{t('liveLabel')}</p>
+              <h3 className="mt-3 font-display text-2xl font-bold text-[var(--color-text-primary)] md:text-3xl">
+                {t('card1Title')}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                {t('card1Body')}
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-20 grid gap-12 md:grid-cols-5 md:items-center">
+            <Reveal delay={0.2} className="md:col-span-2">
+              <p className="font-mono text-[11px] uppercase tracking-widest text-coral">{t('liveLabel')}</p>
+              <h3 className="mt-3 font-display text-2xl font-bold text-[var(--color-text-primary)] md:text-3xl">
+                {t('card5Title')}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                {t('card5Body')}
+              </p>
+            </Reveal>
+            <MockupReveal delay={0} className="md:col-span-3">
+              <DashboardMockup />
+            </MockupReveal>
+          </div>
+
+          <div className="mt-20 grid gap-12 md:grid-cols-5 md:items-center">
+            <MockupReveal delay={0} className="md:col-span-3">
+              <MockAutomation />
+            </MockupReveal>
+            <Reveal delay={0.2} className="md:col-span-2">
+              <p className="font-mono text-[11px] uppercase tracking-widest text-coral">{t('liveLabel')}</p>
+              <h3 className="mt-3 font-display text-2xl font-bold text-[var(--color-text-primary)] md:text-3xl">
+                {t('card6Title')}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                {t('card6Body')}
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
